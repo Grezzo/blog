@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lesson Learned &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/lesson-learned/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Mon, 07 Aug 2017 18:15:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>nc.exe v1.10 NT crashes when -e used and </title>
+		<link>/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
+					<comments>/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 07 Aug 2017 13:02:27 +0000</pubDate>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[Online Course]]></category>
+		<category><![CDATA[OSCP]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">/?p=295</guid>
+
+					<description><![CDATA[I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a &#8230; <a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a remote system.</p>
+<p>One of the methods suggested is converting the file to text using exe2bat.exe to convert the file into a series of echo commands with redirection to a file that can be copy/pasted into the shell and finally running debug.exe to convert the file back into an exe. It&#8217;s a pretty well known method, detailed instructions can be found easily with google.</p>
+<p>I hit a problem when working through this though&#8230; I created a bind shell using nc.exe (v1.10 NT) and when i connected to this and pasted in the lines from the bat file created by exe2bat.exe, the nc.exe process would crash. It turned out to be crashing when it got the 3rd line from the bat file. I thought this was strange, so I contacted offensive-security support and they confirmed my findings, but weren&#8217;t sure why and suggested I used a different method to get a remote shell, e.g. using msfvenom.</p>
+<p>I have done some testing myself, and wrote a python script that tells me what it received and how long it was so that I could see in more detail what was going on. The script is:</p>
+<pre lang="PYTHON" line="1">#!/usr/bin/env python3
+
+import sys
+
+print('pypipe.py v0.1')
+print('--------------', flush=True)
+
+for idx, line in enumerate(sys.stdin):
+    line = line.strip()
+    print('# Received line {}. Length (bytes):{}'.format(
+            str(idx).zfill(3),
+            str(len(line)).zfill(3)),
+        flush=True)</pre>
+<p>Binding this to port 80 on windows with</p>
+<pre lang="BASH">nc -nvlp 80 -e "py pypipe.py"</pre>
+<p>and then connecting with netcat on my other system makes any input get reported back to the remote system line by line, and i can see that the problem happens when a long line is sent. I could also tell that it accepted a line with 323 characters, but when i sent 324, it crashed.</p>
+<p>I suspect I&#8217;m seeing the bug mentioned <a href="https://www.exploit-db.com/exploits/726/">here</a> and <a href="https://www.exploit-db.com/exploits/16436/">here</a>.</p>
+<p>So I&#8217;ve learned that I can&#8217;t use that version of nc.exe to send binary files that have been converted into long text strings. Different versions of nc probably don&#8217;t have this issue.</p>
+<p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>My first pentest on a friend&#8217;s network</title>
+		<link>/my-first-pentest-on-a-friends-network/</link>
+					<comments>/my-first-pentest-on-a-friends-network/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:31:58 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[OS X]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<category><![CDATA[WebApp]]></category>
+		<guid isPermaLink="false">/?p=227</guid>
+
+					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
+<p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
+<p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
+<p>Nessus didn&#8217;t find anything that was listed as critical, but it did show me that we had ssh running on port 22 and it also showed me all other ports that were open and had web servers running on them. I checked them all out and I found on various ports; the default Lion server webpage, SABNZBd, SickBeard, Transmission, and the unRAID server.</p>
+<p>The website served by the unRAID server was asking for a username and password using basic access authentication. That was no use so I started looking into the other services. Not only were the operating interfaces unsecured, but their configuration sections were also open to anyone. I saw that SABNZBd was running as &#8220;admin&#8221; and that it had an option of running scripts when a download had completed. The method was to point SABNZBd to a folder containing scripts, start a download and then choose what script to run on completion. I knew I could download a file using SABNZBd or Transmission to any directory that the admin user had write permissions to, but I didn&#8217;t know at this stage how to make it executable.</p>
+<p>I saw in SABNZBd&#8217;s preferences that I could specify the permissions (in octal format) of files and folders that were downloaded, so I ran SABNZBd on my machine, created a binary post on a newsgroup containing a script that was basically a reverse shell and tested a download to my machine with SABNZBd set to mark everything at 777. It created a folder with 777 permissions, but the file was only 555. Presumably this was for security reasons &#8211; damn!</p>
+<p>At this point I was wishing that his machine was running Windows not OSX because SABNZBd on Windows only requires that a scripts file extension is in the PATHEXT environment variable. That would have been much easier than getting a file marked as executable.</p>
+<p>I had to find another way of making an executable script on that machine. How could I get that machine to run my commands without having an executable script set&#8230; The web server or course. I created my single line PHP shell again (mentioned in a previous post) and set Transmission to download files to the Lion web server default folder, created a torrent containing my php script and downloaded the torrent to the server using transmission. I tested it, with the command <strong>whoami</strong>, and it worked. I was in, but I was only the user _www.</p>
+<p>What could I do as _www? Not much, but I was able to create a reverse shell using netcat and take a look around the system. I couldn&#8217;t access admin&#8217;s files yet, but of course I could write to /tmp. If I could write to /tmp, I could create a script and mark it as executable by everyone. Then I could get SABNZBd to run it! I started thinking about making a script that would create a reverse shell, then it dawned on me: create a public/private key pair and add it to /Users/admin/.ssh/authorized_keys.</p>
+<p>I uploaded my public key using my php shell script, and then created an executable script in /tmp that appended my key to authorized_keys.</p>
+<p>I started a new SABNZBd download (I decided to just download something that was small, free and released under the CC license) so as no to upset anyone. Obviously I now set my script to run. All went well and I could now ssh into the machine as the admin user without a password.</p>
+<p>At this point I cleaned up everything I had downloaded and just left my key in place so I could log in. I took a look around, but I couldn&#8217;t see anything to do with the unRAID server, so I thought I should report how far I had got.</p>
+<p>They were surprised, and while I didn&#8217;t get into the unRAID server, I had gotten a lot further than they thought anyone would be able to. As a result of this, they have since enabled logins on all their web services and removed my public key, but they still do have some vulnerabilities, like ssh running on a default port and allowing password authentication (ripe for brute forcing). They are a lot safer than they were, but it may well be worth me going back and having another go at some point in the future.</p>
+<p>A lot of the methods that I have used in this test were inspired by the challenges I have been working through in hackthissite.org and exploit-excercises.com and I&#8217;m very grateful to them for making the challenges.</p>
+<p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How (I think) my windows live account got compromised</title>
+		<link>/how-i-think-my-windows-live-account-got-compromised/</link>
+					<comments>/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 29 Oct 2012 11:22:54 +0000</pubDate>
+				<category><![CDATA[Brute Force]]></category>
+		<category><![CDATA[Comic]]></category>
+		<category><![CDATA[Compromise]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Google Authenticator]]></category>
+		<category><![CDATA[Hash]]></category>
+		<category><![CDATA[LastPass]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[Password Reuse]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[Salt]]></category>
+		<category><![CDATA[Windows Live]]></category>
+		<category><![CDATA[XKCD]]></category>
+		<guid isPermaLink="false">/?p=134</guid>
+
+					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+<p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
+<p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
+<p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
+<p>When I set up my windows live account many years ago, I wasn&#8217;t really bothered about security and I used the same password for many of my online accounts. There is another great xkcd comic about this:<a href="http://xkcd.com/792/"><img fetchpriority="high" decoding="async" class="alignnone" title="xkcd: Password Reuse" src="http://imgs.xkcd.com/comics/password_reuse.png" alt="xkcd: Password Reuse" width="480" height="1189" /></a></p>
+<p>When I realised that this was insecure I started to change some of my accounts to use a slightly different password where a small number of characters were different. The changed characters were chose depending on which site or service I was logging in to, but I had never updated the password on my windows live account because I never logged in manually; I had windows live messenger set to save my password and log in automatically. This meant that I was still probably reusing a password with another account somewhere else that I had forgotten about.</p>
+<p>My theory of how they got my password is that a website or service that I had forgotten about (because I haven&#8217;t used it for years) has been compromised and had revealed my email address and password. The password was probably stored (and therefore revealed) as plain text. I think this because even if my password was hashed but not unsalted, the attacker would have had to use a very large rainbow table for it to cover my password, and this would have also taken so much time that it would not have been worth it for the attacker. The attacker would surely just go for the low hanging fruit, rather than spend ages on a single account. I think that once the attackers got the email/password combination, they probably just tried it on a bunch of common services that they could use to send spam messages (<a title="Hotmail" href="http://www.hotmail.com/" target="_blank">hotmail</a>, <a title="Facebook" href="https://www.facebook.com/" target="_blank">facebook</a>, <a title="Twitter" href="https://twitter.com/" target="_blank">twitter</a>, <a title="Skype" href="http://www.skype.com/" target="_blank">skype</a>, <strong>WLM</strong>, <a title="iCloud" href="https://www.icloud.com/" target="_blank">iCloud</a>, etc), and found that one of my accounts had the same password.</p>
+<p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

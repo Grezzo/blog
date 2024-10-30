@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Stanford Online &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/education/online-course/stanford-online/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Tue, 11 Dec 2012 21:32:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>I passed my course :-)</title>
+		<link>/i-passed-my-course/</link>
+					<comments>/i-passed-my-course/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Tue, 11 Dec 2012 21:32:30 +0000</pubDate>
+				<category><![CDATA[Education]]></category>
+		<category><![CDATA[Online Course]]></category>
+		<category><![CDATA[Stanford Online]]></category>
+		<guid isPermaLink="false">/?p=225</guid>
+
+					<description><![CDATA[I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed. Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard! &#8230; <a href="/i-passed-my-course/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed.</p>
+<p>Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard!</p>
+<p>I think the course title was misleading; I was expecting to learn a bit more detail about stuff that I had already taught myself about simple LANs; network masks, routing, etc. but it was much more than just this this. It was actually more to do with how the internet works and included some quite complicated concepts and mathematical/statistical theories. I found it pretty hard work, to the point that I considered jacking it in a couple of times, because it was taking a lot of my evening and weekend time, but I&#8217;m glad I made it through. I&#8217;m just thankful that it was quite short (about 6 weeks) because now the pressure is off and I have some free time again.</p>
+<p>The free course is by Stanford University professors Nick McKeown and Philip Levis and many subjects in detail including:</p>
+<ul>
+<li>Protocols:
+<ul>
+<li>IP</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>ICMP</li>
+<li>ARP</li>
+<li>DHCP</li>
+<li>DNS</li>
+<li>NAT</li>
+<li>BGP</li>
+<li>Ethernet</li>
+</ul>
+</li>
+<li>Other Theory:
+<ul>
+<li>Encapsulation</li>
+<li>Packet Switching</li>
+<li>Delays (End to End &amp; Queueing)</li>
+<li>Broadcasting</li>
+<li>Routing</li>
+<li>Wireless</li>
+</ul>
+</li>
+</ul>
+<p>The course goes into so much detail in these subjects, and in many more. They are planning on re-running the course in Autumn 2013, so if any of this sounds interesting to you, then you should definitely consider enrolling nearer the time.</p>
+<p>So now I&#8217;m just waiting to receive my statement on completion&#8230; I think it&#8217;s due in the new year.</p>
+<p>Lastly I should say thanks to Nick and Philip for putting the course together and for offering it for free &#8211; Cheers guys</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/i-passed-my-course/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

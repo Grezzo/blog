@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Hack This Site Realistic 6	</title>
+	<atom:link href="/hack-this-site-realistic-6/feed/" rel="self" type="application/rss+xml" />
+	<link>/hack-this-site-realistic-6/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Tue, 11 Aug 2015 05:30:13 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Jason Statham		</title>
+		<link>/hack-this-site-realistic-6/#comment-4519776</link>
+
+		<dc:creator><![CDATA[Jason Statham]]></dc:creator>
+		<pubDate>Tue, 11 Aug 2015 05:30:13 +0000</pubDate>
+		<guid isPermaLink="false">http://grobinson.me/?p=1#comment-4519776</guid>
+
+					<description><![CDATA[Hey Greame,
+                     I am extremely thankful for your effort it saved a lot of time for me, although i did not disclose my original name. Thanks once again.....]]></description>
+			<content:encoded><![CDATA[<p>Hey Greame,<br />
+                     I am extremely thankful for your effort it saved a lot of time for me, although i did not disclose my original name. Thanks once again&#8230;..</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

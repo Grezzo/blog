@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Hack the Box	</title>
+	<atom:link href="/hack-the-box/feed/" rel="self" type="application/rss+xml" />
+	<link>/hack-the-box/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Thu, 09 Nov 2017 10:24:04 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: gujar		</title>
+		<link>/hack-the-box/#comment-4555653</link>
+
+		<dc:creator><![CDATA[gujar]]></dc:creator>
+		<pubDate>Thu, 09 Nov 2017 10:24:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=290#comment-4555653</guid>
+
+					<description><![CDATA[can you give me a hint to hack blue
+Which method only the name of attack
+thank you]]></description>
+			<content:encoded><![CDATA[<p>can you give me a hint to hack blue<br />
+Which method only the name of attack<br />
+thank you</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

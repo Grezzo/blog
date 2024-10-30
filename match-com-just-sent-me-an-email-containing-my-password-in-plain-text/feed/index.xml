@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: Match.com just sent me an email containing my password in plain text!	</title>
+	<atom:link href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/" rel="self" type="application/rss+xml" />
+	<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Sat, 18 Apr 2015 21:07:16 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: Steven		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-4313132</link>
+
+		<dc:creator><![CDATA[Steven]]></dc:creator>
+		<pubDate>Sat, 18 Apr 2015 21:07:16 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-4313132</guid>
+
+					<description><![CDATA[I just signed-up for match.com and guess that was included in an email from them: My password, in plaintext!]]></description>
+			<content:encoded><![CDATA[<p>I just signed-up for match.com and guess that was included in an email from them: My password, in plaintext!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nathan		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-163273</link>
+
+		<dc:creator><![CDATA[Nathan]]></dc:creator>
+		<pubDate>Sat, 16 Aug 2014 14:29:03 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-163273</guid>
+
+					<description><![CDATA[Yikes this is pretty bad.  It&#039;s almost 2 years later and they&#039;re still doing it!  I clicked forgot password and bam, plaintext password sent to me in my email.
+
+They don&#039;t even verify emails! This is just ridiculous]]></description>
+			<content:encoded><![CDATA[<p>Yikes this is pretty bad.  It&#8217;s almost 2 years later and they&#8217;re still doing it!  I clicked forgot password and bam, plaintext password sent to me in my email.</p>
+<p>They don&#8217;t even verify emails! This is just ridiculous</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Graeme Robinson		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-153121</link>
+
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 28 Jul 2014 16:26:27 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-153121</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038&quot;&gt;Bradford C. Vokey&lt;/a&gt;.
+
+I think maybe it&#039;s time to escalate. Perhaps @SamYagan (CEO of Match.com) might be worth contacting...
+
+&lt;strong&gt;Update:&lt;/strong&gt;Tweeted him: https://twitter.com/Grezzo82/statuses/493796324048117760]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038">Bradford C. Vokey</a>.</p>
+<p>I think maybe it&#8217;s time to escalate. Perhaps @SamYagan (CEO of Match.com) might be worth contacting&#8230;</p>
+<p><strong>Update:</strong>Tweeted him: <a href="https://twitter.com/Grezzo82/statuses/493796324048117760" rel="nofollow ugc">https://twitter.com/Grezzo82/statuses/493796324048117760</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bradford C. Vokey		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038</link>
+
+		<dc:creator><![CDATA[Bradford C. Vokey]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 19:24:24 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-145038</guid>
+
+					<description><![CDATA[It is even worse, much worse, than you have thought...
+
+Match.com does not &#039;verify&#039; your email before they use it and store it in your account.
+
+We (as owners of the domain &#039;matchmake.com&#039;) have been receiving email from their servers with private log-on information (and much more) because people (for some reason) have been entering their email addresses using our domain by mistake. Match.com happily accepts it even though they have NO access to it and never verified it and blindly gives anyone with access to the mistyped email address FULL access to their Match.com account.
+
+At first we thought it was just some fake robot accounts being set-up with random email addresses - but it is not. These accounts have fully registered credit cards in their profiles and are fully active subscriptions.
+
+Pretty lame Match.com, pretty lame.
+
+We are debating what we should do about it and the 707 emails we have received from them in just the last 5 months...]]></description>
+			<content:encoded><![CDATA[<p>It is even worse, much worse, than you have thought&#8230;</p>
+<p>Match.com does not &#8216;verify&#8217; your email before they use it and store it in your account.</p>
+<p>We (as owners of the domain &#8216;matchmake.com&#8217;) have been receiving email from their servers with private log-on information (and much more) because people (for some reason) have been entering their email addresses using our domain by mistake. Match.com happily accepts it even though they have NO access to it and never verified it and blindly gives anyone with access to the mistyped email address FULL access to their Match.com account.</p>
+<p>At first we thought it was just some fake robot accounts being set-up with random email addresses &#8211; but it is not. These accounts have fully registered credit cards in their profiles and are fully active subscriptions.</p>
+<p>Pretty lame Match.com, pretty lame.</p>
+<p>We are debating what we should do about it and the 707 emails we have received from them in just the last 5 months&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Danny		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-132395</link>
+
+		<dc:creator><![CDATA[Danny]]></dc:creator>
+		<pubDate>Sun, 01 Jun 2014 23:49:22 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-132395</guid>
+
+					<description><![CDATA[Well I&#039;ve just requested a password reset today and yes: Plaintext.  Nothing appears to have changed 17 months after your initial report.]]></description>
+			<content:encoded><![CDATA[<p>Well I&#8217;ve just requested a password reset today and yes: Plaintext.  Nothing appears to have changed 17 months after your initial report.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-101111</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Sat, 15 Mar 2014 20:41:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-101111</guid>
+
+					<description><![CDATA[This problem is still not fixed.  If they can&#039;t protect your password, I guarantee they cannot protect your privacy from other members.]]></description>
+			<content:encoded><![CDATA[<p>This problem is still not fixed.  If they can&#8217;t protect your password, I guarantee they cannot protect your privacy from other members.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-194</link>
+
+		<dc:creator><![CDATA[Andrew]]></dc:creator>
+		<pubDate>Mon, 17 Jun 2013 23:58:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-194</guid>
+
+					<description><![CDATA[This has not been fixed and I don&#039;t see the issue being resolved anytime soon, I&#039;ve also updated the post at http://plaintextoffenders.com]]>/</description>
+			<content:encoded><![CDATA[<p>This has not been fixed and I don&#8217;t see the issue being resolved anytime soon, I&#8217;ve also updated the post at <a href="http://plaintextoffenders.com/" rel="nofollow ugc">http://plaintextoffenders.com/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Scott		</title>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-193</link>
+
+		<dc:creator><![CDATA[Scott]]></dc:creator>
+		<pubDate>Sat, 15 Jun 2013 14:13:25 +0000</pubDate>
+		<guid isPermaLink="false">/?p=228#comment-193</guid>
+
+					<description><![CDATA[I just asked to reset my password today and they instead emailed me my password.  No, nothing changes after what appears 6 months since your post/experience]]></description>
+			<content:encoded><![CDATA[<p>I just asked to reset my password today and they instead emailed me my password.  No, nothing changes after what appears 6 months since your post/experience</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

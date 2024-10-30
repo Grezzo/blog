@@ -1,0 +1,20 @@
+/*
+Theme Name:     Twenty Eleven Mod
+Description:    Hides wordpress link from footer and makes menu bar orange.
+Author:         Graeme Robinson
+Template:       twentyeleven
+*/
+
+@import url("/wp-content/themes/twentyeleven/style.css");
+
+#site-generator {
+    display: none;
+}
+
+#access {
+    background: #b27644; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#b27644, #833012);
+    background: -o-linear-gradient(#b27644, #833012);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b27644), to(#833012)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#b27644, #833012);
+}

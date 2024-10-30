@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>OS X &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/os-x/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Sun, 06 Jan 2013 16:31:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>My first pentest on a friend&#8217;s network</title>
+		<link>/my-first-pentest-on-a-friends-network/</link>
+					<comments>/my-first-pentest-on-a-friends-network/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:31:58 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[OS X]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<category><![CDATA[WebApp]]></category>
+		<guid isPermaLink="false">/?p=227</guid>
+
+					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
+<p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
+<p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
+<p>Nessus didn&#8217;t find anything that was listed as critical, but it did show me that we had ssh running on port 22 and it also showed me all other ports that were open and had web servers running on them. I checked them all out and I found on various ports; the default Lion server webpage, SABNZBd, SickBeard, Transmission, and the unRAID server.</p>
+<p>The website served by the unRAID server was asking for a username and password using basic access authentication. That was no use so I started looking into the other services. Not only were the operating interfaces unsecured, but their configuration sections were also open to anyone. I saw that SABNZBd was running as &#8220;admin&#8221; and that it had an option of running scripts when a download had completed. The method was to point SABNZBd to a folder containing scripts, start a download and then choose what script to run on completion. I knew I could download a file using SABNZBd or Transmission to any directory that the admin user had write permissions to, but I didn&#8217;t know at this stage how to make it executable.</p>
+<p>I saw in SABNZBd&#8217;s preferences that I could specify the permissions (in octal format) of files and folders that were downloaded, so I ran SABNZBd on my machine, created a binary post on a newsgroup containing a script that was basically a reverse shell and tested a download to my machine with SABNZBd set to mark everything at 777. It created a folder with 777 permissions, but the file was only 555. Presumably this was for security reasons &#8211; damn!</p>
+<p>At this point I was wishing that his machine was running Windows not OSX because SABNZBd on Windows only requires that a scripts file extension is in the PATHEXT environment variable. That would have been much easier than getting a file marked as executable.</p>
+<p>I had to find another way of making an executable script on that machine. How could I get that machine to run my commands without having an executable script set&#8230; The web server or course. I created my single line PHP shell again (mentioned in a previous post) and set Transmission to download files to the Lion web server default folder, created a torrent containing my php script and downloaded the torrent to the server using transmission. I tested it, with the command <strong>whoami</strong>, and it worked. I was in, but I was only the user _www.</p>
+<p>What could I do as _www? Not much, but I was able to create a reverse shell using netcat and take a look around the system. I couldn&#8217;t access admin&#8217;s files yet, but of course I could write to /tmp. If I could write to /tmp, I could create a script and mark it as executable by everyone. Then I could get SABNZBd to run it! I started thinking about making a script that would create a reverse shell, then it dawned on me: create a public/private key pair and add it to /Users/admin/.ssh/authorized_keys.</p>
+<p>I uploaded my public key using my php shell script, and then created an executable script in /tmp that appended my key to authorized_keys.</p>
+<p>I started a new SABNZBd download (I decided to just download something that was small, free and released under the CC license) so as no to upset anyone. Obviously I now set my script to run. All went well and I could now ssh into the machine as the admin user without a password.</p>
+<p>At this point I cleaned up everything I had downloaded and just left my key in place so I could log in. I took a look around, but I couldn&#8217;t see anything to do with the unRAID server, so I thought I should report how far I had got.</p>
+<p>They were surprised, and while I didn&#8217;t get into the unRAID server, I had gotten a lot further than they thought anyone would be able to. As a result of this, they have since enabled logins on all their web services and removed my public key, but they still do have some vulnerabilities, like ssh running on a default port and allowing password authentication (ripe for brute forcing). They are a lot safer than they were, but it may well be worth me going back and having another go at some point in the future.</p>
+<p>A lot of the methods that I have used in this test were inspired by the challenges I have been working through in hackthissite.org and exploit-excercises.com and I&#8217;m very grateful to them for making the challenges.</p>
+<p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>My Fiancée is Using Better Passwords Than Me!</title>
+		<link>/my-fiancee-is-using-better-passwords-than-me/</link>
+					<comments>/my-fiancee-is-using-better-passwords-than-me/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 17 Sep 2012 20:30:32 +0000</pubDate>
+				<category><![CDATA[Brute Force]]></category>
+		<category><![CDATA[Comic]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Email]]></category>
+		<category><![CDATA[Encryption]]></category>
+		<category><![CDATA[FileVault]]></category>
+		<category><![CDATA[Full Disk Encryption]]></category>
+		<category><![CDATA[HashCat]]></category>
+		<category><![CDATA[Hotmail]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[John The Ripper]]></category>
+		<category><![CDATA[OS X]]></category>
+		<category><![CDATA[Password Complexity]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[XKCD]]></category>
+		<guid isPermaLink="false">/?p=63</guid>
+
+					<description><![CDATA[I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get &#8230; <a href="/my-fiancee-is-using-better-passwords-than-me/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get into infosec, I should at least try to be secure myself.</p>
+<p>Around the same time my fiancée had said that her Windows laptop was running slow, and then her hotmail account got compromised. I checked her laptop for anything malicious (all seemed ok) but I didn&#8217;t have time to try and find out why it was running slow right then, so I set her up with an account on my Mac laptop. I had not enforced any password policy on my Mac laptop (I&#8217;m not even sure how to do that &#8211; I&#8217;ll have to find out soon), so I asked her if she would mind telling me what password she had used because her password would be able to unlock the FileVault (almost) full disk encryption and her password could be the weak link.</p>
+<p>She obviously trusts me because she told me, and I knew from experience with John The Ripper/Hascat/etc that it would easily be cracked using brute force by the proper tools in a matter of seconds because it followed a very common pattern. It turned out that her hotmail account was using a similarly simple password, so it was no great surprise that it had been compromised.</p>
+<p>I explained with the help of this great XKCD comic that a password can be hard to crack, but easy to remember:<a href="http://xkcd.com/936/"><img fetchpriority="high" decoding="async" class="alignnone" title="XKCD: Password Strength" src="http://imgs.xkcd.com/comics/password_strength.png" alt="" width="740" height="601" /></a></p>
+<p>She is now using a passwords around 30 characters long! This means some of her passwords are probably stronger than some of mine&#8230; I have some catching up to do!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/my-fiancee-is-using-better-passwords-than-me/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

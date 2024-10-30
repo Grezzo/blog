@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments for Graeme Robinson&#039;s blog	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Mon, 28 Dec 2020 13:37:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		Comment on Single Line PHP Script to Gain Shell by Graeme Robinson		</title>
+		<link>/single-line-php-script-to-gain-shell/#comment-5077679</link>
+
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 28 Dec 2020 13:37:39 +0000</pubDate>
+		<guid isPermaLink="false">/?p=79#comment-5077679</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/single-line-php-script-to-gain-shell/#comment-5061347&quot;&gt;Daniel&lt;/a&gt;.
+
+Thanks, my brother made them for a custom mouse mat that he had made for our parents years ago]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Daniel</a>.</p>
+<p>Thanks, my brother made them for a custom mouse mat that he had made for our parents years ago</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Single Line PHP Script to Gain Shell by Daniel		</title>
+		<link>/single-line-php-script-to-gain-shell/#comment-5061347</link>
+
+		<dc:creator><![CDATA[Daniel]]></dc:creator>
+		<pubDate>Tue, 13 Oct 2020 21:08:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=79#comment-5061347</guid>
+
+					<description><![CDATA[I love the bean pictures]]></description>
+			<content:encoded><![CDATA[<p>I love the bean pictures</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Learning more about buffer overflow exploits by Errorgedill		</title>
+		<link>/learning-more-about-buffer-overflow-exploits/#comment-5021162</link>
+
+		<dc:creator><![CDATA[Errorgedill]]></dc:creator>
+		<pubDate>Thu, 16 Apr 2020 01:07:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=342#comment-5021162</guid>
+
+					<description><![CDATA[Yo! Thank You for this,thank you for this. As the Mojoheads label =)))]]></description>
+			<content:encoded><![CDATA[<p>Yo! Thank You for this,thank you for this. As the Mojoheads label =)))</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Single Line PHP Script to Gain Shell by Reverse shells even without nc on Linux &#124; Graeme Robinson&#039;s blog		</title>
+		<link>/single-line-php-script-to-gain-shell/#comment-4568725</link>
+
+		<dc:creator><![CDATA[Reverse shells even without nc on Linux &#124; Graeme Robinson&#039;s blog]]></dc:creator>
+		<pubDate>Sun, 29 Apr 2018 13:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=79#comment-4568725</guid>
+
+					<description><![CDATA[[&#8230;] when I get remote command execution on a linux system for example I&#8217;ve planted my one line php script , the next step is getting a remote shell. Usually an nc listener would be used to receive the [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] when I get remote command execution on a linux system for example I&#8217;ve planted my one line php script , the next step is getting a remote shell. Usually an nc listener would be used to receive the [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP) by I passed OSCP! &#124; Graeme Robinson&#039;s blog		</title>
+		<link>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721</link>
+
+		<dc:creator><![CDATA[I passed OSCP! &#124; Graeme Robinson&#039;s blog]]></dc:creator>
+		<pubDate>Sun, 29 Apr 2018 10:45:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=285#comment-4568721</guid>
+
+					<description><![CDATA[[&#8230;] on from my post a few months ago, I took the OSCP exam about a week ago and passed first time! It&#8217;s a great course, and the [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] on from my post a few months ago, I took the OSCP exam about a week ago and passed first time! It&#8217;s a great course, and the [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Hack the Box by gujar		</title>
+		<link>/hack-the-box/#comment-4555653</link>
+
+		<dc:creator><![CDATA[gujar]]></dc:creator>
+		<pubDate>Thu, 09 Nov 2017 10:24:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=290#comment-4555653</guid>
+
+					<description><![CDATA[can you give me a hint to hack blue
+Which method only the name of attack
+thank you]]></description>
+			<content:encoded><![CDATA[<p>can you give me a hint to hack blue<br />
+Which method only the name of attack<br />
+thank you</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Kioptrix 2014 by FristiLeaks 1.3 &#124; Graeme Robinson&#039;s blog		</title>
+		<link>/kioptrix-2014/#comment-4555235</link>
+
+		<dc:creator><![CDATA[FristiLeaks 1.3 &#124; Graeme Robinson&#039;s blog]]></dc:creator>
+		<pubDate>Sun, 22 Oct 2017 11:29:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=312#comment-4555235</guid>
+
+					<description><![CDATA[[&#8230;] &#8592; Previous [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] &larr; Previous [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Single Line PHP Script to Gain Shell by Kioptrix 2014 &#124; Graeme Robinson&#039;s blog		</title>
+		<link>/single-line-php-script-to-gain-shell/#comment-4554853</link>
+
+		<dc:creator><![CDATA[Kioptrix 2014 &#124; Graeme Robinson&#039;s blog]]></dc:creator>
+		<pubDate>Thu, 12 Oct 2017 20:48:51 +0000</pubDate>
+		<guid isPermaLink="false">/?p=79#comment-4554853</guid>
+
+					<description><![CDATA[[&#8230;] before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a single line php backdoor file by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&#060;?php echo [&#8230;]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a single line php backdoor file by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP) by Graeme Robinson		</title>
+		<link>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4554814</link>
+
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Wed, 11 Oct 2017 19:35:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=285#comment-4554814</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4554387&quot;&gt;Yogs&lt;/a&gt;.
+
+Hi,
+
+Well I booked 60 days, but about 14 of those I was on holiday (bad timing, I know!) so I only really got 46 days of lab access, and I didn&#039;t manage to study on all of those days... Needless to say that when my 60 days were up, I was not ready (and still aren&#039;t) to take the exam. I understand all the theory, but I&#039;ve only owned about 4 machines in the lab (I&#039;ve not been using metasploit for any of them, since it&#039;s use is restricted in the exam to one system), and it takes me much longer that it should to do it. I&#039;ve decided to practice some machines on vulnhub before buying extra lab time. I&#039;m hoping that once I&#039;ve got more experience outside the labs and I&#039;m faster, I may manage to be ready after buying a 30 day extension.
+
+Are you doing the PWK course, or considering doing it?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4554387">Yogs</a>.</p>
+<p>Hi,</p>
+<p>Well I booked 60 days, but about 14 of those I was on holiday (bad timing, I know!) so I only really got 46 days of lab access, and I didn&#8217;t manage to study on all of those days&#8230; Needless to say that when my 60 days were up, I was not ready (and still aren&#8217;t) to take the exam. I understand all the theory, but I&#8217;ve only owned about 4 machines in the lab (I&#8217;ve not been using metasploit for any of them, since it&#8217;s use is restricted in the exam to one system), and it takes me much longer that it should to do it. I&#8217;ve decided to practice some machines on vulnhub before buying extra lab time. I&#8217;m hoping that once I&#8217;ve got more experience outside the labs and I&#8217;m faster, I may manage to be ready after buying a 30 day extension.</p>
+<p>Are you doing the PWK course, or considering doing it?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP) by Yogs		</title>
+		<link>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4554387</link>
+
+		<dc:creator><![CDATA[Yogs]]></dc:creator>
+		<pubDate>Mon, 25 Sep 2017 09:44:51 +0000</pubDate>
+		<guid isPermaLink="false">/?p=285#comment-4554387</guid>
+
+					<description><![CDATA[Hi Graeme, 
+
+Would you like to post your experience with OSCP labs till date and any advice for OSCP hunters?]]></description>
+			<content:encoded><![CDATA[<p>Hi Graeme, </p>
+<p>Would you like to post your experience with OSCP labs till date and any advice for OSCP hunters?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Salt &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/infosec/hash/salt/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Mon, 29 Oct 2012 11:24:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>How (I think) my windows live account got compromised</title>
+		<link>/how-i-think-my-windows-live-account-got-compromised/</link>
+					<comments>/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 29 Oct 2012 11:22:54 +0000</pubDate>
+				<category><![CDATA[Brute Force]]></category>
+		<category><![CDATA[Comic]]></category>
+		<category><![CDATA[Compromise]]></category>
+		<category><![CDATA[Crack]]></category>
+		<category><![CDATA[Google Authenticator]]></category>
+		<category><![CDATA[Hash]]></category>
+		<category><![CDATA[LastPass]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[Password Reuse]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[Salt]]></category>
+		<category><![CDATA[Windows Live]]></category>
+		<category><![CDATA[XKCD]]></category>
+		<guid isPermaLink="false">/?p=134</guid>
+
+					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+<p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
+<p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
+<p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
+<p>When I set up my windows live account many years ago, I wasn&#8217;t really bothered about security and I used the same password for many of my online accounts. There is another great xkcd comic about this:<a href="http://xkcd.com/792/"><img fetchpriority="high" decoding="async" class="alignnone" title="xkcd: Password Reuse" src="http://imgs.xkcd.com/comics/password_reuse.png" alt="xkcd: Password Reuse" width="480" height="1189" /></a></p>
+<p>When I realised that this was insecure I started to change some of my accounts to use a slightly different password where a small number of characters were different. The changed characters were chose depending on which site or service I was logging in to, but I had never updated the password on my windows live account because I never logged in manually; I had windows live messenger set to save my password and log in automatically. This meant that I was still probably reusing a password with another account somewhere else that I had forgotten about.</p>
+<p>My theory of how they got my password is that a website or service that I had forgotten about (because I haven&#8217;t used it for years) has been compromised and had revealed my email address and password. The password was probably stored (and therefore revealed) as plain text. I think this because even if my password was hashed but not unsalted, the attacker would have had to use a very large rainbow table for it to cover my password, and this would have also taken so much time that it would not have been worth it for the attacker. The attacker would surely just go for the low hanging fruit, rather than spend ages on a single account. I think that once the attackers got the email/password combination, they probably just tried it on a bunch of common services that they could use to send spam messages (<a title="Hotmail" href="http://www.hotmail.com/" target="_blank">hotmail</a>, <a title="Facebook" href="https://www.facebook.com/" target="_blank">facebook</a>, <a title="Twitter" href="https://twitter.com/" target="_blank">twitter</a>, <a title="Skype" href="http://www.skype.com/" target="_blank">skype</a>, <strong>WLM</strong>, <a title="iCloud" href="https://www.icloud.com/" target="_blank">iCloud</a>, etc), and found that one of my accounts had the same password.</p>
+<p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

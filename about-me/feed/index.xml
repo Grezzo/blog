@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: About Me	</title>
+	<atom:link href="/about-me/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Mon, 28 Dec 2020 14:06:17 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>
+		By: abc		</title>
+		<link>/about-me/#comment-1422520</link>
+
+		<dc:creator><![CDATA[abc]]></dc:creator>
+		<pubDate>Mon, 17 Nov 2014 03:39:08 +0000</pubDate>
+		<guid isPermaLink="false">http://grobinson.me/?page_id=2#comment-1422520</guid>
+
+					<description><![CDATA[I have attached my settings, is that correct? And I don&#039;t know where to set get-task-allow.
+
+
+
+
+
+
+	SUPPORTED_DEVICE_FAMILIES
+	1,2
+	GCC_THUMB_SUPPORT
+	YES
+	DEFAULT_COMPILER
+	com.apple.compilers.llvm.clang.1_0
+	IPHONEOS_DEPLOYMENT_TARGET
+	8.1
+	DEAD_CODE_STRIPPING
+	YES
+	CODE_SIGN_ENTITLEMENTS
+	
+	ENTITLEMENTS_REQUIRED
+	NO
+	CODE_SIGNING_REQUIRED
+	NO
+	PLATFORM_NAME
+	iphoneos
+	AD_HOC_CODE_SIGNING_ALLOWED
+	YES
+
+]]></description>
+			<content:encoded><![CDATA[<p>I have attached my settings, is that correct? And I don&#8217;t know where to set get-task-allow.</p>
+<p>	SUPPORTED_DEVICE_FAMILIES<br />
+	1,2<br />
+	GCC_THUMB_SUPPORT<br />
+	YES<br />
+	DEFAULT_COMPILER<br />
+	com.apple.compilers.llvm.clang.1_0<br />
+	IPHONEOS_DEPLOYMENT_TARGET<br />
+	8.1<br />
+	DEAD_CODE_STRIPPING<br />
+	YES<br />
+	CODE_SIGN_ENTITLEMENTS</p>
+<p>	ENTITLEMENTS_REQUIRED<br />
+	NO<br />
+	CODE_SIGNING_REQUIRED<br />
+	NO<br />
+	PLATFORM_NAME<br />
+	iphoneos<br />
+	AD_HOC_CODE_SIGNING_ALLOWED<br />
+	YES</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

