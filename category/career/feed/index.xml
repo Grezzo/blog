@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Career &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/career/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/career/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 11 Oct 2017 19:46:34 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,22 +21,22 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>I got a job at an information security company!</title>
-		<link>/i-got-a-job-at-an-information-security-company/</link>
-					<comments>/i-got-a-job-at-an-information-security-company/#respond</comments>
+		<link>/blog/i-got-a-job-at-an-information-security-company/</link>
+					<comments>/blog/i-got-a-job-at-an-information-security-company/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Wed, 11 Oct 2017 19:46:34 +0000</pubDate>
 				<category><![CDATA[Career]]></category>
 		<category><![CDATA[Conference]]></category>
 		<category><![CDATA[Information Security]]></category>
-		<guid isPermaLink="false">/?p=310</guid>
+		<guid isPermaLink="false">/blog/?p=310</guid>
 
-					<description><![CDATA[In a previous blog post, I said that I attended B-Sides London earlier this year. It turns out that was probably one of the best things I&#8217;ve done this year because, not only was it very enjoyable, but I ended &#8230; <a href="/i-got-a-job-at-an-information-security-company/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[In a previous blog post, I said that I attended B-Sides London earlier this year. It turns out that was probably one of the best things I&#8217;ve done this year because, not only was it very enjoyable, but I ended &#8230; <a href="/blog/i-got-a-job-at-an-information-security-company/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>In a previous blog post, I said that I attended B-Sides London earlier this year. It turns out that was probably one of the best things I&#8217;ve done this year because, not only was it very enjoyable, but I ended up speaking to a quite a lot of people while I was there, including some people that worked at security companies that were recruiting and I ended up getting a job at a company that is well known in the infosec world.</p>
 <p>It was about time I moved on from my previous position, and this is a real step up for me. I&#8217;ve been working there for a few weeks now and I&#8217;m really enjoying it, the work is fun and interesting, the working environment is brilliant. It&#8217;s just great to be working in a field that I&#8217;m interested in and be somewhere that cares about career progression.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/i-got-a-job-at-an-information-security-company/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/i-got-a-job-at-an-information-security-company/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: InfoSec Links	</title>
-	<atom:link href="/infosec-links/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/infosec-links/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 04 Dec 2016 02:28:25 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		By: George Molino		</title>
-		<link>/infosec-links/#comment-4540859</link>
+		<link>/blog/infosec-links/#comment-4540859</link>
 
 		<dc:creator><![CDATA[George Molino]]></dc:creator>
 		<pubDate>Sun, 04 Dec 2016 02:28:25 +0000</pubDate>
-		<guid isPermaLink="false">/?page_id=13#comment-4540859</guid>
+		<guid isPermaLink="false">/blog/?page_id=13#comment-4540859</guid>
 
 					<description><![CDATA[Thank you very much !]]></description>
 			<content:encoded><![CDATA[<p>Thank you very much !</p>

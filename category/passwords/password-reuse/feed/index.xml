@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Password Reuse &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/passwords/password-reuse/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/passwords/password-reuse/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Mon, 29 Oct 2012 11:24:12 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>How (I think) my windows live account got compromised</title>
-		<link>/how-i-think-my-windows-live-account-got-compromised/</link>
-					<comments>/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
+		<link>/blog/how-i-think-my-windows-live-account-got-compromised/</link>
+					<comments>/blog/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 29 Oct 2012 11:22:54 +0000</pubDate>
@@ -39,10 +39,10 @@
 		<category><![CDATA[Salt]]></category>
 		<category><![CDATA[Windows Live]]></category>
 		<category><![CDATA[XKCD]]></category>
-		<guid isPermaLink="false">/?p=134</guid>
+		<guid isPermaLink="false">/blog/?p=134</guid>
 
-					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/blog/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/blog/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
 <p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
 <p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
 <p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
@@ -52,7 +52,7 @@
 <p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

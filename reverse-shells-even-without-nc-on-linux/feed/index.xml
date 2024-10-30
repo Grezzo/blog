@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Reverse shells even without nc on Linux	</title>
-	<atom:link href="/reverse-shells-even-without-nc-on-linux/feed/" rel="self" type="application/rss+xml" />
-	<link>/reverse-shells-even-without-nc-on-linux/</link>
+	<atom:link href="/blog/reverse-shells-even-without-nc-on-linux/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/reverse-shells-even-without-nc-on-linux/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 29 Apr 2018 13:52:23 +0000</lastBuildDate>
 	<sy:updatePeriod>

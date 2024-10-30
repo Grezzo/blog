@@ -9,8 +9,8 @@
 
 <channel>
 	<title>PWK &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/pwk/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/pwk/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 29 Apr 2018 10:45:42 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>I passed OSCP!</title>
-		<link>/i-passed-oscp/</link>
-					<comments>/i-passed-oscp/#respond</comments>
+		<link>/blog/i-passed-oscp/</link>
+					<comments>/blog/i-passed-oscp/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 29 Apr 2018 10:45:00 +0000</pubDate>
@@ -32,10 +32,10 @@
 		<category><![CDATA[Online Course]]></category>
 		<category><![CDATA[OSCP]]></category>
 		<category><![CDATA[PWK]]></category>
-		<guid isPermaLink="false">/?p=330</guid>
+		<guid isPermaLink="false">/blog/?p=330</guid>
 
-					<description><![CDATA[Following on from my post a few months ago, I took the OSCP exam about a week ago and passed first time! It&#8217;s a great course, and the training materials cover most of what is required to pass the exam, &#8230; <a href="/i-passed-oscp/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>Following on from <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/">my post a few months ago</a>, I took the <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">OSCP</a> exam about a week ago and passed first time! It&#8217;s a great course, and the training materials cover most of what is required to pass the exam, but I found that I for some subjects I ended up turning to the web for more examples and to get a deeper understanding of some of the subjects.</p>
+					<description><![CDATA[Following on from my post a few months ago, I took the OSCP exam about a week ago and passed first time! It&#8217;s a great course, and the training materials cover most of what is required to pass the exam, &#8230; <a href="/blog/i-passed-oscp/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/blog/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/">my post a few months ago</a>, I took the <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">OSCP</a> exam about a week ago and passed first time! It&#8217;s a great course, and the training materials cover most of what is required to pass the exam, but I found that I for some subjects I ended up turning to the web for more examples and to get a deeper understanding of some of the subjects.</p>
 <p>My main challenges were:</p>
 <h2>Finding time to actually do the course</h2>
 <p>I initially signed up for 60 days of lab access on 16th July 2017 and used that time to go through the training materials and practice in the labs. About 14 of days of those were spent on holiday or away from home for some other reason. Also some days after work I was too mentally tired to do the course when I got home, and other days I felt that my wife deserved some of my time, so I really struggled to get a decent amount of time logged in the labs. I took a week off work to get more time devoted to the labs and then I was able to get the most of the course exercises completed, but I hadn&#8217;t pwned many lab systems by the time my 60 days were up. After practicing outside the labs (<a href="https://www.vulnhub.com/">vulnhub</a> and <a href="https://www.hackthebox.eu/">hackthebox</a>), I bought another 30 days of lab time, starting 23rd December, because I had a few days off work around Christmas and the New year, and I also took a day or two off work near then end of January. This time I managed to finish the course exercises and hack into more than the 10 systems that are required to get the 5 bonus points for the exam but I didn&#8217;t feel I was ready for the exam so I did more practice outside the labs again.</p>
@@ -49,15 +49,15 @@
 <p>I knew that an exam sitting is included in every purchase of lab time and I clearly wasn&#8217;t ready after the first 60 days of lab access expired, so I never booked that exam. After the 30 days of extra lab time I still didn&#8217;t feel ready but I decided I might as well book the exam, and if I failed I hadn&#8217;t lost anything and hopefully I would get an idea of what the exam would be like and what I needed to focus my practice time on. I think that mindset actually helped, since I wasn&#8217;t feeling very stressed in the buildup to the exam. I started out pretty slowly, and after about 14.5 hours with only 35 points out of the 70 required to pass the exam I went to bed, fairly sure I was going to fail. I woke up 5 hours later and went back to work, then suddenly started making progress. Those 35 remaining points were in sight, but now I was running out of time! These final few hours were pretty stressful since I was so close, but I felt it was just out of my grasp. After 23 hours and 15 minutes, with 30 minutes to spare, I got a root shell on the last machine that I needed, giving me (I think) 75 points. The whole of the day following the exam was spent writing up the report for the exam and polishing the lab report in case I needed those 5 extra bonus points. By the time I submitted the report, by brain was done. My wife suggested we get some food and a drink to celebrate ate a nearby pub, which I was happy to do, but I was not good company because I was so tired. I think she had a better conversation with the dog than with me, that evening.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/i-passed-oscp/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/i-passed-oscp/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>I&#8217;ve signed up to the Penetration testing with Kali Linux Course (OSCP)</title>
-		<link>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/</link>
-					<comments>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comments</comments>
+		<link>/blog/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/</link>
+					<comments>/blog/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Tue, 06 Jun 2017 21:45:59 +0000</pubDate>
@@ -68,15 +68,15 @@
 		<category><![CDATA[OSCP]]></category>
 		<category><![CDATA[Penetration Test]]></category>
 		<category><![CDATA[PWK]]></category>
-		<guid isPermaLink="false">/?p=285</guid>
+		<guid isPermaLink="false">/blog/?p=285</guid>
 
-					<description><![CDATA[Last week I signed up for the PWK course from Offensive Security starting in mid June with the intentions of getting the OSCP certification. I booked 60 days of lab access; I hope that&#8217;s enough, but if I don&#8217;t manage to &#8230; <a href="/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Last week I signed up for the PWK course from Offensive Security starting in mid June with the intentions of getting the OSCP certification. I booked 60 days of lab access; I hope that&#8217;s enough, but if I don&#8217;t manage to &#8230; <a href="/blog/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>Last week I signed up for the <a href="https://www.offensive-security.com/information-security-training/penetration-testing-training-kali-linux/">PWK course from Offensive Security</a> starting in mid June with the intentions of getting the OSCP certification. I booked 60 days of lab access; I hope that&#8217;s enough, but if I don&#8217;t manage to find enough free time in those 60 days, I should be able to book some time off work towards the end. Failing that, I can always buy more time in the labs if I really need it.</p>
 <p>I&#8217;m interested to see how I&#8217;ll handle the 24 hour exam at the end. Sounds like a fun challenge, which I suppose if what the whole point is (as well as proving skills).</p>
 <p>In the weeks before that course starts, I&#8217;m working my way through the <a href="https://www.offensive-security.com/metasploit-unleashed/">Metasploit Unleashed</a> course, also by Offensive Security. Looks like a great tool, from what I&#8217;ve learned about it so far.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/ive-signed-up-to-the-penetration-testing-with-kali-linux-course-oscp/feed/</wfw:commentRss>
 			<slash:comments>3</slash:comments>
 		
 		

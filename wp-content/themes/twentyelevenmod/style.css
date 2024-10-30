@@ -5,7 +5,7 @@ Author:         Graeme Robinson
 Template:       twentyeleven
 */
 
-@import url("/wp-content/themes/twentyeleven/style.css");
+@import url("/blog/wp-content/themes/twentyeleven/style.css");
 
 #site-generator {
     display: none;

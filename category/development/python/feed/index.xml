@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Python &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/development/python/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/development/python/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 22 Oct 2017 11:31:46 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>FristiLeaks 1.3</title>
-		<link>/fristileaks-1-3/</link>
-					<comments>/fristileaks-1-3/#respond</comments>
+		<link>/blog/fristileaks-1-3/</link>
+					<comments>/blog/fristileaks-1-3/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
@@ -36,10 +36,10 @@
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
-		<guid isPermaLink="false">/?p=321</guid>
+		<guid isPermaLink="false">/blog/?p=321</guid>
 
-					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/blog/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/blog/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
 <p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
 <pre>root@kali:~# nmap -A [IP-REDACTED]
 
@@ -104,15 +104,15 @@ print cryptoresult</pre>
 <p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/fristileaks-1-3/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/fristileaks-1-3/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>nc.exe v1.10 NT crashes when -e used and </title>
-		<link>/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
-					<comments>/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
+		<link>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
+					<comments>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 07 Aug 2017 13:02:27 +0000</pubDate>
@@ -123,9 +123,9 @@ print cryptoresult</pre>
 		<category><![CDATA[OSCP]]></category>
 		<category><![CDATA[Penetration Test]]></category>
 		<category><![CDATA[Python]]></category>
-		<guid isPermaLink="false">/?p=295</guid>
+		<guid isPermaLink="false">/blog/?p=295</guid>
 
-					<description><![CDATA[I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a &#8230; <a href="/nc-exe-v1-10-nt-crashes-when-e-used-and/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a &#8230; <a href="/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I&#8217;m currently working through the PWK course from offensive-security, hoping to get my OSCP certification. While following the course materials, I&#8217;ve got to a section that talks about methods of transferring binary files after you have a shell on a remote system.</p>
 <p>One of the methods suggested is converting the file to text using exe2bat.exe to convert the file into a series of echo commands with redirection to a file that can be copy/pasted into the shell and finally running debug.exe to convert the file back into an exe. It&#8217;s a pretty well known method, detailed instructions can be found easily with google.</p>
 <p>I hit a problem when working through this though&#8230; I created a bind shell using nc.exe (v1.10 NT) and when i connected to this and pasted in the lines from the bat file created by exe2bat.exe, the nc.exe process would crash. It turned out to be crashing when it got the 3rd line from the bat file. I thought this was strange, so I contacted offensive-security support and they confirmed my findings, but weren&#8217;t sure why and suggested I used a different method to get a remote shell, e.g. using msfvenom.</p>
@@ -151,7 +151,7 @@ for idx, line in enumerate(sys.stdin):
 <p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: B-Sides London 2017	</title>
-	<atom:link href="/b-sides-london-2017/feed/" rel="self" type="application/rss+xml" />
-	<link>/b-sides-london-2017/</link>
+	<atom:link href="/blog/b-sides-london-2017/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/b-sides-london-2017/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sat, 10 Jun 2017 15:57:21 +0000</lastBuildDate>
 	<sy:updatePeriod>

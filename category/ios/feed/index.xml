@@ -9,8 +9,8 @@
 
 <channel>
 	<title>iOS &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/category/ios/feed/" rel="self" type="application/rss+xml" />
-	<link>/</link>
+	<atom:link href="/blog/category/ios/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 16 Nov 2014 11:00:28 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>Developing and debugging my own apps on JailBroken iOS8.1 using XCode 6.1 without paying apple</title>
-		<link>/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/</link>
-					<comments>/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments</comments>
+		<link>/blog/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/</link>
+					<comments>/blog/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 16 Nov 2014 10:54:28 +0000</pubDate>
@@ -31,9 +31,9 @@
 		<category><![CDATA[iOS]]></category>
 		<category><![CDATA[JailBreak]]></category>
 		<category><![CDATA[XCode]]></category>
-		<guid isPermaLink="false">/?p=260</guid>
+		<guid isPermaLink="false">/blog/?p=260</guid>
 
-					<description><![CDATA[A while back I used an app called JailCoder to enable me to run and debug my own apps on my jailbroken iPhone 5S without having to pay Apple for a full developer account. I&#8217;m still learning iOS development and &#8230; <a href="/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A while back I used an app called JailCoder to enable me to run and debug my own apps on my jailbroken iPhone 5S without having to pay Apple for a full developer account. I&#8217;m still learning iOS development and &#8230; <a href="/blog/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A while back I used an app called JailCoder to enable me to run and debug my own apps on my jailbroken iPhone 5S without having to pay Apple for a full developer account. I&#8217;m still learning iOS development and I have nothing I want to submit to the app store, so I&#8217;m reluctant to pay the £100 that Apple wants to enable me to run my own code on my own device.</p>
 <p>Given that XCode is free, and that £100 per year would gives me the ability to sell apps through the app store, I think it&#8217;s a bargain if you are actually planning to distribute apps, but for me just learning it seems a bit steep.</p>
 <p>There don&#8217;t seem to be many tutorials out there telling you how to do this for iOS8.1 and XCode 6.1 (they are all a bit outdated), but this is what worked for me:</p>
@@ -52,7 +52,7 @@
 <p><a href="https://www.reddit.com/r/jailbreak/comments/2m45y8/release_appsync_unified_51_with_full_ios_8/">This subreddit may be helpful</a></p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/feed/</wfw:commentRss>
+					<wfw:commentRss>/blog/developing-and-debugging-my-own-apps-on-jailbroken-ios8-1-using-xcode-6-1-without-paying-apple/feed/</wfw:commentRss>
 			<slash:comments>64</slash:comments>
 		
 		

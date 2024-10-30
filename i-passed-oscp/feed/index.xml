@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: I passed OSCP!	</title>
-	<atom:link href="/i-passed-oscp/feed/" rel="self" type="application/rss+xml" />
-	<link>/i-passed-oscp/</link>
+	<atom:link href="/blog/i-passed-oscp/feed/" rel="self" type="application/rss+xml" />
+	<link>/blog/i-passed-oscp/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Sun, 29 Apr 2018 10:45:42 +0000</lastBuildDate>
 	<sy:updatePeriod>
