@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/infosec/white-hat/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
-	<lastBuildDate>Tue, 16 Aug 2016 14:31:43 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>Am I officially a white hat hacker now!?</title>
 		<link>/blog/am-i-officially-a-white-hat-hacker-now/</link>
-					<comments>/blog/am-i-officially-a-white-hat-hacker-now/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Tue, 16 Aug 2016 14:31:43 +0000</pubDate>
@@ -37,8 +36,6 @@
 <p>This also took a while to come to fruition, but they did hold true to their word and sent me the money, followed a few days later by my name being added to the <a href="https://www.pebble.com/legal/white_hat/hall_of_fame">Pebble White Hat Hall of Fame</a>!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/am-i-officially-a-white-hat-hacker-now/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

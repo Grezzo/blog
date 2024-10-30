@@ -12,7 +12,7 @@
 	<atom:link href="/blog/author/admin/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
-	<lastBuildDate>Fri, 20 Jul 2018 21:48:34 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -162,7 +162,6 @@ print "Done"</pre>
 		<item>
 		<title>Reverse shells even without nc on Linux</title>
 		<link>/blog/reverse-shells-even-without-nc-on-linux/</link>
-					<comments>/blog/reverse-shells-even-without-nc-on-linux/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 29 Apr 2018 13:49:55 +0000</pubDate>
@@ -205,15 +204,12 @@ print "Done"</pre>
 <p>I&#8217;m sure it&#8217;s possible do similar things in other languages if python isn&#8217;t installed.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/reverse-shells-even-without-nc-on-linux/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>I discovered a vulnerability in a wordpress plugin</title>
 		<link>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/</link>
-					<comments>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 29 Apr 2018 11:12:59 +0000</pubDate>
@@ -240,15 +236,12 @@ $ curl "http://host/wordpress/wp-content/plugins/simple-fields/simple_fields.php
 <p>This vulnerability is admittedly not that likely to show up in the wild since it requires an old version of php, and an old version of a plugin that isn&#8217;t even supported any more, but it could be present on some old systems.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>I passed OSCP!</title>
 		<link>/blog/i-passed-oscp/</link>
-					<comments>/blog/i-passed-oscp/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 29 Apr 2018 10:45:00 +0000</pubDate>
@@ -275,15 +268,12 @@ $ curl "http://host/wordpress/wp-content/plugins/simple-fields/simple_fields.php
 <p>I knew that an exam sitting is included in every purchase of lab time and I clearly wasn&#8217;t ready after the first 60 days of lab access expired, so I never booked that exam. After the 30 days of extra lab time I still didn&#8217;t feel ready but I decided I might as well book the exam, and if I failed I hadn&#8217;t lost anything and hopefully I would get an idea of what the exam would be like and what I needed to focus my practice time on. I think that mindset actually helped, since I wasn&#8217;t feeling very stressed in the buildup to the exam. I started out pretty slowly, and after about 14.5 hours with only 35 points out of the 70 required to pass the exam I went to bed, fairly sure I was going to fail. I woke up 5 hours later and went back to work, then suddenly started making progress. Those 35 remaining points were in sight, but now I was running out of time! These final few hours were pretty stressful since I was so close, but I felt it was just out of my grasp. After 23 hours and 15 minutes, with 30 minutes to spare, I got a root shell on the last machine that I needed, giving me (I think) 75 points. The whole of the day following the exam was spent writing up the report for the exam and polishing the lab report in case I needed those 5 extra bonus points. By the time I submitted the report, by brain was done. My wife suggested we get some food and a drink to celebrate ate a nearby pub, which I was happy to do, but I was not good company because I was so tired. I think she had a better conversation with the dog than with me, that evening.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/i-passed-oscp/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>FristiLeaks 1.3</title>
 		<link>/blog/fristileaks-1-3/</link>
-					<comments>/blog/fristileaks-1-3/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
@@ -365,8 +355,6 @@ print cryptoresult</pre>
 <p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/fristileaks-1-3/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
@@ -490,7 +478,6 @@ root</pre>
 		<item>
 		<title>I got a job at an information security company!</title>
 		<link>/blog/i-got-a-job-at-an-information-security-company/</link>
-					<comments>/blog/i-got-a-job-at-an-information-security-company/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Wed, 11 Oct 2017 19:46:34 +0000</pubDate>
@@ -504,15 +491,12 @@ root</pre>
 <p>It was about time I moved on from my previous position, and this is a real step up for me. I&#8217;ve been working there for a few weeks now and I&#8217;m really enjoying it, the work is fun and interesting, the working environment is brilliant. It&#8217;s just great to be working in a field that I&#8217;m interested in and be somewhere that cares about career progression.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/i-got-a-job-at-an-information-security-company/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>New alternate emoji domain</title>
 		<link>/blog/new-alternate-emoji-domain/</link>
-					<comments>/blog/new-alternate-emoji-domain/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Wed, 16 Aug 2017 14:27:14 +0000</pubDate>
@@ -526,15 +510,12 @@ root</pre>
 <p>Check your address bar now. You may already using the emoji domain without even knowing.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/new-alternate-emoji-domain/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>nc.exe v1.10 NT crashes when -e used and </title>
 		<link>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
-					<comments>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 07 Aug 2017 13:02:27 +0000</pubDate>
@@ -573,8 +554,6 @@ for idx, line in enumerate(sys.stdin):
 <p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

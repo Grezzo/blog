@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
-	<lastBuildDate>Fri, 20 Jul 2018 21:48:34 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -279,7 +279,6 @@ root</pre>
 		<item>
 		<title>New alternate emoji domain</title>
 		<link>/blog/new-alternate-emoji-domain/</link>
-					<comments>/blog/new-alternate-emoji-domain/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Wed, 16 Aug 2017 14:27:14 +0000</pubDate>
@@ -293,8 +292,6 @@ root</pre>
 <p>Check your address bar now. You may already using the emoji domain without even knowing.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/new-alternate-emoji-domain/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
@@ -344,7 +341,6 @@ root</pre>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 08</title>
 		<link>/blog/exploit-exercises-nebula-level-08/</link>
-					<comments>/blog/exploit-exercises-nebula-level-08/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sat, 01 Dec 2012 12:17:44 +0000</pubDate>
@@ -361,15 +357,12 @@ To do this level, log in as the level08 account with the password level08 . File
 <p style="text-align: left;">
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/exploit-exercises-nebula-level-08/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 07</title>
 		<link>/blog/exploit-exercises-nebula-level-07/</link>
-					<comments>/blog/exploit-exercises-nebula-level-07/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sat, 01 Dec 2012 11:58:49 +0000</pubDate>
@@ -429,8 +422,6 @@ ping(param(&quot;Host&quot;));
 <p>Now I can run any command including whoami and getflag</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/exploit-exercises-nebula-level-07/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

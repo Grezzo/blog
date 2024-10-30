@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/lesson-learned/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
-	<lastBuildDate>Mon, 07 Aug 2017 18:15:06 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>nc.exe v1.10 NT crashes when -e used and </title>
 		<link>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/</link>
-					<comments>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 07 Aug 2017 13:02:27 +0000</pubDate>
@@ -61,8 +60,6 @@ for idx, line in enumerate(sys.stdin):
 <p>While this is a problem because it&#8217;s an exploitable bug, this is not much of a problem for transferring binary files because in real world secenarios because there won&#8217;t be nc.exe on the system unless I&#8217;ve already found a way of getting a binary file onto the system, but it&#8217;s something that did trip me up for a few hours while doing the PWK course.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/nc-exe-v1-10-nt-crashes-when-e-used-and/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>

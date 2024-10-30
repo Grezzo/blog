@@ -12,7 +12,7 @@
 	<atom:link href="/blog/category/web-server/feed/" rel="self" type="application/rss+xml" />
 	<link>/blog/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
-	<lastBuildDate>Sun, 29 Apr 2018 11:12:59 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,6 @@
 	<item>
 		<title>I discovered a vulnerability in a wordpress plugin</title>
 		<link>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/</link>
-					<comments>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 29 Apr 2018 11:12:59 +0000</pubDate>
@@ -49,15 +48,12 @@ $ curl "http://host/wordpress/wp-content/plugins/simple-fields/simple_fields.php
 <p>This vulnerability is admittedly not that likely to show up in the wild since it requires an old version of php, and an old version of a plugin that isn&#8217;t even supported any more, but it could be present on some old systems.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/i-discovered-a-vulnerability-in-a-wordpress-plugin/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>FristiLeaks 1.3</title>
 		<link>/blog/fristileaks-1-3/</link>
-					<comments>/blog/fristileaks-1-3/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
@@ -139,8 +135,6 @@ print cryptoresult</pre>
 <p>I really enjoyed this machine, especially as it didn&#8217;t have any known exploits to compile and or run. It was all just configuration mistakes and silly security mistakes. I also really enjoyed having to work around not being able to use nc on this system since it wasn&#8217;t present.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/fristileaks-1-3/feed/</wfw:commentRss>
-			<slash:comments>0</slash:comments>
 		
 		
 			</item>
