@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Stanford Online &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/education/online-course/stanford-online/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/education/online-course/stanford-online/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,16 +21,16 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>I passed my course :-)</title>
-		<link>/blog/i-passed-my-course/</link>
+		<link>/i-passed-my-course/</link>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Tue, 11 Dec 2012 21:32:30 +0000</pubDate>
 				<category><![CDATA[Education]]></category>
 		<category><![CDATA[Online Course]]></category>
 		<category><![CDATA[Stanford Online]]></category>
-		<guid isPermaLink="false">/blog/?p=225</guid>
+		<guid isPermaLink="false">/?p=225</guid>
 
-					<description><![CDATA[I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed. Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard! &#8230; <a href="/blog/i-passed-my-course/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed. Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard! &#8230; <a href="/i-passed-my-course/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I was doing a free online networking course from Stanford University called &#8220;An Introduction to Computer Networks&#8221; recently, and they just told me that I passed.</p>
 <p>Apparently I needed 50%, and I got 84%. I needn&#8217;t have tried so hard!</p>
 <p>I think the course title was misleading; I was expecting to learn a bit more detail about stuff that I had already taught myself about simple LANs; network masks, routing, etc. but it was much more than just this this. It was actually more to do with how the internet works and included some quite complicated concepts and mathematical/statistical theories. I found it pretty hard work, to the point that I considered jacking it in a couple of times, because it was taking a lot of my evening and weekend time, but I&#8217;m glad I made it through. I&#8217;m just thankful that it was quite short (about 6 weeks) because now the pressure is off and I have some free time again.</p>

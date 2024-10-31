@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Hack This Site Realistic 6	</title>
-	<atom:link href="/blog/hack-this-site-realistic-6/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/hack-this-site-realistic-6/</link>
+	<atom:link href="/hack-this-site-realistic-6/feed/" rel="self" type="application/rss+xml" />
+	<link>/hack-this-site-realistic-6/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Tue, 11 Aug 2015 05:30:13 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,7 +20,7 @@
 	<item>
 		<title>
 		By: Jason Statham		</title>
-		<link>/blog/hack-this-site-realistic-6/#comment-4519776</link>
+		<link>/hack-this-site-realistic-6/#comment-4519776</link>
 
 		<dc:creator><![CDATA[Jason Statham]]></dc:creator>
 		<pubDate>Tue, 11 Aug 2015 05:30:13 +0000</pubDate>

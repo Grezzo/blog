@@ -9,8 +9,8 @@
 
 <channel>
 	<title>WebApp &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/infosec/webapp/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/infosec/webapp/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>My first pentest on a friend&#8217;s network</title>
-		<link>/blog/my-first-pentest-on-a-friends-network/</link>
-					<comments>/blog/my-first-pentest-on-a-friends-network/#comments</comments>
+		<link>/my-first-pentest-on-a-friends-network/</link>
+					<comments>/my-first-pentest-on-a-friends-network/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 06 Jan 2013 16:31:58 +0000</pubDate>
@@ -36,9 +36,9 @@
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
 		<category><![CDATA[WebApp]]></category>
-		<guid isPermaLink="false">/blog/?p=227</guid>
+		<guid isPermaLink="false">/?p=227</guid>
 
-					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/blog/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
 <p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
 <p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
@@ -56,15 +56,15 @@
 <p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
+					<wfw:commentRss>/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
 			<slash:comments>9</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>How (I think) my windows live account got compromised</title>
-		<link>/blog/how-i-think-my-windows-live-account-got-compromised/</link>
-					<comments>/blog/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
+		<link>/how-i-think-my-windows-live-account-got-compromised/</link>
+					<comments>/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 29 Oct 2012 11:22:54 +0000</pubDate>
@@ -81,10 +81,10 @@
 		<category><![CDATA[Salt]]></category>
 		<category><![CDATA[Windows Live]]></category>
 		<category><![CDATA[XKCD]]></category>
-		<guid isPermaLink="false">/blog/?p=134</guid>
+		<guid isPermaLink="false">/?p=134</guid>
 
-					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/blog/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/blog/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
 <p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
 <p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
 <p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
@@ -94,15 +94,15 @@
 <p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
+					<wfw:commentRss>/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Single Line PHP Script to Gain Shell</title>
-		<link>/blog/single-line-php-script-to-gain-shell/</link>
-					<comments>/blog/single-line-php-script-to-gain-shell/#comments</comments>
+		<link>/single-line-php-script-to-gain-shell/</link>
+					<comments>/single-line-php-script-to-gain-shell/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 23 Sep 2012 21:48:19 +0000</pubDate>
@@ -113,9 +113,9 @@
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Web Server]]></category>
 		<category><![CDATA[WebApp]]></category>
-		<guid isPermaLink="false">/blog/?p=79</guid>
+		<guid isPermaLink="false">/?p=79</guid>
 
-					<description><![CDATA[A while ago, on PaulDotCom Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about &#8230; <a href="/blog/single-line-php-script-to-gain-shell/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A while ago, on PaulDotCom Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about &#8230; <a href="/single-line-php-script-to-gain-shell/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A while ago, on <a title="PaulDotCom" href="http://pauldotcom.com/" target="_blank" rel="noopener">PaulDotCom</a> Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about it on google when I searched, perhaps because it&#8217;s too easy, or perhaps I was using the wrong search terms. Anyway, I forgot about it for a while&#8230; until now.</p>
 <p>Since WebApp security is what I&#8217;m most interested in at the moment, I have been learning PHP, I&#8217;m not finished learning yet, but today (while reading about how inputs should be sanitised before using &#8220;include&#8221;) I remembered the single line PHP shell, and I had a go and this is what I came up with:</p>
 <pre lang="PHP"><?php echo shell_exec($_GET['e'].' 2>&1'); ?></pre>
@@ -133,7 +133,7 @@
 <p>The last command even showed me some files and their owners which in turn (because I am using a shared host) told me the names of some of the other sites are that are running on the same server as mine, which was an unexpected &#8220;bonus&#8221; find.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/single-line-php-script-to-gain-shell/feed/</wfw:commentRss>
+					<wfw:commentRss>/single-line-php-script-to-gain-shell/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		

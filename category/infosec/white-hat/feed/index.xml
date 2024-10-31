@@ -9,8 +9,8 @@
 
 <channel>
 	<title>White Hat &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/infosec/white-hat/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/infosec/white-hat/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,16 +21,16 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>Am I officially a white hat hacker now!?</title>
-		<link>/blog/am-i-officially-a-white-hat-hacker-now/</link>
+		<link>/am-i-officially-a-white-hat-hacker-now/</link>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Tue, 16 Aug 2016 14:31:43 +0000</pubDate>
 				<category><![CDATA[Exploit]]></category>
 		<category><![CDATA[Information Security]]></category>
 		<category><![CDATA[White Hat]]></category>
-		<guid isPermaLink="false">/blog/?p=278</guid>
+		<guid isPermaLink="false">/?p=278</guid>
 
-					<description><![CDATA[A while ago, while developing a geocaching app for pebble smartwatches called &#8220;Watch Caching&#8221;, I noticed a bug that could have security implications, so I reported it to Pebble using the whitehat guidelines set out by theme It took them a &#8230; <a href="/blog/am-i-officially-a-white-hat-hacker-now/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A while ago, while developing a geocaching app for pebble smartwatches called &#8220;Watch Caching&#8221;, I noticed a bug that could have security implications, so I reported it to Pebble using the whitehat guidelines set out by theme It took them a &#8230; <a href="/am-i-officially-a-white-hat-hacker-now/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A while ago, while developing a geocaching app for pebble smartwatches called <a href="https://apps.getpebble.com/applications/571f2701bfdfeab1cf000004">&#8220;Watch Caching&#8221;</a>, I noticed a bug that could have security implications, so I reported it to Pebble using <a href="https://www.pebble.com/legal/white_hat/">the whitehat guidelines set out by theme</a></p>
 <p>It took them a while, but they eventually got back to me and agreed that it was a security vulnerability and wanted to offer me a significant financial reward, as well as put me in the <a href="https://www.pebble.com/legal/white_hat/hall_of_fame">Pebble White Hat Hall of Fame</a></p>
 <p>This also took a while to come to fruition, but they did hold true to their word and sent me the money, followed a few days later by my name being added to the <a href="https://www.pebble.com/legal/white_hat/hall_of_fame">Pebble White Hat Hall of Fame</a>!</p>

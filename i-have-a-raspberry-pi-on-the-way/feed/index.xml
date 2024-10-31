@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: I have a Raspberry PI on the way	</title>
-	<atom:link href="/blog/i-have-a-raspberry-pi-on-the-way/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/i-have-a-raspberry-pi-on-the-way/</link>
+	<atom:link href="/i-have-a-raspberry-pi-on-the-way/feed/" rel="self" type="application/rss+xml" />
+	<link>/i-have-a-raspberry-pi-on-the-way/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		By: We See		</title>
-		<link>/blog/i-have-a-raspberry-pi-on-the-way/#comment-191</link>
+		<link>/i-have-a-raspberry-pi-on-the-way/#comment-191</link>
 
 		<dc:creator><![CDATA[We See]]></dc:creator>
 		<pubDate>Fri, 14 Jun 2013 16:02:22 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=238#comment-191</guid>
+		<guid isPermaLink="false">/?p=238#comment-191</guid>
 
 					<description><![CDATA[Hello from all at WeSee :)]]></description>
 			<content:encoded><![CDATA[<p>Hello from all at WeSee 🙂</p>

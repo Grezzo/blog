@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Hash &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/infosec/hash/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/infosec/hash/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>Match.com just sent me an email containing my password in plain text!</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
-					<comments>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments</comments>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
+					<comments>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 31 Dec 2012 10:47:26 +0000</pubDate>
@@ -31,12 +31,12 @@
 		<category><![CDATA[Password Complexity]]></category>
 		<category><![CDATA[Passwords]]></category>
 		<category><![CDATA[Plaintext]]></category>
-		<guid isPermaLink="false">/blog/?p=228</guid>
+		<guid isPermaLink="false">/?p=228</guid>
 
-					<description><![CDATA[A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to Match.com and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did &#8230; <a href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to Match.com and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did &#8230; <a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to <a href="http://www.match.com/">Match.com</a> and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did this because I found my Fiancée over 3 years ago (via Match.com) so there was no reason to still have an active account. I didn&#8217;t want to delete the account because it had some of our earliest messages to each other saved.</p>
 <p>Anyway, I checked my emails today and noticed that I had one from them encouraging me to re-activate my account. What was more concerning was that the email contained my password in plain text! Here is a screenshot of the email:</p>
-<p><a href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/screen-shot-2012-12-31-at-10-13-27/" rel="attachment wp-att-229"><img decoding="async" class="alignnone size-thumbnail wp-image-229" alt="Screen Shot 2012-12-31 at 10.13.27" src="/blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png" width="150" height="150" srcset="/blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png 150w, /blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-300x300.png 300w, /blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27.png 584w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<p><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/screen-shot-2012-12-31-at-10-13-27/" rel="attachment wp-att-229"><img decoding="async" class="alignnone size-thumbnail wp-image-229" alt="Screen Shot 2012-12-31 at 10.13.27" src="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png" width="150" height="150" srcset="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png 150w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-300x300.png 300w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27.png 584w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
 <p>I was about to submit them to <a href="http://plaintextoffenders.com/ ">plaintextoffenders.com </a>but I did a search before and found that they were already added to the list 15 months ago, so I left a comment on the plaintextoffenders listing and decided to send a message to Match.com. The message was:</p>
 <p style="padding-left: 30px;"><em>On the 20th of December 2012 I received an email encouraging me to reactivate my account. What concerns me is that in the body of the email was my password, in plain text! Firstly you should not be storing my password in plain text, and secondly (if you insist on storing passwords as plain text) you should not be sending it to me over something as insecure as email, especially if I didn&#8217;t request it!</em></p>
 <p style="padding-left: 30px;"><em>I was about to submit match.com to http://plaintextoffenders.com,/ but when I searched, I saw that it was already submitted some 15 months ago. See <a href="http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this">http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this</a>.</em></p>
@@ -53,15 +53,15 @@
 <p>At least they are not dismissing it. I wonder if anything will actually change?</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/</wfw:commentRss>
+					<wfw:commentRss>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/</wfw:commentRss>
 			<slash:comments>8</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Exploit Exercises – Nebula – Level 06</title>
-		<link>/blog/exploit-exercises-nebula-level-06/</link>
-					<comments>/blog/exploit-exercises-nebula-level-06/#respond</comments>
+		<link>/exploit-exercises-nebula-level-06/</link>
+					<comments>/exploit-exercises-nebula-level-06/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Thu, 29 Nov 2012 23:59:23 +0000</pubDate>
@@ -75,9 +75,9 @@
 		<category><![CDATA[Linux]]></category>
 		<category><![CDATA[Shell]]></category>
 		<category><![CDATA[Unix]]></category>
-		<guid isPermaLink="false">/blog/?p=215</guid>
+		<guid isPermaLink="false">/?p=215</guid>
 
-					<description><![CDATA[Even less information about this one: The flag06 account credentials came from a legacy unix system. To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06. &#8230; <a href="/blog/exploit-exercises-nebula-level-06/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[Even less information about this one: The flag06 account credentials came from a legacy unix system. To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06. &#8230; <a href="/exploit-exercises-nebula-level-06/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>Even less information about this one:</p>
 <p style="padding-left: 30px;">The flag06 account credentials came from a legacy unix system.<br />
 To do this level, log in as the level06 account with the password level06 . Files for this level can be found in /home/flag06.</p>
@@ -86,15 +86,15 @@ To do this level, log in as the level06 account with the password level06 . File
 <p>shows me the hash is ueqwOCnSGdsuM. I need to &#8220;crack&#8221; the hash. Time to get john the ripper on the case. At this point I didn&#8217;t have any other linux machines to hand, so I went to another tty session on this one and logged in a nebula and installed john (<strong>sudo apt-get install john</strong>). Then I ran john on the password file (<strong>john /etc/passwd</strong>) and he showed me the password. I switched over to flag06 account and the password worked as expected.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/exploit-exercises-nebula-level-06/feed/</wfw:commentRss>
+					<wfw:commentRss>/exploit-exercises-nebula-level-06/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>How (I think) my windows live account got compromised</title>
-		<link>/blog/how-i-think-my-windows-live-account-got-compromised/</link>
-					<comments>/blog/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
+		<link>/how-i-think-my-windows-live-account-got-compromised/</link>
+					<comments>/how-i-think-my-windows-live-account-got-compromised/#respond</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 29 Oct 2012 11:22:54 +0000</pubDate>
@@ -111,10 +111,10 @@ To do this level, log in as the level06 account with the password level06 . File
 		<category><![CDATA[Salt]]></category>
 		<category><![CDATA[Windows Live]]></category>
 		<category><![CDATA[XKCD]]></category>
-		<guid isPermaLink="false">/blog/?p=134</guid>
+		<guid isPermaLink="false">/?p=134</guid>
 
-					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/blog/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
-										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/blog/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
+					<description><![CDATA[This message kind of follows on from the post about my Fiancée&#8217;s hotmail account being compromised, and her subsequent use of much better passwords. About a week ago I got a message from my brother telling me that my windows &#8230; <a href="/how-i-think-my-windows-live-account-got-compromised/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+										<content:encoded><![CDATA[<p>This message kind of follows on from <a href="/my-fiancee-is-using-better-passwords-than-me/">the post about my Fianc<em>é</em>e&#8217;s hotmail account being compromised, and her subsequent use of much better passwords.</a></p>
 <p>About a week ago I got a message from my brother telling me that my windows live messenger account was spamming him. This was confirmed a little later by another friend but as I was travelling in Germany at the time for work, I was not able to log on and try to change my password immediately. When I was able to sit down with my laptop and internet access, I was pleased to find that I could still log in to windows live and I promptly changed my password.</p>
 <p>This compromise was a bit of a surprise and lead me to think about how my account could get compromised, and what I lessons I could learn from the compromise. This post is about how I think my account was compromised, and how I have further strengthened my security since.</p>
 <p>While my windows live password was fairly secure (it didn&#8217;t conform to any of the common patterns used for passwords) and it wasn&#8217;t overly short. Because of this, I&#8217;m pretty confident that a brute force attack over the internet against the windows live authentication services would take too much time to make it a reasonable attack vector; it would be prohibitively slow. I would also expect the windows live authentication services to have some kind of security measure to counter brute force attacks, though I&#8217;m not sure about that.</p>
@@ -124,15 +124,15 @@ To do this level, log in as the level06 account with the password level06 . File
 <p>I use <a title="LastPass" href="https://lastpass.com/" target="_blank">lastpass</a> these days, with two factor authentication using <a title="Google Authenticator" href="http://en.wikipedia.org/wiki/Google_Authenticator" target="_blank">google authenticator</a> app on my phone, and have been going through my various accounts, making sure they are using unique and secure passwords (the lastpass security challenge is great for this &#8211; I am now up to 92.6% secure) but as I mentioned before, I hadn&#8217;t logged in to windows live manually for years, so my vault didn&#8217;t contain that password, and so couldn&#8217;t warn me that I was still reusing a password. So I have racked by brain to try to remember anywhere else that I may have an account and made sure that I checked those passwords too. I&#8217;m sure I will have missed some, but hopefully they are ones that I don&#8217;t really care about or use these days.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
+					<wfw:commentRss>/how-i-think-my-windows-live-account-got-compromised/feed/</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>My Fiancée is Using Better Passwords Than Me!</title>
-		<link>/blog/my-fiancee-is-using-better-passwords-than-me/</link>
-					<comments>/blog/my-fiancee-is-using-better-passwords-than-me/#comments</comments>
+		<link>/my-fiancee-is-using-better-passwords-than-me/</link>
+					<comments>/my-fiancee-is-using-better-passwords-than-me/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 17 Sep 2012 20:30:32 +0000</pubDate>
@@ -151,9 +151,9 @@ To do this level, log in as the level06 account with the password level06 . File
 		<category><![CDATA[Password Complexity]]></category>
 		<category><![CDATA[Passwords]]></category>
 		<category><![CDATA[XKCD]]></category>
-		<guid isPermaLink="false">/blog/?p=63</guid>
+		<guid isPermaLink="false">/?p=63</guid>
 
-					<description><![CDATA[I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get &#8230; <a href="/blog/my-fiancee-is-using-better-passwords-than-me/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get &#8230; <a href="/my-fiancee-is-using-better-passwords-than-me/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get into infosec, I should at least try to be secure myself.</p>
 <p>Around the same time my fiancée had said that her Windows laptop was running slow, and then her hotmail account got compromised. I checked her laptop for anything malicious (all seemed ok) but I didn&#8217;t have time to try and find out why it was running slow right then, so I set her up with an account on my Mac laptop. I had not enforced any password policy on my Mac laptop (I&#8217;m not even sure how to do that &#8211; I&#8217;ll have to find out soon), so I asked her if she would mind telling me what password she had used because her password would be able to unlock the FileVault (almost) full disk encryption and her password could be the weak link.</p>
 <p>She obviously trusts me because she told me, and I knew from experience with John The Ripper/Hascat/etc that it would easily be cracked using brute force by the proper tools in a matter of seconds because it followed a very common pattern. It turned out that her hotmail account was using a similarly simple password, so it was no great surprise that it had been compromised.</p>
@@ -161,7 +161,7 @@ To do this level, log in as the level06 account with the password level06 . File
 <p>She is now using a passwords around 30 characters long! This means some of her passwords are probably stronger than some of mine&#8230; I have some catching up to do!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/my-fiancee-is-using-better-passwords-than-me/feed/</wfw:commentRss>
+					<wfw:commentRss>/my-fiancee-is-using-better-passwords-than-me/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

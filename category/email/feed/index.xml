@@ -9,8 +9,8 @@
 
 <channel>
 	<title>Email &#8211; Graeme Robinson&#039;s blog</title>
-	<atom:link href="/blog/category/email/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/</link>
+	<atom:link href="/category/email/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<language>en-US</language>
@@ -21,8 +21,8 @@
 	<generator>https://wordpress.org/?v=6.6.2</generator>
 	<item>
 		<title>Match.com just sent me an email containing my password in plain text!</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
-					<comments>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments</comments>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
+					<comments>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 31 Dec 2012 10:47:26 +0000</pubDate>
@@ -31,12 +31,12 @@
 		<category><![CDATA[Password Complexity]]></category>
 		<category><![CDATA[Passwords]]></category>
 		<category><![CDATA[Plaintext]]></category>
-		<guid isPermaLink="false">/blog/?p=228</guid>
+		<guid isPermaLink="false">/?p=228</guid>
 
-					<description><![CDATA[A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to Match.com and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did &#8230; <a href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to Match.com and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did &#8230; <a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>A few weeks ago, when I was going through all my online accounts and making the passwords more secure and unique I logged in to <a href="http://www.match.com/">Match.com</a> and deactivated my account. I didn&#8217;t delete it, just made it dormant. I did this because I found my Fiancée over 3 years ago (via Match.com) so there was no reason to still have an active account. I didn&#8217;t want to delete the account because it had some of our earliest messages to each other saved.</p>
 <p>Anyway, I checked my emails today and noticed that I had one from them encouraging me to re-activate my account. What was more concerning was that the email contained my password in plain text! Here is a screenshot of the email:</p>
-<p><a href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/screen-shot-2012-12-31-at-10-13-27/" rel="attachment wp-att-229"><img decoding="async" class="alignnone size-thumbnail wp-image-229" alt="Screen Shot 2012-12-31 at 10.13.27" src="/blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png" width="150" height="150" srcset="/blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png 150w, /blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-300x300.png 300w, /blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27.png 584w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<p><a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/screen-shot-2012-12-31-at-10-13-27/" rel="attachment wp-att-229"><img decoding="async" class="alignnone size-thumbnail wp-image-229" alt="Screen Shot 2012-12-31 at 10.13.27" src="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png" width="150" height="150" srcset="/wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-150x150.png 150w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27-300x300.png 300w, /wp-content/uploads/2012/12/Screen-Shot-2012-12-31-at-10.13.27.png 584w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
 <p>I was about to submit them to <a href="http://plaintextoffenders.com/ ">plaintextoffenders.com </a>but I did a search before and found that they were already added to the list 15 months ago, so I left a comment on the plaintextoffenders listing and decided to send a message to Match.com. The message was:</p>
 <p style="padding-left: 30px;"><em>On the 20th of December 2012 I received an email encouraging me to reactivate my account. What concerns me is that in the body of the email was my password, in plain text! Firstly you should not be storing my password in plain text, and secondly (if you insist on storing passwords as plain text) you should not be sending it to me over something as insecure as email, especially if I didn&#8217;t request it!</em></p>
 <p style="padding-left: 30px;"><em>I was about to submit match.com to http://plaintextoffenders.com,/ but when I searched, I saw that it was already submitted some 15 months ago. See <a href="http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this">http://plaintextoffenders.com/post/9744438766/match-com-dating-site-very-soon-after-i-got-this</a>.</em></p>
@@ -53,15 +53,15 @@
 <p>At least they are not dismissing it. I wonder if anything will actually change?</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/</wfw:commentRss>
+					<wfw:commentRss>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/</wfw:commentRss>
 			<slash:comments>8</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>My Fiancée is Using Better Passwords Than Me!</title>
-		<link>/blog/my-fiancee-is-using-better-passwords-than-me/</link>
-					<comments>/blog/my-fiancee-is-using-better-passwords-than-me/#comments</comments>
+		<link>/my-fiancee-is-using-better-passwords-than-me/</link>
+					<comments>/my-fiancee-is-using-better-passwords-than-me/#comments</comments>
 		
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 17 Sep 2012 20:30:32 +0000</pubDate>
@@ -80,9 +80,9 @@
 		<category><![CDATA[Password Complexity]]></category>
 		<category><![CDATA[Passwords]]></category>
 		<category><![CDATA[XKCD]]></category>
-		<guid isPermaLink="false">/blog/?p=63</guid>
+		<guid isPermaLink="false">/?p=63</guid>
 
-					<description><![CDATA[I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get &#8230; <a href="/blog/my-fiancee-is-using-better-passwords-than-me/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+					<description><![CDATA[I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get &#8230; <a href="/my-fiancee-is-using-better-passwords-than-me/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
 										<content:encoded><![CDATA[<p>I upgraded my Mac laptop to OS X 10.8 Mountain Lion a few weeks ago, and at the same time I decided to turn on FileVault for (almost) full disk encryption. I&#8217;m not paranoid, but If I want to get into infosec, I should at least try to be secure myself.</p>
 <p>Around the same time my fiancée had said that her Windows laptop was running slow, and then her hotmail account got compromised. I checked her laptop for anything malicious (all seemed ok) but I didn&#8217;t have time to try and find out why it was running slow right then, so I set her up with an account on my Mac laptop. I had not enforced any password policy on my Mac laptop (I&#8217;m not even sure how to do that &#8211; I&#8217;ll have to find out soon), so I asked her if she would mind telling me what password she had used because her password would be able to unlock the FileVault (almost) full disk encryption and her password could be the weak link.</p>
 <p>She obviously trusts me because she told me, and I knew from experience with John The Ripper/Hascat/etc that it would easily be cracked using brute force by the proper tools in a matter of seconds because it followed a very common pattern. It turned out that her hotmail account was using a similarly simple password, so it was no great surprise that it had been compromised.</p>
@@ -90,7 +90,7 @@
 <p>She is now using a passwords around 30 characters long! This means some of her passwords are probably stronger than some of mine&#8230; I have some catching up to do!</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>/blog/my-fiancee-is-using-better-passwords-than-me/feed/</wfw:commentRss>
+					<wfw:commentRss>/my-fiancee-is-using-better-passwords-than-me/feed/</wfw:commentRss>
 			<slash:comments>1</slash:comments>
 		
 		

@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Match.com just sent me an email containing my password in plain text!	</title>
-	<atom:link href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
+	<atom:link href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/feed/" rel="self" type="application/rss+xml" />
+	<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		By: Steven		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-4313132</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-4313132</link>
 
 		<dc:creator><![CDATA[Steven]]></dc:creator>
 		<pubDate>Sat, 18 Apr 2015 21:07:16 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-4313132</guid>
+		<guid isPermaLink="false">/?p=228#comment-4313132</guid>
 
 					<description><![CDATA[I just signed-up for match.com and guess that was included in an email from them: My password, in plaintext!]]></description>
 			<content:encoded><![CDATA[<p>I just signed-up for match.com and guess that was included in an email from them: My password, in plaintext!</p>
@@ -34,11 +34,11 @@
 		<item>
 		<title>
 		By: Nathan		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-163273</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-163273</link>
 
 		<dc:creator><![CDATA[Nathan]]></dc:creator>
 		<pubDate>Sat, 16 Aug 2014 14:29:03 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-163273</guid>
+		<guid isPermaLink="false">/?p=228#comment-163273</guid>
 
 					<description><![CDATA[Yikes this is pretty bad.  It&#039;s almost 2 years later and they&#039;re still doing it!  I clicked forgot password and bam, plaintext password sent to me in my email.
 
@@ -51,18 +51,18 @@ They don&#039;t even verify emails! This is just ridiculous]]></description>
 		<item>
 		<title>
 		By: Graeme Robinson		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-153121</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-153121</link>
 
 		<dc:creator><![CDATA[Graeme Robinson]]></dc:creator>
 		<pubDate>Mon, 28 Jul 2014 16:26:27 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-153121</guid>
+		<guid isPermaLink="false">/?p=228#comment-153121</guid>
 
-					<description><![CDATA[In reply to &lt;a href=&quot;/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038&quot;&gt;Bradford C. Vokey&lt;/a&gt;.
+					<description><![CDATA[In reply to &lt;a href=&quot;/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038&quot;&gt;Bradford C. Vokey&lt;/a&gt;.
 
 I think maybe it&#039;s time to escalate. Perhaps @SamYagan (CEO of Match.com) might be worth contacting...
 
 &lt;strong&gt;Update:&lt;/strong&gt;Tweeted him: https://twitter.com/Grezzo82/statuses/493796324048117760]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038">Bradford C. Vokey</a>.</p>
+			<content:encoded><![CDATA[<p>In reply to <a href="/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038">Bradford C. Vokey</a>.</p>
 <p>I think maybe it&#8217;s time to escalate. Perhaps @SamYagan (CEO of Match.com) might be worth contacting&#8230;</p>
 <p><strong>Update:</strong>Tweeted him: <a href="https://twitter.com/Grezzo82/statuses/493796324048117760" rel="nofollow ugc">https://twitter.com/Grezzo82/statuses/493796324048117760</a></p>
 ]]></content:encoded>
@@ -71,11 +71,11 @@ I think maybe it&#039;s time to escalate. Perhaps @SamYagan (CEO of Match.com) m
 		<item>
 		<title>
 		By: Bradford C. Vokey		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-145038</link>
 
 		<dc:creator><![CDATA[Bradford C. Vokey]]></dc:creator>
 		<pubDate>Mon, 07 Jul 2014 19:24:24 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-145038</guid>
+		<guid isPermaLink="false">/?p=228#comment-145038</guid>
 
 					<description><![CDATA[It is even worse, much worse, than you have thought...
 
@@ -100,11 +100,11 @@ We are debating what we should do about it and the 707 emails we have received f
 		<item>
 		<title>
 		By: Danny		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-132395</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-132395</link>
 
 		<dc:creator><![CDATA[Danny]]></dc:creator>
 		<pubDate>Sun, 01 Jun 2014 23:49:22 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-132395</guid>
+		<guid isPermaLink="false">/?p=228#comment-132395</guid>
 
 					<description><![CDATA[Well I&#039;ve just requested a password reset today and yes: Plaintext.  Nothing appears to have changed 17 months after your initial report.]]></description>
 			<content:encoded><![CDATA[<p>Well I&#8217;ve just requested a password reset today and yes: Plaintext.  Nothing appears to have changed 17 months after your initial report.</p>
@@ -114,11 +114,11 @@ We are debating what we should do about it and the 707 emails we have received f
 		<item>
 		<title>
 		By: Anonymous		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-101111</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-101111</link>
 
 		<dc:creator><![CDATA[Anonymous]]></dc:creator>
 		<pubDate>Sat, 15 Mar 2014 20:41:42 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-101111</guid>
+		<guid isPermaLink="false">/?p=228#comment-101111</guid>
 
 					<description><![CDATA[This problem is still not fixed.  If they can&#039;t protect your password, I guarantee they cannot protect your privacy from other members.]]></description>
 			<content:encoded><![CDATA[<p>This problem is still not fixed.  If they can&#8217;t protect your password, I guarantee they cannot protect your privacy from other members.</p>
@@ -128,11 +128,11 @@ We are debating what we should do about it and the 707 emails we have received f
 		<item>
 		<title>
 		By: Andrew		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-194</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-194</link>
 
 		<dc:creator><![CDATA[Andrew]]></dc:creator>
 		<pubDate>Mon, 17 Jun 2013 23:58:31 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-194</guid>
+		<guid isPermaLink="false">/?p=228#comment-194</guid>
 
 					<description><![CDATA[This has not been fixed and I don&#039;t see the issue being resolved anytime soon, I&#039;ve also updated the post at http://plaintextoffenders.com]]>/</description>
 			<content:encoded><![CDATA[<p>This has not been fixed and I don&#8217;t see the issue being resolved anytime soon, I&#8217;ve also updated the post at <a href="http://plaintextoffenders.com/" rel="nofollow ugc">http://plaintextoffenders.com/</a></p>
@@ -142,11 +142,11 @@ We are debating what we should do about it and the 707 emails we have received f
 		<item>
 		<title>
 		By: Scott		</title>
-		<link>/blog/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-193</link>
+		<link>/match-com-just-sent-me-an-email-containing-my-password-in-plain-text/#comment-193</link>
 
 		<dc:creator><![CDATA[Scott]]></dc:creator>
 		<pubDate>Sat, 15 Jun 2013 14:13:25 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=228#comment-193</guid>
+		<guid isPermaLink="false">/?p=228#comment-193</guid>
 
 					<description><![CDATA[I just asked to reset my password today and they instead emailed me my password.  No, nothing changes after what appears 6 months since your post/experience]]></description>
 			<content:encoded><![CDATA[<p>I just asked to reset my password today and they instead emailed me my password.  No, nothing changes after what appears 6 months since your post/experience</p>

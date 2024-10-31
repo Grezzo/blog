@@ -8,8 +8,8 @@
 <channel>
 	<title>
 	Comments on: Hack the Box	</title>
-	<atom:link href="/blog/hack-the-box/feed/" rel="self" type="application/rss+xml" />
-	<link>/blog/hack-the-box/</link>
+	<atom:link href="/hack-the-box/feed/" rel="self" type="application/rss+xml" />
+	<link>/hack-the-box/</link>
 	<description>A place for my thoughts when I was starting to break into the information security feild</description>
 	<lastBuildDate>Wed, 30 Oct 2024 17:15:23 +0000</lastBuildDate>
 	<sy:updatePeriod>
@@ -20,11 +20,11 @@
 	<item>
 		<title>
 		By: gujar		</title>
-		<link>/blog/hack-the-box/#comment-4555653</link>
+		<link>/hack-the-box/#comment-4555653</link>
 
 		<dc:creator><![CDATA[gujar]]></dc:creator>
 		<pubDate>Thu, 09 Nov 2017 10:24:04 +0000</pubDate>
-		<guid isPermaLink="false">/blog/?p=290#comment-4555653</guid>
+		<guid isPermaLink="false">/?p=290#comment-4555653</guid>
 
 					<description><![CDATA[can you give me a hint to hack blue
 Which method only the name of attack
